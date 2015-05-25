@@ -1,0 +1,166 @@
+@import 'base';
+ // Import the mixins
+ @import "sass-css3-mixins/css3-mixins.scss";
+
+@import 'compass/css3/transition';
+
+$inline-header-padding: 		15px;
+$hr-rule-top-colour: 			  #414141;
+$hr-rule-bottom-colour:			#242424;
+$jumbotron-side-padding: 		40px;
+$site-bg:	 			        		#EAE5E3;
+$letter-spacing:				    1px;
+$lock-in-text-height: 			40px;
+
+body {
+	letter-spacing:				$letter-spacing;
+	background: 				#EAE5E3;
+	background-color: 			$site-bg;
+}
+
+div.fancybox-skin {
+	background:					transparent;
+}
+
+.jumbotron {
+	padding-left: 				$jumbotron-side-padding;
+	padding-right: 				$jumbotron-side-padding;
+	padding-bottom: 			0;
+	margin-bottom: 				0;
+	padding-top:				28px;
+}
+
+p {
+	margin-bottom:				4px;
+}
+
+.container {
+  color:                #444444;
+	padding-left: 				$jumbotron-side-padding;
+	padding-right: 				$jumbotron-side-padding;
+	background-color: 			$site-bg;
+	padding-bottom: 			20px;
+	margin-bottom: 				0;
+}
+
+h2 {
+  text-transform:       uppercase;
+}
+
+.navbar-header {
+	float: 						none;
+  width:            100%;
+  height:           89px;
+  background:       #333333;
+}
+
+.navbar-brand {
+	background: 				transparent url('../images/gazelli-house-logo.png') center center no-repeat;
+	text-indent:				-9999px;
+	width: 						  100%;
+	height: 					  100%;
+}
+
+.navbar-collapse {
+  width:              100%;
+  background:         #828382;
+}
+
+.navbar-nav {
+  float:              none;
+  margin:             auto;
+  width:              510px;
+}
+
+.navbar-nav>li~li:before {
+  content: '|';
+  color: #eee;
+  position: absolute;
+  left: -1px;
+  top: 4px;
+}
+
+.navbar-nav>li>a {
+  padding:            4px 8px;
+  color:              #EAE5E3;
+  &:hover {
+    background:       #828382;
+  }
+}
+
+.carousel-fade {
+  .carousel-inner {
+    .item {
+      opacity: 0;
+      transition-property: opacity;
+    }
+    .active {
+      opacity: 1;
+    }
+    .active.left,
+    .active.right {
+      left: 0;
+      opacity: 0;
+      z-index: 1;
+    
+    }
+    .next.left,
+    .prev.right {
+      opacity: 1;
+    }
+  
+  }
+  .carousel-control {
+    z-index: 2;
+    opacity: 0;
+  }
+  .carousel-caption {
+    padding-bottom: 0px;
+    left: 50%;
+    margin-left: -50%;
+    top: 50%;
+    width: 100%;
+    color: $brand-primary;
+    text-shadow:  none;
+    font-size: 48px;
+    text-transform: uppercase;
+    letter-spacing: 40px;
+
+    &.light {
+      color: white;
+    }
+  }
+}
+
+html, 
+body, 
+.carousel, 
+.carousel-inner,
+.carousel-inner .item {
+  height: 100%;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes slideInUp {
+  0% {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInUp {
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp;
+}
