@@ -218,7 +218,12 @@
   }
 
   $(window).resize(setCarouselInnerHeight);
-
+  var setHeightInt = setInterval(function(){
+    if($myCarousel.find('.item:first img').height() > 0) {
+      setCarouselInnerHeight();
+      clearInterval(setHeightInt);
+    }
+  }, 100);
   setCarouselInnerHeight();
   // Initialize carousel
   $myCarousel.carousel();

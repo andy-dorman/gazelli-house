@@ -150,6 +150,11 @@ body,
   height: 100%;
 }
 
+.carousel-inner>.item>img {
+  width: 100%;
+  max-width: auto;
+}
+
 .animated {
   -webkit-animation-duration: 5s;
   animation-duration: 5s;
