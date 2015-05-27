@@ -88,14 +88,24 @@ h2 {
   }
 }
 
+
 .carousel-fade {
+  max-height: 720px;
+  overflow: hidden;
   .carousel-inner {
     .item {
       opacity: 0;
-      transition-property: opacity;
+      left: -5%;
+      top: -5%;
+      width: 110%;
+      transition: opacity 2s, width 2s, left 2s, top 2s;
+      transition-property: opacity, width, top, left;
     }
     .active {
       opacity: 1;
+      width: 100%;
+      top: 0;
+      left: 0;
     }
     .active.left,
     .active.right {
@@ -141,8 +151,8 @@ body,
 }
 
 .animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration: 5s;
+  animation-duration: 5s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
@@ -163,4 +173,44 @@ body,
 .slideInUp {
   -webkit-animation-name: slideInUp;
   animation-name: slideInUp;
+}
+
+@keyframes zoomIn {
+  0% {
+      opacity: 0;
+      left: -5%;
+      top: -5%;
+      width: 110%;
+      transition: opacity 5s, width 5s, left 5s, top 5s;
+      transition-property: opacity, width, top, left;
+  }
+
+  100% {
+      opacity: 1;
+      width: 100%;
+      top: 0;
+      left: 0;
+  }
+}
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+
+@keyframes slideDown {
+  0% {
+      bottom: 10%;
+      transition: bottom 2s;
+      transition-property: bottom;
+  }
+
+  100% {
+      bottom: 20px;
+  }
+}
+
+.slideDown {
+  -webkit-animation-name: slideDown;
+  animation-name: slideDown;
 }

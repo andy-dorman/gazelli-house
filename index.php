@@ -40,7 +40,7 @@ $detect = new Mobile_Detect;
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="../" class="navbar-brand">Walton Street</a>
+        <a href="../" class="navbar-brand">Gazelli House</a>
       </div>
       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
         <ul class="nav navbar-nav">
@@ -53,7 +53,7 @@ $detect = new Mobile_Detect;
       </nav>
       <div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel">
         <!-- Indicators -->
-        <ol class="carousel-indicators">
+        <ol class="carousel-indicators" data-animation="animated slideDown">
           <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
           <li data-target="#carousel-example-generic" data-slide-to="1"></li>
         </ol>
@@ -61,13 +61,13 @@ $detect = new Mobile_Detect;
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-            <img src="/images/image-1" alt="First image">
+            <img src="/images/image-1" alt="First image" data-animation="animated zoomIn">
             <div class="carousel-caption" data-animation="animated slideInUp">
               Foundations
             </div>
           </div>
           <div class="item">
-            <img src="/images/image-2" alt="Second image">
+            <img src="/images/image-2" alt="Second image" data-animation="animated zoomIn">
             <div class="carousel-caption light" data-animation="animated slideInUp">
               Living Room
             </div>
