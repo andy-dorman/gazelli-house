@@ -228,6 +228,8 @@
   // Initialize carousel
   $myCarousel.carousel();
 
+  $('.selectpicker').selectpicker();
+
   function doAnimations(elems) {
     var animEndEv = 'webkitAnimationEnd animationend';
 
@@ -259,6 +261,9 @@
     // carousel's slide.bs.carousel event
     $myCarousel.on('slide.bs.carousel', function (e) {
       // Select the elements to be animated inside the active slide
+      var index = $('#carousel-example-generic .item').index(e.relatedTarget);
+      $('#carousel-text .carousel-indicators li:eq(' + index + ')').click();
+      console.log(index);
       var $animatingElems = $(e.relatedTarget)
       .find("[data-animation ^= 'animated']");
       doAnimations($animatingElems);

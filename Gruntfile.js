@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 				options: {
 					sassDir: 'sass',
 					cssDir: 'stylesheets',
-                    environment: 'production'
+            environment: 'production'
 				}
 			}
 		},
@@ -15,17 +15,18 @@ module.exports = function(grunt) {
 				files: '**/*.scss',
 				tasks: ['compass']
 			},
-            js: {
-                files: 'javascripts/**/*.js',
-                tasks: 'uglify'
-            }
+      js: {
+          files: 'javascripts/**/*.js',
+          tasks: 'uglify'
+      }
 		},
         uglify: {
             all: {
                 files: {
                     'javascripts/gazelli-house.min.js': [
-                        'bower/jquery/dist/jquery.min.js',
-                        'bower/bootstrap/dist/js/bootstrap.min.js',
+                        'bower_components/jquery/dist/jquery.min.js',
+                        'bower_components/bootstrap/dist/js/bootstrap.min.js',
+                        'bower_components/bootstrap-select/dist/js/bootstrap-select.js',
                         'js/jquery.fancybox.pack.js',
                         'js/jquery.form.js',
                         'js/walton-street.js'

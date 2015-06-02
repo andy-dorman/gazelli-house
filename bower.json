@@ -8,9 +8,11 @@
     "jquery": null,
     "bootstrap": null,
     "jquery-ui": null,
-    "jquery.fancybox": null
+    "jquery.fancybox": null,
+    "bootstrap-select": "~1.7.1",
+    "awesome-bootstrap-checkbox": "~0.3.4"
   },
   "resolutions": {
-    "jquery": "2.1.1"
+    "jquery": "2.1.4"
   }
 }

@@ -1,6 +1,7 @@
 @import 'base';
- // Import the mixins
- @import "sass-css3-mixins/css3-mixins.scss";
+// Import the mixins
+@import "sass-css3-mixins/css3-mixins.scss";
+@import "../bower_components/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.scss";
 
 @import 'compass/css3/transition';
 
@@ -11,6 +12,7 @@ $jumbotron-side-padding: 		40px;
 $site-bg:	 			        		#EAE5E3;
 $letter-spacing:				    1px;
 $lock-in-text-height: 			40px;
+      
 
 body {
 	letter-spacing:				$letter-spacing;
@@ -57,7 +59,10 @@ h2 {
 .navbar-brand {
 	background: 				transparent url('../images/gazelli-house-logo.png') center center no-repeat;
 	text-indent:				-9999px;
-	width: 						  100%;
+	width: 						  auto;
+  margin:             auto;
+  float:              none;
+  display:            block;
 	height: 					  100%;
 }
 
@@ -71,6 +76,17 @@ h2 {
   margin:             auto;
   width:              510px;
 }
+
+.navbar-toggle {
+  margin:             0;
+  top:                50%;
+  margin-top:         -6%;
+  margin-right:       20px;
+  .icon-bar {
+    background:         $site-bg;
+  }
+}
+
 
 .navbar-nav>li~li:before {
   content: '|';
@@ -88,53 +104,125 @@ h2 {
   }
 }
 
-
 .carousel-fade {
-  max-height: 720px;
-  overflow: hidden;
   .carousel-inner {
     .item {
       opacity: 0;
-      left: -5%;
-      top: -5%;
-      width: 110%;
-      transition: opacity 2s, width 2s, left 2s, top 2s;
-      transition-property: opacity, width, top, left;
+      transition-property: opacity;
     }
+    
     .active {
       opacity: 1;
-      width: 100%;
-      top: 0;
-      left: 0;
     }
+
     .active.left,
     .active.right {
       left: 0;
       opacity: 0;
       z-index: 1;
-    
     }
+    
     .next.left,
     .prev.right {
       opacity: 1;
     }
-  
   }
+
   .carousel-control {
     z-index: 2;
+  }
+  .carousel-indicators {
+    display: none;
+  }
+}
+
+hr {
+  border-color: $brand-primary;
+  width: 100px;
+}
+
+#sign-up {
+  background: white;
+  border: none;
+  text-transform: uppercase;
+  margin-top: 10px;
+  padding: 4px 50px;
+}
+.social-icons {
+  margin-top: 20px;
+
+  .social-icon {
+    width: 20px;
+    height: 20px;
+    background: black;
+    a {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+    }
+
+    &.twitter {
+      background: transparent url('/images/icons/twitter.png') left top no-repeat;
+    }
+    &.facebook {
+      background: transparent url('/images/icons/facebook.png') left top no-repeat;
+    }
+    &.icon-3 {
+      background: transparent url('/images/icons/icon-3.png') left top no-repeat;
+    }
+    &.bird {
+      background: transparent url('/images/icons/icon-bird.png') left top no-repeat;
+    }
+  }
+}
+
+#carousel-example-generic {
+  overflow: hidden;
+  .item {
+    left: -5%;
+    top: -5%;
+    width: 110%;
+    transition: opacity 2s, width 2s, left 2s, top 2s;
+    transition-property: opacity, width, top, left;
+  }
+  .carousel-inner .active {
+    opacity: 1;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .next.left, .prev.right {
+    opacity: 1;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .active.left, .active.right {
+    left: -5%;
+    width: 110%;
+    top: -5%;
+    opacity: 0;
+    z-index: 2;
+  }
+
+  .carousel-control {
     opacity: 0;
   }
+  
   .carousel-caption {
     padding-bottom: 0px;
     left: 50%;
     margin-left: -50%;
-    top: 50%;
+    top: 30%;
     width: 100%;
     color: $brand-primary;
     text-shadow:  none;
-    font-size: 48px;
+    font-size: 20px;
     text-transform: uppercase;
-    letter-spacing: 40px;
+    letter-spacing: 20px;
 
     &.light {
       color: white;
@@ -218,4 +306,63 @@ body,
 .slideDown {
   -webkit-animation-name: slideDown;
   animation-name: slideDown;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-phone) {
+  #carousel-example-generic {
+    .carousel-caption {
+      top:        50%;
+      font-size:  48px;
+      letter-spacing: 40px;
+    }
+  }
+}
+
+form {
+  fieldset {
+    background: #F5F2F1;
+    
+    legend {
+      background: #82807F;
+      color: #F5F2F1;
+      width: 100%;
+    }
+
+    .form-control {
+      border: none;
+      border-radius: 0;
+    }
+
+    .bs-select-hidden {
+      display: none;
+    }
+
+    .bootstrap-select {
+      .dropdown-menu {
+        li {
+          &:hover,
+          &.selected {
+            background: $site-bg;
+             a {
+              color: $brand-primary;
+             }
+          }
+
+          >a {
+            color: $site-bg;
+            &:hover {
+              color: $brand-primary;
+            }
+          }
+        }
+        background: $brand-primary;
+        border-radius: 0;
+
+      }
+      button {
+      }
+    }
+  }
+
 }

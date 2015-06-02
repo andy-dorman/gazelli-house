@@ -52,12 +52,6 @@ $detect = new Mobile_Detect;
         </ul>
       </nav>
       <div id="carousel-example-generic" class="carousel slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators" data-animation="animated slideDown">
-          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        </ol>
-
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
           <div class="item active">
@@ -73,16 +67,6 @@ $detect = new Mobile_Detect;
             </div>
           </div>
         </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
       </div>
     </header>
     <div class="container">
@@ -90,27 +74,17 @@ $detect = new Mobile_Detect;
       <div>
         <!-- Page content of course! -->
         <main class="text-center" id="content" role="main">
-          <div id="carousel-text" class="carousel carousel-fade slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators" data-animation="animated slideDown">
-          <li data-target="#carousel-text" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-text" data-slide-to="1"></li>
-        </ol>
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-              <div class="item active">
-                <h2>Expertise in Skincare</h2>
-                <p>
-                  Our hand-selected team of Facial Experts deliver our next-generation skincare treatments based on the exclusive combination of Dr Hamzayeva’s iconic Gazelli White Oil™ formulations with the best in state-of-the-art technology. 
-                </p>
-              </div>
-              <div class="item">
-                <h2>Fred in Skincare</h2>
-                <p>
-                  BOB
-                </p>
-              </div>
-            </div>
+          <div>
+          <h2>Gazelli House</h2>
+            <p>
+            The Gazelli world has been built upon a foundation of expertise in results driven skincare. Now, in the Gazelli House London, you can be fully immersed in the brand’s creativity and commitment to enhancing lives. 
+            </p>
+            <p>
+            Divided into three unique floors, the House offers a range of services, workshops and lifestyle events that provide guests with the tools to enrich every aspect of their wellbeing. 
+            </p>
+            <p>
+            With its intimate, homely and inviting interiors, the Gazelli House is the perfect space in which to learn and be inspired, a unique atmosphere that encourages healing through all of the senses.
+            </p>
           </div>
           <hr/>
           <div>
