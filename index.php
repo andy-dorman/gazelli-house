@@ -56,20 +56,27 @@ $detect = new Mobile_Detect;
         <ol class="carousel-indicators" data-animation="animated slideDown">
           <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
           <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
         </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-            <img src="/images/image-1" alt="First image" data-animation="animated zoomIn">
+            <img src="/images/headers/carousel/foundations.jpg" alt="Foundations" data-animation="animated zoomIn">
             <div class="carousel-caption" data-animation="animated slideInUp">
               Foundations
             </div>
           </div>
           <div class="item">
-            <img src="/images/image-2" alt="Second image" data-animation="animated zoomIn">
+            <img src="/images/headers/carousel/living-room.jpg" alt="Living Room" data-animation="animated zoomIn">
             <div class="carousel-caption light" data-animation="animated slideInUp">
               Living Room
+            </div>
+          </div>
+          <div class="item">
+            <img src="/images/headers/carousel/sky-parlour.jpg" alt="Sky Parlour" data-animation="animated zoomIn">
+            <div class="carousel-caption light" data-animation="animated slideInUp">
+             Sky Parlour 
             </div>
           </div>
         </div>
@@ -95,6 +102,7 @@ $detect = new Mobile_Detect;
         <ol class="carousel-indicators" data-animation="animated slideDown">
           <li data-target="#carousel-text" data-slide-to="0" class="active"></li>
           <li data-target="#carousel-text" data-slide-to="1"></li>
+          <li data-target="#carousel-text" data-slide-to="2"></li>
         </ol>
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
@@ -105,9 +113,15 @@ $detect = new Mobile_Detect;
                 </p>
               </div>
               <div class="item">
-                <h2>Fred in Skincare</h2>
+                <h2>Discover & Inspire</h2>
                 <p>
-                  BOB
+                  In the heart of the House you will find a warm and welcoming space in which to connect with others and discover our innovative calendar of events and workshops. This room will bring people together, and encourage us to stretch our intellect and imagination.
+                </p>
+              </div>
+              <div class="item">
+                <h2>Awaken the Senses</h2>
+                <p>
+                  An intimate space flooded with natural light. Here you can enjoy one-to-one consultations with resident and visiting lifestyle experts, while reawakening all the channels of the senses in a spirit of healing and mindfulness.
                 </p>
               </div>
             </div>

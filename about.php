@@ -55,15 +55,9 @@ $detect = new Mobile_Detect;
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-            <img src="/images/image-1" alt="First image" data-animation="animated zoomIn">
-            <div class="carousel-caption" data-animation="animated slideInUp">
-              Foundations
-            </div>
-          </div>
-          <div class="item">
-            <img src="/images/image-2" alt="Second image" data-animation="animated zoomIn">
-            <div class="carousel-caption light" data-animation="animated slideInUp">
-              Living Room
+            <img src="/images/headers/live-beautifully.jpg" alt="Live Beautifully">
+            <div class="carousel-caption">
+              Live Beautifully
             </div>
           </div>
         </div>

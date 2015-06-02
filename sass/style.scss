@@ -1,9 +1,11 @@
 @import 'base';
 // Import the mixins
 @import "sass-css3-mixins/css3-mixins.scss";
-@import "../bower_components/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.scss";
 
 @import 'compass/css3/transition';
+
+@import "../awesome-bootstrap-checkbox/bower_components/Font-Awesome/scss/font-awesome";
+@import "../awesome-bootstrap-checkbox/awesome-bootstrap-checkbox";
 
 $inline-header-padding: 		15px;
 $hr-rule-top-colour: 			  #414141;
@@ -69,12 +71,16 @@ h2 {
 .navbar-collapse {
   width:              100%;
   background:         #828382;
+  background:         rgba(0, 0, 0, 0.6);
+  position:           absolute;
+  top:                89px;
+  z-index:            10;
 }
 
 .navbar-nav {
   float:              none;
   margin:             auto;
-  width:              510px;
+  width:              340px;
 }
 
 .navbar-toggle {
@@ -88,19 +94,13 @@ h2 {
 }
 
 
-.navbar-nav>li~li:before {
-  content: '|';
-  color: #eee;
-  position: absolute;
-  left: -1px;
-  top: 4px;
-}
 
 .navbar-nav>li>a {
   padding:            4px 8px;
   color:              #EAE5E3;
   &:hover {
     background:       #828382;
+    background:       rgba(0, 0, 0, 0.9);
   }
 }
 
@@ -310,6 +310,17 @@ body,
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-phone) {
+  .navbar-nav {
+    width:              510px;
+    & > li~li:before {
+      content: '|';
+      color: #eee;
+      position: absolute;
+      left: -1px;
+      top: 4px;
+    }
+  }
+
   #carousel-example-generic {
     .carousel-caption {
       top:        50%;
@@ -364,5 +375,8 @@ form {
       }
     }
   }
-
+  .checkbox-primary input[type="checkbox"]:checked+label::before,
+  .checkbox label::before {
+    outline: none;
+  }
 }
