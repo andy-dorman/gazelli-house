@@ -63,19 +63,19 @@ $detect = new Mobile_Detect;
         <div class="carousel-inner" role="listbox">
           <div class="item active">
             <img src="/images/headers/carousel/foundations.jpg" alt="Foundations" data-animation="animated zoomIn">
-            <div class="carousel-caption" data-animation="animated slideInUp">
+            <div class="carousel-caption" data-animation="animated">
               Foundations
             </div>
           </div>
           <div class="item">
             <img src="/images/headers/carousel/living-room.jpg" alt="Living Room" data-animation="animated zoomIn">
-            <div class="carousel-caption light" data-animation="animated slideInUp">
+            <div class="carousel-caption light" data-animation="animated">
               Living Room
             </div>
           </div>
           <div class="item">
             <img src="/images/headers/carousel/sky-parlour.jpg" alt="Sky Parlour" data-animation="animated zoomIn">
-            <div class="carousel-caption light" data-animation="animated slideInUp">
+            <div class="carousel-caption light" data-animation="animated">
              Sky Parlour 
             </div>
           </div>
@@ -107,19 +107,19 @@ $detect = new Mobile_Detect;
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
               <div class="item active">
-                <h2>Expertise in Skincare</h2>
+                <h3>Expertise in Skincare</h3>
                 <p>
                   Our hand-selected team of Facial Experts deliver our next-generation skincare treatments based on the exclusive combination of Dr Hamzayeva’s iconic Gazelli White Oil™ formulations with the best in state-of-the-art technology. 
                 </p>
               </div>
               <div class="item">
-                <h2>Discover & Inspire</h2>
+                <h3>Discover & Inspire</h3>
                 <p>
                   In the heart of the House you will find a warm and welcoming space in which to connect with others and discover our innovative calendar of events and workshops. This room will bring people together, and encourage us to stretch our intellect and imagination.
                 </p>
               </div>
               <div class="item">
-                <h2>Awaken the Senses</h2>
+                <h3>Awaken the Senses</h3>
                 <p>
                   An intimate space flooded with natural light. Here you can enjoy one-to-one consultations with resident and visiting lifestyle experts, while reawakening all the channels of the senses in a spirit of healing and mindfulness.
                 </p>

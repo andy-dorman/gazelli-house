@@ -212,7 +212,7 @@
   var $myCarousel = $('#carousel-example-generic');
   function setCarouselInnerHeight() {
     $myCarousel.find('.carousel-inner').css({
-      height: $myCarousel.find('.item:first img').height() + 'px',
+      height: ($myCarousel.find('.item:first img').height() - 100) + 'px',
       overflow: 'hidden'
     });
   }

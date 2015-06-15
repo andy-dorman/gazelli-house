@@ -14,7 +14,7 @@ $jumbotron-side-padding: 		40px;
 $site-bg:	 			        		#EAE5E3;
 $letter-spacing:				    1px;
 $lock-in-text-height: 			40px;
-      
+$letter-spacing:            0;      
 
 body {
 	letter-spacing:				$letter-spacing;
@@ -107,17 +107,27 @@ h2 {
 .carousel-fade {
   .carousel-inner {
     .item {
+      left: 0 !important;
       opacity: 0;
-      transition-property: opacity;
+      transition: 0.7s ease-in-out opacity;
     }
     
+    h3 {
+      color: #444444;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+    }
+    
+    p {
+      letter-spacing: 0;
+    }
+
     .active {
       opacity: 1;
     }
 
     .active.left,
     .active.right {
-      left: 0;
       opacity: 0;
       z-index: 1;
     }
@@ -142,6 +152,9 @@ hr {
 }
 
 #sign-up {
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 800;
   background: white;
   border: none;
   text-transform: uppercase;
@@ -179,10 +192,10 @@ hr {
 #carousel-example-generic {
   overflow: hidden;
   .item {
-    left: -5%;
-    top: -5%;
-    width: 110%;
-    transition: opacity 2s, width 2s, left 2s, top 2s;
+    left: -0.5%;
+    top: -0.5%;
+    width: 101%;
+    transition: opacity 0.7s, width 0.7s, left 0.7s, top 0.7s;
     transition-property: opacity, width, top, left;
   }
   .carousel-inner .active {
@@ -201,9 +214,9 @@ hr {
   }
 
   .active.left, .active.right {
-    left: -5%;
-    width: 110%;
-    top: -5%;
+    left: -0.5%;
+    width: 101%;
+    top: -0.5%;
     opacity: 0;
     z-index: 2;
   }
@@ -213,10 +226,12 @@ hr {
   }
   
   .carousel-caption {
+    padding-top: 0px;
     padding-bottom: 0px;
     left: 50%;
     margin-left: -50%;
-    top: 30%;
+    margin-top: 50%;
+    top: -50%;
     width: 100%;
     color: $brand-primary;
     text-shadow:  none;
@@ -240,6 +255,8 @@ body,
 
 .carousel-inner>.item>img {
   width: 100%;
+  top: -50px;
+  position: relative;
   max-width: auto;
 }
 
@@ -271,10 +288,10 @@ body,
 @keyframes zoomIn {
   0% {
       opacity: 0;
-      left: -5%;
-      top: -5%;
-      width: 110%;
-      transition: opacity 5s, width 5s, left 5s, top 5s;
+      left: -0.5%;
+      top: -0.5%;
+      width: 101%;
+      transition: opacity 7s, width 7s, left 7s, top 7s;
       transition-property: opacity, width, top, left;
   }
 
@@ -311,7 +328,8 @@ body,
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-phone) {
   .navbar-nav {
-    width:              510px;
+    text-transform: uppercase;
+    width:              585px;
     & > li~li:before {
       content: '|';
       color: #eee;
@@ -323,7 +341,7 @@ body,
 
   #carousel-example-generic {
     .carousel-caption {
-      top:        50%;
+      padding-top: 0px;
       font-size:  48px;
       letter-spacing: 40px;
     }
@@ -334,7 +352,22 @@ form {
   fieldset {
     background: #F5F2F1;
     
+    label {
+      color: #666666;
+    }
+
+    input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+      color: #636363;
+    }
+
+    input:-moz-placeholder, textarea:-moz-placeholder {
+      color: #636363;
+    }
+  
     legend {
+      text-transform: uppercase;
+      font-size: 14px;
+      padding: 4px 0;
       background: #82807F;
       color: #F5F2F1;
       width: 100%;
@@ -375,6 +408,17 @@ form {
       }
     }
   }
+  
+  .checkbox {
+    label {
+      text-align:     left;
+      padding-left:   4px;
+      font-size:      12px;
+      width:          170%;
+      max-width:      170%;
+    }
+  }
+
   .checkbox-primary input[type="checkbox"]:checked+label::before,
   .checkbox label::before {
     outline: none;
