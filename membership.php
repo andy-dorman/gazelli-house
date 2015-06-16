@@ -61,7 +61,7 @@ $detect = new Mobile_Detect;
           <p>
             Our hand-selected team of Facial Experts deliver our next-generation skincare treatments based on the exclusive combination of Dr Hamzayeva’s iconic Gazelli White Oil™ formulations with the best in state-of-the-art technology.
           </p>
-          <form class="form-horizontal" role="form">
+          <form class="form-horizontal" role="form" id="membership_registration" action="entry.php" method="post">
             <fieldset>
               <legend>About you</legend>
                 <div class="form-group">
@@ -70,16 +70,14 @@ $detect = new Mobile_Detect;
                     <input type="text" name="fullname" class="form-control"/>
                   </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group dob">
                   <label class="control-label col-xs-3">Date of birth</label>
-                  <div class="col-xs-2">
+                  <div class="col-xs-2 separator">
                     <input type="text" name="day" class="form-control" placeholder="DD"/>
                   </div>
-                  <div class="col-xs-1">/</div>
-                  <div class="col-xs-2">
+                  <div class="col-xs-2 separator">
                     <input type="text" name="month" class="form-control" placeholder="MM"/>
                   </div>
-                  <div class="col-xs-1">/</div>
                   <div class="col-xs-2">
                     <input type="text" name="year" class="form-control" placeholder="YYYY"/>
                   </div>
@@ -99,7 +97,7 @@ $detect = new Mobile_Detect;
                 <div class="form-group">
                   <label class="control-label col-xs-3">Town / City</label>
                   <div class="col-xs-8">
-                    <input type="text" name="towncity" class="form-control"/>
+                    <input type="text" name="city" class="form-control"/>
                   </div>
                 </div>
                 <div class="form-group">
@@ -112,7 +110,7 @@ $detect = new Mobile_Detect;
                   <label class="control-label col-xs-3">Country</label>
                   <div class="col-xs-8">
                     <div class="row-fluid">
-                      <select class="selectpicker" data-width="100%" data-style="btn-primary">
+                      <select class="selectpicker" name="country" data-width="100%" data-style="btn-primary">
                         <option>Select one</option>
                         <option>United Kingdom</option>
                         <option>France</option>
@@ -124,7 +122,7 @@ $detect = new Mobile_Detect;
                 <div class="form-group">
                   <label class="control-label col-xs-3">Telephone</label>
                   <div class="col-xs-8">
-                    <input type="text" name="telephone" class="form-control"/>
+                    <input type="text" name="tel" class="form-control"/>
                   </div>
                 </div>
                 <div class="form-group">
@@ -136,7 +134,7 @@ $detect = new Mobile_Detect;
                 <div class="form-group">
                   <label class="control-label col-xs-3">Re-enter email</label>
                   <div class="col-xs-8">
-                    <input type="text" name="renteremail" class="form-control"/>
+                    <input type="text" name="confirm_email" class="form-control"/>
                   </div>
                 </div>
               <legend>Your interests</legend>
@@ -148,97 +146,97 @@ $detect = new Mobile_Detect;
                 </div>
                 <div class="form-group">
                   <label class="control-label col-xs-3">Which of the following areas do you enjoy?</label>
-                  <div class="form-group col-xs-9 col-xs-offset-1">
-                    <div class="col-xs-3 checkbox checkbox-primary">
-                      <input type="checkbox" id="literature" class="pull-left" />
+                  <div class="col-xs-8">
+                    <div class="col-xs-4 checkbox checkbox-primary">
+                      <input type="checkbox" name="literature" id="literature" class="pull-left" />
                       <label class="pull-left" for="literature">Literature</label>
                     </div>
-                    <div class="col-xs-3 checkbox checkbox-primary">
-                      <input type="checkbox" id="art" class="checkbox pull-left" />
+                    <div class="col-xs-4 checkbox checkbox-primary">
+                      <input type="checkbox" name="art" id="art" class="checkbox pull-left" />
                       <label class="pull-left" for="art">Art</label>
                     </div>
-                    <div class="col-xs-3 checkbox checkbox-primary">
-                      <input type="checkbox"  class="checkbox pull-left" id="languages"/>
+                    <div class="col-xs-4 checkbox checkbox-primary">
+                      <input type="checkbox" name="languages" class="checkbox pull-left" id="languages"/>
                       <label class="pull-left" for="languages">Languages</label>
                     </div>
-                    <div class="col-xs-3 checkbox checkbox-primary">
-                      <input type="checkbox" class="checkbox pull-left" id="fashion"/>
+                    <div class="col-xs-4 checkbox checkbox-primary">
+                      <input type="checkbox" name="fashion" class="checkbox pull-left" id="fashion"/>
                       <label class="pull-left" for="fashion">Fashion</label>
                     </div>
-                    <div class="col-xs-3 checkbox checkbox-primary">
-                      <input type="checkbox" class="checkbox pull-left" id="cosmetics"/>
+                    <div class="col-xs-4 checkbox checkbox-primary">
+                      <input type="checkbox" name="cosmetics" class="checkbox pull-left" id="cosmetics"/>
                       <label class="pull-left" for="cosmetics">Cosmetics</label>
                     </div>
-                    <div class="col-xs-3 checkbox checkbox-primary">
-                      <input type="checkbox" class="checkbox pull-left" id="spirituality"/>
+                    <div class="col-xs-4 checkbox checkbox-primary">
+                      <input type="checkbox" name="spirituality" class="checkbox pull-left" id="spirituality"/>
                       <label class="pull-left" for="spirituality">Spirituality</label>
                     </div>
-                    <div class="col-xs-3 checkbox checkbox-primary">
-                      <input type="checkbox" class="checkbox pull-left" id="self-development"/>
-                      <label class="pull-left" for="self-development">Self-development</label>
+                    <div class="col-xs-4 checkbox checkbox-primary">
+                      <input type="checkbox" name="self_development" class="checkbox pull-left" id="self_development"/>
+                      <label class="pull-left" for="self_development">Self-development</label>
                     </div>
-                    <div class="col-xs-3 checkbox checkbox-primary">
-                      <input type="checkbox" class="checkbox pull-left" id="body-treatments"/>
-                      <label class="pull-left" for="body-treatments">Body Treatments</label>
+                    <div class="col-xs-4 checkbox checkbox-primary">
+                      <input type="checkbox" name="body_treatments" class="checkbox pull-left" id="body_treatments"/>
+                      <label class="pull-left" for="body_treatments">Body Treatments</label>
                     </div>
-                    <div class="col-xs-3 checkbox checkbox-primary">
-                      <input type="checkbox" class="checkbox pull-left" id="skincare"/>
+                    <div class="col-xs-4 checkbox checkbox-primary">
+                      <input type="checkbox" name="skincare" class="checkbox pull-left" id="skincare"/>
                       <label class="pull-left" for="skincare">Skincare</label>
                     </div>
-                    <div class="col-xs-3 checkbox checkbox-primary">
+                    <div class="col-xs-4 checkbox checkbox-primary">
                       <input type="checkbox" class="checkbox pull-left" id="life-coaching"/>
                       <label class="pull-left" for="life-coaching">Life Coaching</label>
                     </div>
-                    <div class="col-xs-3 checkbox checkbox-primary">
-                      <input type="checkbox" class="checkbox pull-left" id="facial-treatments"/>
-                      <label class="pull-left" for="facial-treatments">Facial Treatments</label>
+                    <div class="col-xs-4 checkbox checkbox-primary">
+                      <input type="checkbox" name="facial_treatments" class="checkbox pull-left" id="facial_treatments"/>
+                      <label class="pull-left" for="facial_treatments">Facial Treatments</label>
                     </div>
-                    <div class="col-xs-3 checkbox checkbox-primary">
-                      <input type="checkbox" class="checkbox pull-left" id="alternative-therapies"/>
-                      <label class="pull-left" for="alternative-therapies">Alternative Therapies</label>
+                    <div class="col-xs-4 checkbox checkbox-primary">
+                      <input type="checkbox" name="alternative_therapies" class="checkbox pull-left" id="alternative_therapies"/>
+                      <label class="pull-left" for="alternative_therapies">Alternative Therapies</label>
                     </div>
-                    <div class="col-xs-3 checkbox checkbox-primary">
-                      <input type="checkbox" class="checkbox pull-left" id="travel"/>
+                    <div class="col-xs-4 checkbox checkbox-primary">
+                      <input type="checkbox" name="travel" class="checkbox pull-left" id="travel"/>
                       <label class="pull-left" for="travel">Travel</label>
                     </div>
-                    <div class="col-xs-3 checkbox checkbox-primary">
-                      <input type="checkbox" class="checkbox pull-left" id="ayurveda"/>
+                    <div class="col-xs-4 checkbox checkbox-primary">
+                      <input type="checkbox" name="ayurveda" class="checkbox pull-left" id="ayurveda"/>
                       <label class="pull-left" for="ayurveda">Ayurveda</label>
                     </div>
-                    <div class="col-xs-3 checkbox checkbox-primary">
-                      <input type="checkbox" class="checkbox pull-left" id="lifestyle"/>
+                    <div class="col-xs-4 checkbox checkbox-primary">
+                      <input type="checkbox" name="lifestyle" class="checkbox pull-left" id="lifestyle"/>
                       <label class="pull-left" for="lifestyle">Lifestyle</label>
                     </div>
-                    <div class="col-xs-3 checkbox checkbox-primary">
-                      <input type="checkbox" class="checkbox pull-left" id="nutrition"/>
+                    <div class="col-xs-4 checkbox checkbox-primary">
+                      <input type="checkbox" name="nutrition" class="checkbox pull-left" id="nutrition"/>
                       <label class="pull-left" for="nutrition">Nutrition</label>
                     </div>
-                    <div class="col-xs-3 checkbox checkbox-primary">
-                      <input type="checkbox" class="checkbox pull-left" id="fitness"/>
+                    <div class="col-xs-4 checkbox checkbox-primary">
+                      <input type="checkbox" name="fitness" class="checkbox pull-left" id="fitness"/>
                       <label class="pull-left" for="fitness">Fitness</label>
                     </div>
-                    <div class="col-xs-3 checkbox checkbox-primary">
-                      <input type="checkbox" class="checkbox pull-left" id="theatre"/>
+                    <div class="col-xs-4 checkbox checkbox-primary">
+                      <input type="checkbox" name="theatre" class="checkbox pull-left" id="theatre"/>
                       <label class="pull-left" for="theatre">Theatre</label>
                     </div>
-                    <div class="col-xs-3 checkbox checkbox-primary">
-                      <input type="checkbox" class="checkbox pull-left" id="ballet"/>
+                    <div class="col-xs-4 checkbox checkbox-primary">
+                      <input type="checkbox" name="ballet" class="checkbox pull-left" id="ballet"/>
                       <label class="pull-left" for="ballet">Ballet</label>
                     </div>
-                    <div class="col-xs-3 checkbox checkbox-primary">
-                      <input type="checkbox" class="checkbox pull-left" id="socialising"/>
+                    <div class="col-xs-4 checkbox checkbox-primary">
+                      <input type="checkbox" name="socialising" class="checkbox pull-left" id="socialising"/>
                       <label class="pull-left" for="socialising">Socialising</label>
                     </div>
-                    <div class="col-xs-3 checkbox checkbox-primary">
-                      <input type="checkbox" class="checkbox pull-left" id="realxing"/>
+                    <div class="col-xs-4 checkbox checkbox-primary">
+                      <input type="checkbox" name="relaxing" class="checkbox pull-left" id="relaxing"/>
                       <label class="pull-left" for="relaxing">Relaxing</label>
                     </div>
-                    <div class="col-xs-3 checkbox checkbox-primary">
-                      <input type="checkbox" class="checkbox pull-left" id="film-screenings"/>
-                      <label class="pull-left" for="film-screenings">Film Screenings</label>
+                    <div class="col-xs-4 checkbox checkbox-primary">
+                      <input type="checkbox" name="film_screenings" class="checkbox pull-left" id="film_screenings"/>
+                      <label class="pull-left" for="film_screenings">Film Screenings</label>
                     </div>
-                    <div class="col-xs-3 checkbox checkbox-primary">
-                      <input type="checkbox" class="checkbox pull-left" id="yoga"/>
+                    <div class="col-xs-4 checkbox checkbox-primary">
+                      <input type="checkbox" name="yoga" class="checkbox pull-left" id="yoga"/>
                       <label class="pull-left" for="yoga">Yoga</label>
                     </div>
                   </div>
@@ -246,7 +244,7 @@ $detect = new Mobile_Detect;
                 <div class="form-group">
                   <label class="control-label col-xs-3">Are there any areas not listed above that you would like to be available at the Gazelli House?</label>
                   <div class="col-xs-8">
-                    <textarea name="suggestion" class="form-control"></textarea>
+                    <textarea name="suggestions" class="form-control"></textarea>
                   </div>
                 </div>
                 <div class="form-group">
@@ -259,7 +257,7 @@ $detect = new Mobile_Detect;
             <p>
               Sign up to register your interest and recieve your complimentary membership
             </p>
-            <button id="sign-up">Click here to sign up</button>
+            <a href="/membership.php" id="sign-up">Click here to sign up</a>
         </main>
 
         <?php

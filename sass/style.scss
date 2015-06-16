@@ -153,13 +153,14 @@ hr {
 
 #sign-up {
   letter-spacing: 3px;
+  display: inline-block;
   font-size: 12px;
   font-weight: 800;
   background: white;
   border: none;
   text-transform: uppercase;
   margin-top: 10px;
-  padding: 4px 50px;
+  padding: 4px 30px;
 }
 .social-icons {
   margin-top: 20px;
@@ -327,6 +328,10 @@ body,
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-phone) {
+  #sign-up {
+    padding: 4px 50px;
+  }
+
   .navbar-nav {
     text-transform: uppercase;
     width:              585px;
@@ -341,7 +346,6 @@ body,
 
   #carousel-example-generic {
     .carousel-caption {
-      padding-top: 0px;
       font-size:  48px;
       letter-spacing: 40px;
     }
@@ -349,6 +353,21 @@ body,
 }
 
 form {
+  margin-top: 20px;
+  .dob {
+    .col-xs-2 {
+      width: 22.199999999999%;
+    }
+  }
+  .separator:after {
+    content: "/";
+    position: absolute;
+    top: 0;
+    right: -5px;
+    font-size: 30px;
+    color: #dddddd;
+  }
+
   fieldset {
     background: #F5F2F1;
     
@@ -356,12 +375,28 @@ form {
       color: #666666;
     }
 
-    input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-      color: #636363;
+    textarea.form-control {
+      height: 150px;
     }
 
-    input:-moz-placeholder, textarea:-moz-placeholder {
-      color: #636363;
+    input::-webkit-input-placeholder {
+      color: rgba(0,5,143,.5);
+      text-transform: uppercase;
+    }
+
+    input::-moz-placeholder {
+      color: rgba(0,5,143,.5);
+      text-transform: uppercase;
+    }
+
+    input:-moz-placeholder {   /* Older versions of Firefox */
+      color: rgba(0,5,143,.5);
+      text-transform: uppercase;
+    }
+
+    input:-ms-input-placeholder { 
+      color: rgba(0,5,143,.5);
+      text-transform: uppercase;
     }
   
     legend {

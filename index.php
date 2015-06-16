@@ -131,7 +131,7 @@ $detect = new Mobile_Detect;
             <p>
               Sign up to register your interest and recieve your complimentary membership
             </p>
-            <button id="sign-up">Click here to sign up</button>
+            <a href="/membership.php" id="sign-up">Click here to sign up</a>
           </div>
         </main>
 

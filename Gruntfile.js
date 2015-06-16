@@ -29,7 +29,7 @@ module.exports = function(grunt) {
                         'bower_components/bootstrap-select/dist/js/bootstrap-select.js',
                         'js/jquery.fancybox.pack.js',
                         'js/jquery.form.js',
-                        'js/walton-street.js'
+                        'js/gazelli-house.js'
                     ]
                 }
             }
