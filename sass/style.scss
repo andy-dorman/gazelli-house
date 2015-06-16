@@ -351,8 +351,19 @@ body,
     }
   }
 }
-
 form {
+  .form-control::-webkit-input-placeholder {
+    color: #cccccc;
+  }
+  .form-control::-moz-placeholder { /* Firefox 19+ */
+    color: #cccccc;
+  }
+  .form-control:-ms-input-placeholder {
+    color: #cccccc;
+  }
+  .form-control:-moz-placeholder { /* Firefox 18- */
+    color: #cccccc;
+  }
   margin-top: 20px;
   .dob {
     .col-xs-2 {
@@ -362,7 +373,7 @@ form {
   .separator:after {
     content: "/";
     position: absolute;
-    top: 0;
+    top: -2px;
     right: -5px;
     font-size: 30px;
     color: #dddddd;
@@ -379,26 +390,6 @@ form {
       height: 150px;
     }
 
-    input::-webkit-input-placeholder {
-      color: rgba(0,5,143,.5);
-      text-transform: uppercase;
-    }
-
-    input::-moz-placeholder {
-      color: rgba(0,5,143,.5);
-      text-transform: uppercase;
-    }
-
-    input:-moz-placeholder {   /* Older versions of Firefox */
-      color: rgba(0,5,143,.5);
-      text-transform: uppercase;
-    }
-
-    input:-ms-input-placeholder { 
-      color: rgba(0,5,143,.5);
-      text-transform: uppercase;
-    }
-  
     legend {
       text-transform: uppercase;
       font-size: 14px;
@@ -455,7 +446,9 @@ form {
   }
 
   .checkbox-primary input[type="checkbox"]:checked+label::before,
-  .checkbox label::before {
+  .checkbox label::before,
+  .checkbox:focus {
     outline: none;
+    border: none;
   }
 }
