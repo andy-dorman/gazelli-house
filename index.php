@@ -1,6 +1,25 @@
 <?php
+require 'lib/config.php';
 require 'lib/Mobile_Detect.php';
 $detect = new Mobile_Detect;
+
+$carousel_images = array();
+
+if ($handle = opendir($img_dir)) {
+  /* This is the correct way to loop over the directory. */
+  while (false !== $entry = readdir($handle)) {
+    if($entry !== "." && $entry !== "..") {
+      $img_obj = new stdClass();
+      $img_obj->image = $entry;
+      $img_obj->contrast = strpos($entry, '-dark') ? 'dark' : 'light';
+      $carousel_images[] = $img_obj;
+    }
+  }
+  shuffle($carousel_images);
+  while(count($carousel_images) > 3) {
+    array_shift($carousel_images);
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,20 +81,20 @@ $detect = new Mobile_Detect;
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-            <img src="/images/headers/carousel/foundations.jpg" alt="Foundations" data-animation="animated zoomIn">
-            <div class="carousel-caption" data-animation="animated">
+          <img src="<?php echo $img_dir.'/'.$carousel_images[0]->image; ?>" alt="Foundations" data-animation="animated zoomIn">
+            <div class="carousel-caption <?php echo $carousel_images[0]->contrast; ?>" data-animation="animated">
               Foundations
             </div>
           </div>
           <div class="item">
-            <img src="/images/headers/carousel/living-room.jpg" alt="Living Room" data-animation="animated zoomIn">
-            <div class="carousel-caption light" data-animation="animated">
+            <img src="<?php echo $img_dir."/".$carousel_images[1]->image; ?>" alt="Living Room" data-animation="animated zoomIn">
+            <div class="carousel-caption <?php echo $carousel_images[1]->contrast; ?>" data-animation="animated">
               Living Room
             </div>
           </div>
           <div class="item">
-            <img src="/images/headers/carousel/sky-parlour.jpg" alt="Sky Parlour" data-animation="animated zoomIn">
-            <div class="carousel-caption light" data-animation="animated">
+            <img src="<?php echo $img_dir."/".$carousel_images[2]->image; ?>" alt="Sky Parlour" data-animation="animated zoomIn">
+            <div class="carousel-caption <?php echo $carousel_images[2]->contrast; ?>" data-animation="animated">
              Sky Parlour 
             </div>
           </div>
