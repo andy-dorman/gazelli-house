@@ -48,6 +48,9 @@ p {
 }
 
 h2 {
+  color: #444444;
+  text-transform: uppercase;
+  letter-spacing: 6px;
   text-transform:       uppercase;
 }
 
@@ -98,7 +101,8 @@ h2 {
 .navbar-nav>li>a {
   padding:            4px 8px;
   color:              #EAE5E3;
-  &:hover {
+  &:hover,
+  &:focus {
     background:       #828382;
     background:       rgba(0, 0, 0, 0.9);
   }
@@ -112,14 +116,9 @@ h2 {
       transition: 0.7s ease-in-out opacity;
     }
     
-    h3 {
-      color: #444444;
-      text-transform: uppercase;
-      letter-spacing: 6px;
-    }
-    
     p {
       letter-spacing: 0;
+      height: 60px;
     }
 
     .active {
@@ -333,22 +332,31 @@ body,
 @media (min-width: $screen-phone) {
   #sign-up {
     padding: 4px 50px;
+    &:hover {
+      text-decoration: none;
+      background: $brand-primary;
+      color: #F5F2F1;
+    }
   }
 
   .navbar-nav {
+    letter-spacing: 3px;
+    font-size: 12px;
     text-transform: uppercase;
-    width:              585px;
+    width:              710px;
     & > li~li:before {
       content: '|';
       color: #eee;
       position: absolute;
       left: -1px;
       top: 4px;
+      z-index: 10;
     }
   }
 
   #carousel-example-generic {
     .carousel-caption {
+      text-shadow: 1px 2px 2px rgba(0,0,0,0.1);
       font-size:  48px;
       letter-spacing: 40px;
     }
@@ -454,4 +462,10 @@ form {
     outline: none;
     border: none;
   }
+}
+
+#success-message {
+  width: 400px;
+  height: 300px;
+  background: $site-bg;
 }

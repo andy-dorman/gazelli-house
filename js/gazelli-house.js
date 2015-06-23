@@ -32,7 +32,7 @@
             "id": "errors"
           }).html('<ul><li>' + response["duplicate_email"] + '</li></ul>');
 
-          $("#").append(errors);
+          //$("#").append(errors);
 
           var oklink = $('<a/>').attr({
             "id": "oklink",
@@ -45,6 +45,28 @@
             $("#errors").remove();
           });
         } else {
+          $.fancybox({
+            fixed: true,
+            enableEscapeButton : true,
+            overlayShow : true,
+            content: '<div id="success-message">' + response["thanks"] + '</div>',
+            fitToView: true,
+            autoSize: true,
+            closeClick: true,
+            closeBtn: true,
+            openEffect: 'none',
+            closeEffect: 'none',
+            scrolling: 'yes',
+            padding: 0,
+            afterClose: function(){
+              $(window).trigger('fancyboxClosed');
+            },
+            helpers   : {
+              overlay: {
+                css: {'background': 'rgba(0,0,0,0.8)'} // or your preferred hex color value
+              } // overlay
+            } // helpers
+          });
         }
       },
       dataType: "json"
@@ -78,6 +100,7 @@
 	}
 
 	function validateForm(formData, jqForm, options) {
+    console.log('validating...');
     var out = true;
     return out;
 	}
@@ -85,15 +108,28 @@
   var $myCarousel = $('#carousel-example-generic');
   function setCarouselInnerHeight() {
     var height;
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-       height = $myCarousel.find('.item:first img').height();
-    } else {
-      height = $myCarousel.find('.item:first img').height() - 100;
-    }
-    $myCarousel.find('.carousel-inner').css({
-      height: (height + 'px'),
+    var img = $myCarousel.find('.item:first img');
+    var ratio = img.width()/img.height();
+    var adjHeight;
+
+    var params = {
       overflow: 'hidden'
-    });
+    };
+
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+       params.height = $myCarousel.find('.item:first img').height() + 'px';
+    } else {
+      params.height = $myCarousel.find('.item:first img').height() + 'px';
+    }
+    if(img.width() > 1024) {
+
+      adjHeight = 1024/ratio;
+      params.height = adjHeight + 'px';
+      $myCarousel.find('img').css({
+        marginTop: '-' + (img.height() - adjHeight)/2 + 'px'
+      });
+    }
+    $myCarousel.find('.carousel-inner').css(params);
   }
 
   $(window).resize(setCarouselInnerHeight);

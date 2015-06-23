@@ -18,6 +18,7 @@ $detect = new Mobile_Detect;
 <!-- Bootstrap core CSS -->
 <link href="stylesheets/style.css" rel="stylesheet">
 <link href="bower_components/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet">
+<link href="stylesheets/jquery.fancybox.css" rel="stylesheet">
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -44,9 +45,9 @@ $detect = new Mobile_Detect;
       </div>
       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
         <ul class="nav navbar-nav">
-          <li><a href="/index.php">About Gazelli House</a></li>
+          <li><a href="/about.php">About Gazelli House</a></li>
           <li><a href="/membership.php">Membership Registration</a></li>
-          <li><a href="/about.php">Live Beautifully Campaign</a></li>
+          <li><a href="http://gazellihouselondon.tumblr.com" target="_blank">Live Beautifully Campaign</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
         </ul>

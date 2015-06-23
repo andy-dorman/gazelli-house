@@ -36,7 +36,7 @@ if ($handle = opendir($img_dir)) {
 
 <!-- Bootstrap core CSS -->
 <link href="stylesheets/style.css" rel="stylesheet">
-
+<link href="stylesheets/jquery.fancybox.css" rel="stylesheet">
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -63,9 +63,9 @@ if ($handle = opendir($img_dir)) {
       </div>
       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
         <ul class="nav navbar-nav">
-          <li><a href="/index.php">About Gazelli House</a></li>
+          <li><a href="/about.php">About Gazelli House</a></li>
           <li><a href="/membership.php">Membership Registration</a></li>
-          <li><a href="/about.php">Live Beautifully Campaign</a></li>
+          <li><a href="http://gazellihouselondon.tumblr.com" target="_blank">Live Beautifully Campaign</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
         </ul>
@@ -126,19 +126,19 @@ if ($handle = opendir($img_dir)) {
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
               <div class="item active">
-                <h3>Expertise in Skincare</h3>
+                <h2>Expertise in Skincare</h2>
                 <p>
                   Our hand-selected team of Facial Experts deliver our next-generation skincare treatments based on the exclusive combination of Dr Hamzayeva’s iconic Gazelli White Oil™ formulations with the best in state-of-the-art technology. 
                 </p>
               </div>
               <div class="item">
-                <h3>Discover & Inspire</h3>
+                <h2>Discover & Inspire</h2>
                 <p>
                   In the heart of the House you will find a warm and welcoming space in which to connect with others and discover our innovative calendar of events and workshops. This room will bring people together, and encourage us to stretch our intellect and imagination.
                 </p>
               </div>
               <div class="item">
-                <h3>Awaken the Senses</h3>
+                <h2>Awaken the Senses</h2>
                 <p>
                   An intimate space flooded with natural light. Here you can enjoy one-to-one consultations with resident and visiting lifestyle experts, while reawakening all the channels of the senses in a spirit of healing and mindfulness.
                 </p>

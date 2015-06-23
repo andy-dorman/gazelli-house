@@ -7,7 +7,6 @@
 //header('Content-type: application/json');
 require "lib/db.php";
 $out = array();
-
 if(!$_SERVER['REQUEST_METHOD'] == "POST") {
 	$out["invalid"] = "You can't access this page directly!!";
 	echo json_encode($out);
@@ -115,6 +114,7 @@ if(!$_SERVER['REQUEST_METHOD'] == "POST") {
 	
     if($result = mysql_query($query)) {
       $out["result"] = "success";
+      $out['thanks'] = "<h2>Thank you</h2><p>Thank you kindly...</p>";
     } else {
       $out["result"] = mysql_error();
     }

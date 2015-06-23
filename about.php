@@ -44,9 +44,9 @@ $detect = new Mobile_Detect;
       </div>
       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
         <ul class="nav navbar-nav">
-          <li><a href="/index.php">About Gazelli House</a></li>
+          <li><a href="/about.php">About Gazelli House</a></li>
           <li><a href="/membership.php">Membership Registration</a></li>
-          <li><a href="/about.php">Live Beautifully Campaign</a></li>
+          <li><a href="http://gazellihouselondon.tumblr.com" target="_blank">Live Beautifully Campaign</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
         </ul>

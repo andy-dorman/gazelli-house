@@ -1,6 +1,7 @@
 <?php
 //ini_set('display_errors',1); 
-error_reporting(E_ALL);
+//error_reporting(E_ALL);
+error_reporting(0);
 //$mysqli = new mysqli("127.0.0.1", "root", "", "gazelli-house", 3306);
 $mysqli = mysql_connect("localhost", "walton", "w4lt0ns3cr3t");
 if (!$mysqli) {
