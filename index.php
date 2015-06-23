@@ -7,9 +7,7 @@ $carousel_images = array();
 
 if ($handle = opendir($img_dir)) {
   /* This is the correct way to loop over the directory. */
-  echo "<h4>";
   while (false !== $entry = readdir($handle)) {
-    echo "* ".$entry."<br/>";
     if($entry !== "." && $entry !== "..") {
       $img_obj = new stdClass();
       $img_obj->image = $entry;
@@ -17,7 +15,6 @@ if ($handle = opendir($img_dir)) {
       $carousel_images[] = $img_obj;
     }
   }
-  echo "</h4>";
   shuffle($carousel_images);
   while(count($carousel_images) > 3) {
     array_shift($carousel_images);
