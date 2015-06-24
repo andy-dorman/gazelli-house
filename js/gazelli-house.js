@@ -54,7 +54,7 @@
           } else {
             Object.keys(response).forEach(function(key, idx) {
               if(response[key]) {
-                content += "<h3>" + key.replace('_', ' ') + "</h3>\n";
+                content += "<h3>" + key.replace(/_/g, ' ') + "</h3>\n";
                 content += "<p>" + response[key] + "</p>\n";
               }
             });
