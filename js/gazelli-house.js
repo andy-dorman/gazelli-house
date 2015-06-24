@@ -106,6 +106,7 @@
 	}
 
   var $myCarousel = $('#carousel-example-generic');
+  var $myTextCarousel = $('#carousel-text');
   function setCarouselInnerHeight() {
     var height;
     var img = $myCarousel.find('.item:first img');
@@ -142,44 +143,48 @@
   setCarouselInnerHeight();
   // Initialize carousel
   $myCarousel.carousel();
+  $myTextCarousel.carousel({
+    interval: false
+  });
+  $myCarousel.carousel("pause");
 
   $('.selectpicker').selectpicker();
 
   function doAnimations(elems) {
     var animEndEv = 'webkitAnimationEnd animationend';
 
+    $myCarousel.find('img').removeClass('animation zoomIn');
+
     elems.each(function () {
       var $this = $(this),
-          $animationType = $this.data('animation');
+        $animationType = $this.data('animation');
 
-          // Add animate.css classes to
-          // the elements to be animated
-          // Remove animate.css classes
-          // once the animation event has ended
-          $this.addClass($animationType).one(animEndEv, function () {
-          $this.removeClass($animationType);
-        });
+        // Add animate.css classes to
+        // the elements to be animated
+        // Remove animate.css classes
+        // once the animation event has ended
+        $this.addClass($animationType).one(animEndEv, function () {
       });
-    }
-
-    // Select the elements to be animated
-    // in the first slide on page load
-    var $firstAnimatingElems = $myCarousel.find('.item:first')
-    .find('[data-animation ^= "animated"]');
-    // Apply the animation using our function
-    doAnimations($firstAnimatingElems);
-
-    // Pause the carousel
-    $myCarousel.carousel('pause');
-
-    // Attach our doAnimations() function to the
-    // carousel's slide.bs.carousel event
-    $myCarousel.on('slide.bs.carousel', function (e) {
-      // Select the elements to be animated inside the active slide
-      var index = $('#carousel-example-generic .item').index(e.relatedTarget);
-      $('#carousel-text .carousel-indicators li:eq(' + index + ')').click();
-      var $animatingElems = $(e.relatedTarget)
-      .find("[data-animation ^= 'animated']");
-      doAnimations($animatingElems);
     });
+  }
+
+  // Select the elements to be animated
+  // in the first slide on page load
+  var $firstAnimatingElems = $myCarousel.find('.item:first')
+  .find('[data-animation ^= "animated"]');
+  // Apply the animation using our function
+  doAnimations($firstAnimatingElems);
+
+  // Attach our doAnimations() function to the
+  // carousel's slide.bs.carousel event
+
+  $myCarousel.on('slide.bs.carousel', function (e) {
+    var index = $('#carousel-example-generic .item').index(e.relatedTarget);
+    $('#carousel-text .carousel-indicators li:eq(' + index + ')').click();
+  });
+  $myCarousel.on('slid.bs.carousel', function (e) {
+    var $animatingElems = $(e.relatedTarget)
+    .find("[data-animation ^= 'animated']");
+    doAnimations($animatingElems);
+  });
 })(jQuery)

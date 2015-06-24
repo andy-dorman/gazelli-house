@@ -70,7 +70,7 @@ if ($handle = opendir($img_dir)) {
         <ul class="nav navbar-nav navbar-right">
         </ul>
       </nav>
-      <div id="carousel-example-generic" class="carousel slide">
+      <div id="carousel-example-generic" class="carousel carousel-fade slide">
         <!-- Indicators -->
         <ol class="carousel-indicators" data-animation="animated slideDown">
           <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -82,33 +82,24 @@ if ($handle = opendir($img_dir)) {
         <div class="carousel-inner" role="listbox">
           <div class="item active">
           <img src="<?php echo $img_dir.'/'.$carousel_images[0]->image; ?>" alt="Foundations" data-animation="animated zoomIn">
-            <div class="carousel-caption <?php echo $carousel_images[0]->contrast; ?>" data-animation="animated">
+            <div class="carousel-caption <?php echo $carousel_images[0]->contrast; ?>">
               Foundations
             </div>
           </div>
           <div class="item">
             <img src="<?php echo $img_dir."/".$carousel_images[1]->image; ?>" alt="Living Room" data-animation="animated zoomIn">
-            <div class="carousel-caption <?php echo $carousel_images[1]->contrast; ?>" data-animation="animated">
+            <div class="carousel-caption <?php echo $carousel_images[1]->contrast; ?>">
               Living Room
             </div>
           </div>
           <div class="item">
             <img src="<?php echo $img_dir."/".$carousel_images[2]->image; ?>" alt="Sky Parlour" data-animation="animated zoomIn">
-            <div class="carousel-caption <?php echo $carousel_images[2]->contrast; ?>" data-animation="animated">
+            <div class="carousel-caption <?php echo $carousel_images[2]->contrast; ?>">
              Sky Parlour 
             </div>
           </div>
         </div>
 
-        <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
       </div>
     </header>
     <div class="container">
