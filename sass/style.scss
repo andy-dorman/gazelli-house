@@ -452,6 +452,11 @@ form {
 
 #success-message {
   width: 400px;
-  height: 300px;
+  height: auto;
   background: $site-bg;
+  padding: 1px 10px 10px 10px;
+  h3 {
+    margin-top: 10px;
+    text-transform: capitalize;
+  }
 }

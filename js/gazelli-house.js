@@ -45,11 +45,25 @@
             $("#errors").remove();
           });
         } else {
+          var content = "";
+          if(response["thanks"]) {
+            $('#membership-registration').find('input[type=text], textarea').val("");
+            $('#membership-registration').find('input[type=checkbox]').attr('checked', false);
+            $('#membership-registration').find('select option:first').attr("selected", "selected");
+            content = response["thanks"];
+          } else {
+            Object.keys(response).forEach(function(key, idx) {
+              if(response[key]) {
+                content += "<h3>" + key.replace('_', ' ') + "</h3>\n";
+                content += "<p>" + response[key] + "</p>\n";
+              }
+            });
+          }
           $.fancybox({
             fixed: true,
             enableEscapeButton : true,
             overlayShow : true,
-            content: '<div id="success-message">' + response["thanks"] + '</div>',
+            content: '<div id="success-message">' + content + '</div>',
             fitToView: true,
             autoSize: true,
             closeClick: true,
@@ -73,14 +87,14 @@
     };
 
 	  // bind form using 'ajaxForm'
-	  $('#membership_registration').ajaxForm(options);
+	  $('#membership-registration').ajaxForm(options);
 	  countCharacters('#interests', 120);
 	  /*$("label").each(function () {
 	      $(this).css("display", "none");
 	  });*/
   }
 
-  if($('#membership_registration').size()) {
+  if($('#membership-registration').size()) {
     getForm();
   }
 
@@ -100,7 +114,6 @@
 	}
 
 	function validateForm(formData, jqForm, options) {
-    console.log('validating...');
     var out = true;
     return out;
 	}

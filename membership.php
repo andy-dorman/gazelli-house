@@ -62,7 +62,7 @@ $detect = new Mobile_Detect;
           <p>
             Our hand-selected team of Facial Experts deliver our next-generation skincare treatments based on the exclusive combination of Dr Hamzayeva’s iconic Gazelli White Oil™ formulations with the best in state-of-the-art technology.
           </p>
-          <form class="form-horizontal" role="form" id="membership_registration" action="entry.php" method="post">
+          <form class="form-horizontal" role="form" id="membership-registration" action="entry.php" method="post">
             <fieldset>
               <legend>About you</legend>
                 <div class="form-group">

@@ -11,57 +11,57 @@ if(!$_SERVER['REQUEST_METHOD'] == "POST") {
 	$out["invalid"] = "You can't access this page directly!!";
 	echo json_encode($out);
 } else {
-  if(isset($_POST['fullname'])) {
+  if($_POST['fullname']) {
     $full_name = mysql_real_escape_string($_POST['fullname']);
   } else {
-    $out["fullname"] = "You must supply your full name.";
+    $out["full_name"] = "You must supply your full name.";
   }
-  if(isset($_POST['year']) && isset($_POST['month']) && isset($_POST['day'])) {
+  if($_POST['year'] && $_POST['month'] && $_POST['day']) {
     $dob = mysql_real_escape_string($_POST['year']).'/'.mysql_real_escape_string($_POST['month']).'/'.mysql_real_escape_string($_POST['day']);
   } else {
-    $out["dob"] = "You must supply your date of birth.";
+    $out["date_of_birth"] = "You must supply your date of birth.";
   }
-  if(isset($_POST['address1'])) {
+  if($_POST['address1']) {
     $address1 = mysql_real_escape_string($_POST['address1']);
   } else {
-    $out["address1"] = "You must supply your address.";
+    $out["address_1"] = "You must supply your address.";
   }
   if(isset($_POST['address2'])) {
     $address2 = mysql_real_escape_string($_POST['address2']);
   } else {
-    $out["address2"] = "You must supply your full name.";
+    $out["address_2"] = "You must supply your full name.";
   }
-  if(isset($_POST['city'])) {
+  if($_POST['city']) {
     $city = mysql_real_escape_string($_POST['city']);
   } else {
     $out["city"] = "You must supply your city.";
   }
-  if(isset($_POST['postcode'])) {
+  if($_POST['postcode']) {
     $postcode = mysql_real_escape_string($_POST['postcode']);
   } else {
     $out["postcode"] = "You must supply your postcode.";
   }
-  if(isset($_POST['country'])) {
+  if($_POST['country']) {
     $country = mysql_real_escape_string($_POST['country']);
   } else {
     $out["country"] = "You must supply your country.";
   }
-  if(isset($_POST['tel'])) {
+  if($_POST['tel']) {
     $tel = mysql_real_escape_string($_POST['tel']);
   } else {
-    $out["tel"] = "You must supply your telephone number.";
+    $out["telephone"] = "You must supply your telephone number.";
   }
-  if(isset($_POST['email'])) {
+  if($_POST['email']) {
     $email = mysql_real_escape_string($_POST['email']);
   } else {
     $out["email"] = "You must supply your email.";
   }
-  if(isset($_POST['confirm_email'])) {
+  if($_POST['confirm_email']) {
     $confirm_email = mysql_real_escape_string($_POST['confirm_email']);
   } else {
     $out["confirm_email"] = "You must confirm your email.";
   }
-  if(isset($_POST['interests'])) {
+  if($_POST['interests']) {
     $interests = mysql_real_escape_string($_POST['interests']);
   } else {
     $out["interests"] = "You must supply your interests.";
@@ -95,7 +95,7 @@ if(!$_SERVER['REQUEST_METHOD'] == "POST") {
 	$yoga = isset($_POST['yoga']) ? 1 : 0;
 
 	if($email !== $confirm_email) {
-    $out['duplicate_email'] = "You can only submit one goal per email address.";
+    $out['emails_do_not_match'] = "Your email addresses do not match can.";
   } else {
 		$query = "SELECT * FROM enquiries WHERE email = '".$email."'";
 		if($result = mysql_query($query)) {
