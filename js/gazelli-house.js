@@ -133,12 +133,18 @@
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
        params.height = $myCarousel.find('.item:first img').height() + 'px';
     } else {
-      params.height = $myCarousel.find('.item:first img').height() + 'px';
+      params.height = ($myCarousel.find('.item:first img').height() - 50) + 'px';
+    }
+    if($myCarousel.find('.item').size() === 1) {
+      params.height = ($myCarousel.find('.item:first img').height() - 120) + 'px';
     }
     if(img.width() > 1024) {
-
       adjHeight = 1024/ratio;
-      params.height = adjHeight + 'px';
+      if($myCarousel.find('.item').size() === 1) {
+        params.height = (adjHeight - 120) + 'px';
+      } else {
+        params.height = (adjHeight - 50) + 'px';
+      }
       $myCarousel.find('img').css({
         marginTop: '-' + (img.height() - adjHeight)/2 + 'px'
       });
@@ -155,11 +161,12 @@
   }, 100);
   setCarouselInnerHeight();
   // Initialize carousel
-  $myCarousel.carousel();
   $myTextCarousel.carousel({
     interval: false
   });
-  $myCarousel.carousel("pause");
+  $myCarousel.carousel({
+    interval: 1000 * 7
+  });
 
   $('.selectpicker').selectpicker();
 
