@@ -63,6 +63,7 @@ if ($handle = opendir($img_dir)) {
       </div>
       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
         <ul class="nav navbar-nav">
+          <li><a href="/">Home</a></li>
           <li><a href="/about.php">About Gazelli House</a></li>
           <li><a href="/membership.php">Membership Registration</a></li>
           <li><a href="http://gazellihouselondon.tumblr.com" target="_blank">Live Beautifully Campaign</a></li>
@@ -81,20 +82,20 @@ if ($handle = opendir($img_dir)) {
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-          <img src="<?php echo $img_dir.'/'.$carousel_images[0]->image; ?>" alt="Foundations" data-animation="animated zoomIn">
-            <div class="carousel-caption <?php echo $carousel_images[0]->contrast; ?>">
+          <img src="images/headers/carousel/foundations-dark.jpg" alt="Foundations" data-animation="animated zoomIn">
+            <div class="carousel-caption dark">
               Foundations
             </div>
           </div>
           <div class="item">
-            <img src="<?php echo $img_dir."/".$carousel_images[1]->image; ?>" alt="Living Room" data-animation="animated zoomIn">
-            <div class="carousel-caption <?php echo $carousel_images[1]->contrast; ?>">
+            <img src="images/headers/carousel/living-room.jpg" alt="Living Room" data-animation="animated zoomIn">
+            <div class="carousel-caption light">
               Living Room
             </div>
           </div>
           <div class="item">
-            <img src="<?php echo $img_dir."/".$carousel_images[2]->image; ?>" alt="Sky Parlour" data-animation="animated zoomIn">
-            <div class="carousel-caption <?php echo $carousel_images[2]->contrast; ?>">
+            <img src="images/headers/carousel/sky-parlour.jpg" alt="Sky Parlour" data-animation="animated zoomIn">
+            <div class="carousel-caption light">
              Sky Parlour 
             </div>
           </div>

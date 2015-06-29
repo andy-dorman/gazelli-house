@@ -28,13 +28,9 @@ if(!$_SERVER['REQUEST_METHOD'] == "POST") {
   }
   if(isset($_POST['address2'])) {
     $address2 = mysql_real_escape_string($_POST['address2']);
-  } else {
-    $out["address_2"] = "You must supply your full name.";
   }
   if($_POST['city']) {
     $city = mysql_real_escape_string($_POST['city']);
-  } else {
-    $out["city"] = "You must supply your city.";
   }
   if($_POST['postcode']) {
     $postcode = mysql_real_escape_string($_POST['postcode']);
@@ -43,13 +39,9 @@ if(!$_SERVER['REQUEST_METHOD'] == "POST") {
   }
   if($_POST['country']) {
     $country = mysql_real_escape_string($_POST['country']);
-  } else {
-    $out["country"] = "You must supply your country.";
   }
   if($_POST['tel']) {
     $tel = mysql_real_escape_string($_POST['tel']);
-  } else {
-    $out["telephone"] = "You must supply your telephone number.";
   }
   if($_POST['email']) {
     $email = mysql_real_escape_string($_POST['email']);
@@ -63,8 +55,6 @@ if(!$_SERVER['REQUEST_METHOD'] == "POST") {
   }
   if($_POST['interests']) {
     $interests = mysql_real_escape_string($_POST['interests']);
-  } else {
-    $out["interests"] = "You must supply your interests.";
   }
   if(isset($_POST['suggestions'])) {
     $suggestions = mysql_real_escape_string($_POST['suggestions']);
@@ -114,7 +104,19 @@ if(!$_SERVER['REQUEST_METHOD'] == "POST") {
 	
     if($result = mysql_query($query)) {
       $out["result"] = "success";
-      $out['thanks'] = "<h2>Thank you</h2><p>Thank you kindly...</p>";
+      $thanks = "";
+      $thanks = "<h2>Thank you</h2><p>Thank you for your application, we will be in touch soon</p>\n";
+      $thanks .= "<div class=\"social-icons\">\n";
+      $thanks .= "<ul class=\"list-inline text-center\">\n";
+      $thanks .= "<li class=\"social-icon bird\"><a href=\"https://www.twitter.com/WaltonSecret\" target=\"_blank\"></a></li>\n";
+      $thanks .= "<li class=\"social-icon facebook\"><a href=\"https://www.facebook.com/WaltonSecret\" target=\"_blank\"></a></li>\n";
+      $thanks .= "<li class=\"social-icon icon-3\"><a href=\"https://www.instagram.com/walton_secret\" target=\"_blank\"></a></li>\n";
+      $thanks .= "<li class=\"social-icon twitter\"><a href=\"http://gazellihouselondon.tumblr.com\" target=\"_blank\"></a></li>\n";
+      $thanks .= "</ul>\n";
+      $thanks .= "<em>Follow us online for updates on Gazelli House</em>\n";
+      $thanks .= "</div>\n";
+      $thanks .= "<button class=\"btn btn-primary\">OK</button>\n";
+      $out['thanks'] = $thanks;
     } else {
       $out["result"] = mysql_error();
     }

@@ -45,6 +45,7 @@ $detect = new Mobile_Detect;
       </div>
       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
         <ul class="nav navbar-nav">
+          <li><a href="/">Home</a></li>
           <li><a href="/about.php">About Gazelli House</a></li>
           <li><a href="/membership.php">Membership Registration</a></li>
           <li><a href="http://gazellihouselondon.tumblr.com" target="_blank">Live Beautifully Campaign</a></li>
@@ -65,13 +66,13 @@ $detect = new Mobile_Detect;
           <form <?php if(!$detect->isMobile()) { ?> class="form-horizontal" <?php } ?>role="form" id="membership-registration" action="entry.php" method="post">
             <fieldset>
               <legend>About you</legend>
-                <div class="form-group">
+                <div class="form-group required">
                 <label class="control-label<?php if(!$detect->isMobile()) { ?> col-xs-3<?php } ?>">Full name</label>
                 <div<?php if(!$detect->isMobile()) { ?> class="col-xs-8"<?php } ?>>
                     <input type="text" name="fullname" class="form-control"/>
                   </div>
                 </div>
-                <div class="form-group dob">
+                <div class="form-group dob required">
                   <label class="control-label<?php if(!$detect->isMobile()) { ?> col-xs-3<?php } ?>">Date of birth</label>
                   <div<?php if($detect->isMobile()) { ?> class="row"<?php } ?>>
                   <div class="<?php if(!$detect->isMobile()) { ?>col-xs-2 <?php } else { ?>col-xs-4 <?php } ?> separator">
@@ -85,7 +86,7 @@ $detect = new Mobile_Detect;
                   </div>
                   </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group required">
                   <label class="control-label<?php if(!$detect->isMobile()) { ?> col-xs-3<?php } ?>">Address 1</label>
                   <div<?php if(!$detect->isMobile()) { ?> class="col-xs-8"<?php } ?>>
                     <input type="text" name="address1" class="form-control"/>
@@ -103,7 +104,7 @@ $detect = new Mobile_Detect;
                     <input type="text" name="city" class="form-control"/>
                   </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group required">
                   <label class="control-label<?php if(!$detect->isMobile()) { ?> col-xs-3<?php } ?>">Post code</label>
                   <div<?php if(!$detect->isMobile()) { ?> class="col-xs-8"<?php } ?>>
                     <input type="text" name="postcode" class="form-control"/>
@@ -112,14 +113,7 @@ $detect = new Mobile_Detect;
                 <div class="form-group">
                   <label class="control-label<?php if(!$detect->isMobile()) { ?> col-xs-3<?php } ?>">Country</label>
                   <div<?php if(!$detect->isMobile()) { ?> class="col-xs-8"<?php } ?>>
-                    <div class="row-fluid">
-                      <select class="selectpicker" name="country" data-width="100%" data-style="btn-primary">
-                        <option>Select one</option>
-                        <option>United Kingdom</option>
-                        <option>France</option>
-                        <option>Germany</option>
-                      </select>
-                    </div>
+                    <input type="text" name="country" class="form-control"/>
                   </div>
                 </div>
                 <div class="form-group">
@@ -128,7 +122,7 @@ $detect = new Mobile_Detect;
                     <input type="text" name="tel" class="form-control"/>
                   </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group required">
                   <label class="control-label<?php if(!$detect->isMobile()) { ?> col-xs-3<?php } ?>">Email</label>
                   <div<?php if(!$detect->isMobile()) { ?> class="col-xs-8"<?php } ?>>
                     <input type="text" name="email" class="form-control"/>
@@ -251,7 +245,7 @@ $detect = new Mobile_Detect;
                   </div>
                 </div>
                 <div class="form-group">
-                  <button class="btn btn-primary">Submit</button>
+                  <button id="submit-form" class="btn btn-primary">Submit</button>
                 </div>
             </fieldset>
           </form>

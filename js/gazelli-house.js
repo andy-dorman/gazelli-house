@@ -67,7 +67,7 @@
             fitToView: true,
             autoSize: true,
             closeClick: true,
-            closeBtn: true,
+            closeBtn: false,
             openEffect: 'none',
             closeEffect: 'none',
             scrolling: 'yes',
@@ -80,6 +80,11 @@
                 css: {'background': 'rgba(0,0,0,0.8)'} // or your preferred hex color value
               } // overlay
             } // helpers
+          });
+
+          $('success-message button').click(function(e){
+            e.preventDefault();
+            $.fancybox.close();
           });
         }
       },
@@ -165,7 +170,7 @@
     interval: false
   });
   $myCarousel.carousel({
-    interval: 1000 * 7
+    interval: 1000 * 5
   });
 
   $('.selectpicker').selectpicker();
