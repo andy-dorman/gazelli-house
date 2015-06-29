@@ -13,7 +13,7 @@ $detect = new Mobile_Detect;
 <meta name="keywords" content="inspire, goal, inspiration, dream, live, learn, family, london, south kensington, walton street, secret, event, launch, new, spa, treatment, facial, massage, skincare, skin, advice, help, mentor, explore, wellbeing, wellness, emotion, emotional, journey, health, body, mind, soul, captivate, engage, interact, innovative, different, concept, groundbreaking, key, lock, safe, unlock, potential, discover">
 <meta name="author" content="">
 
-<title>Gazelli House</title>
+<title>Gazelli House - About</title>
 
 <!-- Bootstrap core CSS -->
 <link href="stylesheets/style.css" rel="stylesheet">
@@ -51,7 +51,7 @@ $detect = new Mobile_Detect;
         <ul class="nav navbar-nav navbar-right">
         </ul>
       </nav>
-      <div id="carousel-example-generic" class="carousel slide">
+      <div id="carousel-example-generic" class="carousel slide carousel-fade">
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
           <div class="item active">
