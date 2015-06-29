@@ -158,7 +158,7 @@ if ($handle = opendir($img_dir)) {
             <li class="social-icon bird"><a href="https://www.twitter.com/WaltonSecret" target="_blank"></a></li>
             <li class="social-icon facebook"><a href="https://www.facebook.com/WaltonSecret" target="_blank"></a></li>
             <li class="social-icon icon-3"><a href="https://www.instagram.com/walton_secret" target="_blank"></a></li>
-            <li class="social-icon twitter"><a href="https://www.twitter.com/WaltonSecret" target="_blank"></a></li>
+            <li class="social-icon twitter"><a href="http://gazellihouselondon.tumblr.com" target="_blank"></a></li>
           </ul>
       </div>
     </div>

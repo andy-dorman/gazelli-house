@@ -56,8 +56,8 @@ $detect = new Mobile_Detect;
         <div class="carousel-inner" role="listbox">
           <div class="item active">
             <img src="/images/headers/live-beautifully.jpg" alt="Live Beautifully">
-            <div class="carousel-caption">
-              Live Beautifully
+            <div class="carousel-caption narrow">
+              Live<br/>Beautifully
             </div>
           </div>
         </div>
@@ -102,7 +102,7 @@ $detect = new Mobile_Detect;
             <li class="social-icon bird"><a href="https://www.twitter.com/WaltonSecret" target="_blank"></a></li>
             <li class="social-icon facebook"><a href="https://www.facebook.com/WaltonSecret" target="_blank"></a></li>
             <li class="social-icon icon-3"><a href="https://www.instagram.com/walton_secret" target="_blank"></a></li>
-            <li class="social-icon twitter"><a href="https://www.twitter.com/WaltonSecret" target="_blank"></a></li>
+            <li class="social-icon twitter"><a href="http://gazellihouselondon.tumblr.com" target="_blank"></a></li>
           </ul>
       </div>
     </div>
