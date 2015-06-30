@@ -565,7 +565,7 @@ form {
   }
 
   form fieldset {
-    padding-bottom: 0px;
+    padding-bottom: 1px;
   }
 
   #carousel-text {
@@ -610,6 +610,7 @@ form {
 
   #carousel-example-generic {
     .carousel-caption {
+      padding-top: 28px;
       font-size:  48px;
       letter-spacing: 35px;
     }
