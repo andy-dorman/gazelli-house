@@ -497,6 +497,31 @@ form {
   }
 }
 
+#form-errors {
+  width: 300px;
+  height: auto;
+  background: $site-bg;
+  padding: 1px 10px 10px 10px;
+  h3,
+  h4 {
+    text-transform: capitalize;
+  }
+  h4 {
+    margin-bottom: 5px;
+  }
+  button {
+    margin-top: 10px;
+    left: 50%;
+    position: relative;
+    margin-left: -40px;
+    border-radius: 0;
+    width: 80px;
+    padding: 2px;
+    background: #444444;
+    border-color: #444444;
+  }
+}
+
 #success-message {
   text-align: center;
   width: 200px;
@@ -508,6 +533,8 @@ form {
     text-indent: -99999px;
   }
   p {
+    margin-left: auto;
+    margin-right: auto;
     text-transform: uppercase;
     font-size: 10px;
     width: 110px;

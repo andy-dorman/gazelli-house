@@ -51,19 +51,22 @@
             $('#membership-registration').find('input[type=checkbox]').attr('checked', false);
             $('#membership-registration').find('select option:first').attr("selected", "selected");
             content = response["thanks"];
+            content = '<div id="success-message">' + content + '</div>';
+
           } else {
             Object.keys(response).forEach(function(key, idx) {
               if(response[key]) {
-                content += "<h3>" + key.replace(/_/g, ' ') + "</h3>\n";
+                content += "<h4>" + key.replace(/_/g, ' ') + "</h4>\n";
                 content += "<p>" + response[key] + "</p>\n";
               }
+              content = '<div id="form-errors"><h3>Registration errors</h3>' + content + '<button class="btn btn-primary">OK</button></div>';
             });
           }
           $.fancybox({
             fixed: true,
             enableEscapeButton : true,
             overlayShow : true,
-            content: '<div id="success-message">' + content + '</div>',
+            content: content,
             fitToView: true,
             autoSize: true,
             closeClick: true,
@@ -82,7 +85,7 @@
             } // helpers
           });
 
-          $('success-message button').click(function(e){
+          $('#success-message button, #form-errors button').click(function(e){
             e.preventDefault();
             $.fancybox.close();
           });
