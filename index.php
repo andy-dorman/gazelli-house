@@ -82,19 +82,19 @@ if ($handle = opendir($img_dir)) {
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-          <img src="images/headers/carousel/foundations-dark.jpg" alt="Foundations" data-animation="animated zoomIn">
+          <img src="images/headers/carousel/foundations-dark.jpg" alt="Foundations" data-animation="animated">
             <div class="carousel-caption dark">
               Foundations
             </div>
           </div>
           <div class="item">
-            <img src="images/headers/carousel/living-room.jpg" alt="Living Room" data-animation="animated zoomIn">
+            <img src="images/headers/carousel/living-room.jpg" alt="Living Room" data-animation="animated">
             <div class="carousel-caption light">
               Living Room
             </div>
           </div>
           <div class="item">
-            <img src="images/headers/carousel/sky-parlour.jpg" alt="Sky Parlour" data-animation="animated zoomIn">
+            <img src="images/headers/carousel/sky-parlour.jpg" alt="Sky Parlour" data-animation="animated">
             <div class="carousel-caption light">
              Sky Parlour 
             </div>

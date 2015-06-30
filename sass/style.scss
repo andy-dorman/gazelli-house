@@ -374,7 +374,7 @@ form {
     padding: 0 20px;
     &.required {
       .control-label:after {
-        color: #d00;
+        color: #CB837B;
         content: "*";
         position: absolute;
         margin-left: 8px;
@@ -592,7 +592,7 @@ form {
   }
 
   .navbar-nav {
-    letter-spacing: 2.4px;
+    letter-spacing: 2px;
     font-size: 12px;
     text-transform: uppercase;
     width:              auto;

@@ -245,7 +245,9 @@ $detect = new Mobile_Detect;
                   </div>
                 </div>
                 <div class="form-group">
-                  <button id="submit-form" class="btn btn-primary">Submit</button>
+                  <div class="col-xs-6 col-xs-offset-3">
+                    <button id="submit-form" class="btn btn-primary">Submit</button>
+                  </div>
                 </div>
             </fieldset>
           </form>
