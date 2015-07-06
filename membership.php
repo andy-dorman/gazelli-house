@@ -238,7 +238,7 @@ $detect = new Mobile_Detect;
                     </div>
                     <div class="col-xs-<?php if(!$detect->isMobile()) { ?>4<?php } else {?>6<?php } ?> checkbox checkbox-primary">
                       <input type="checkbox" name="events" class="checkbox pull-left" id="events"/>
-                      <label class="pull-left" for="events">Event</label>
+                      <label class="pull-left" for="events">Events</label>
                     </div>
                   </div>
                 </div>
