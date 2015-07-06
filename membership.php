@@ -13,7 +13,7 @@ $detect = new Mobile_Detect;
 <meta name="keywords" content="inspire, goal, inspiration, dream, live, learn, family, london, south kensington, walton street, secret, event, launch, new, spa, treatment, facial, massage, skincare, skin, advice, help, mentor, explore, wellbeing, wellness, emotion, emotional, journey, health, body, mind, soul, captivate, engage, interact, innovative, different, concept, groundbreaking, key, lock, safe, unlock, potential, discover">
 <meta name="author" content="">
 
-<title>Gazelli Housei - Membership Registration</title>
+<title>Gazelli House - Membership Registration</title>
 
 <!-- Bootstrap core CSS -->
 <link href="stylesheets/style.css" rel="stylesheet">
@@ -61,7 +61,7 @@ $detect = new Mobile_Detect;
         <main class="text-center" id="content" role="main">
           <h2>Membership</h2>
           <p>
-            Our hand-selected team of Facial Experts deliver our next-generation skincare treatments based on the exclusive combination of Dr Hamzayeva’s iconic Gazelli White Oil™ formulations with the best in state-of-the-art technology.
+            Gazelli House Membership is completely free of charge. All we ask is that you fill out this quick form to ensure your place within the House, and so that the service we provide you with is as tailored to you as possible. We look forward to welcoming you to the Gazelli world.
           </p>
           <form <?php if(!$detect->isMobile()) { ?> class="form-horizontal" <?php } ?>role="form" id="membership-registration" action="entry.php" method="post">
             <fieldset>
@@ -235,6 +235,10 @@ $detect = new Mobile_Detect;
                     <div class="col-xs-<?php if(!$detect->isMobile()) { ?>4<?php } else {?>6<?php } ?> checkbox checkbox-primary">
                       <input type="checkbox" name="yoga" class="checkbox pull-left" id="yoga"/>
                       <label class="pull-left" for="yoga">Yoga</label>
+                    </div>
+                    <div class="col-xs-<?php if(!$detect->isMobile()) { ?>4<?php } else {?>6<?php } ?> checkbox checkbox-primary">
+                      <input type="checkbox" name="events" class="checkbox pull-left" id="events"/>
+                      <label class="pull-left" for="events">Event</label>
                     </div>
                   </div>
                 </div>

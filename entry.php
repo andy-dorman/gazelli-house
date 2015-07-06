@@ -1,6 +1,6 @@
 <?php
 
-//ini_set('display_errors',1); 
+//ini_set('display_errors',1);
 //error_reporting(E_ALL);
 //header('Cache-Control: no-cache, must-revalidate');
 //header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
@@ -83,6 +83,7 @@ if(!$_SERVER['REQUEST_METHOD'] == "POST") {
 	$relaxing = isset($_POST['relaxing']) ? 1 : 0;
 	$film_screenings = isset($_POST['film_screenings']) ? 1 : 0;
 	$yoga = isset($_POST['yoga']) ? 1 : 0;
+	$events = isset($_POST['events']) ? 1 : 0;
 
 	if($email !== $confirm_email) {
     $out['emails_do_not_match'] = "Your email addresses do not match can.";
@@ -100,8 +101,8 @@ if(!$_SERVER['REQUEST_METHOD'] == "POST") {
   if(count($out)) {
     die(json_encode($out));
   } else {
-    $query = "INSERT INTO enquiries (full_name, dob, address1, address2, city, postcode, country, tel, email, interests, suggestions, literature, art, languages, fashion, cosmetics, spirituality, self_development, body_treatments, skincare, life_coaching, facial_treatments, alternative_therapies, travel, ayurveda, lifestyle, nutrition, fitness, theatre, ballet, socialising, relaxing, film_screenings, yoga) VALUES ('".$full_name."', '".$dob."', '".$address1."', '".$address2."', '".$city."', '".$postcode."', '".$country."', '".$tel."', '".".$email"."', '".".$interests"."', '".$suggestions."', '".$literature."', '".$art."', '".$languages."', '".$fashion."', '".$cosmetics."', '".$spirituality."', '".$self_development."', '".$body_treatments."', '".$skincare."', '".$life_coaching."', '".$facial_treatments."', '".$alternative_therapies."', '".$travel."', '".$ayurveda."', '".$lifestyle."', '".$nutrition."', '".$fitness."', '".$theatre."', '".$ballet."', '".$socialising."', '".$relaxing."', '".$film_screenings."', '".$yoga."')";
-	
+    $query = "INSERT INTO enquiries (full_name, dob, address1, address2, city, postcode, country, tel, email, interests, suggestions, literature, art, languages, fashion, cosmetics, spirituality, self_development, body_treatments, skincare, life_coaching, facial_treatments, alternative_therapies, travel, ayurveda, lifestyle, nutrition, fitness, theatre, ballet, socialising, relaxing, film_screenings, yoga, events) VALUES ('".$full_name."', '".$dob."', '".$address1."', '".$address2."', '".$city."', '".$postcode."', '".$country."', '".$tel."', '".".$email"."', '".".$interests"."', '".$suggestions."', '".$literature."', '".$art."', '".$languages."', '".$fashion."', '".$cosmetics."', '".$spirituality."', '".$self_development."', '".$body_treatments."', '".$skincare."', '".$life_coaching."', '".$facial_treatments."', '".$alternative_therapies."', '".$travel."', '".$ayurveda."', '".$lifestyle."', '".$nutrition."', '".$fitness."', '".$theatre."', '".$ballet."', '".$socialising."', '".$relaxing."', '".$film_screenings."', '".$yoga."', '".$events."')";
+
     if($result = mysql_query($query)) {
       $out["result"] = "success";
       $thanks = "";

@@ -1,25 +1,6 @@
 <?php
-require 'lib/config.php';
 require 'lib/Mobile_Detect.php';
 $detect = new Mobile_Detect;
-
-$carousel_images = array();
-
-if ($handle = opendir($img_dir)) {
-  /* This is the correct way to loop over the directory. */
-  while (false !== $entry = readdir($handle)) {
-    if($entry !== "." && $entry !== "..") {
-      $img_obj = new stdClass();
-      $img_obj->image = $entry;
-      $img_obj->contrast = strpos($entry, '-dark') ? 'dark' : 'light';
-      $carousel_images[] = $img_obj;
-    }
-  }
-  shuffle($carousel_images);
-  while(count($carousel_images) > 3) {
-    array_shift($carousel_images);
-  }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +17,7 @@ if ($handle = opendir($img_dir)) {
 
 <!-- Bootstrap core CSS -->
 <link href="stylesheets/style.css" rel="stylesheet">
-<link href="stylesheets/jquery.fancybox.css" rel="stylesheet">
+
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -71,36 +52,16 @@ if ($handle = opendir($img_dir)) {
         <ul class="nav navbar-nav navbar-right">
         </ul>
       </nav>
-      <div id="carousel-example-generic" class="carousel carousel-fade slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators" data-animation="animated slideDown">
-          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-        </ol>
-
+      <div id="carousel-example-generic" class="carousel slide carousel-fade">
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-          <img src="images/headers/carousel/foundations-dark.jpg" alt="Foundations" data-animation="animated">
-            <div class="carousel-caption dark">
-              Foundations
-            </div>
-          </div>
-          <div class="item">
-            <img src="images/headers/carousel/living-room.jpg" alt="Living Room" data-animation="animated">
-            <div class="carousel-caption light">
-              Living Room
-            </div>
-          </div>
-          <div class="item">
-            <img src="images/headers/carousel/sky-parlour.jpg" alt="Sky Parlour" data-animation="animated">
-            <div class="carousel-caption light">
-             Sky Parlour 
+            <img src="/images/headers/live-beautifully.jpg" alt="Live Beautifully">
+            <div class="carousel-caption narrow">
+              Live<br/>Beautifully
             </div>
           </div>
         </div>
-
       </div>
     </header>
     <div class="container">
@@ -108,34 +69,20 @@ if ($handle = opendir($img_dir)) {
       <div>
         <!-- Page content of course! -->
         <main class="text-center" id="content" role="main">
-          <div id="carousel-text" class="carousel carousel-fade slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators" data-animation="animated slideDown">
-          <li data-target="#carousel-text" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-text" data-slide-to="1"></li>
-          <li data-target="#carousel-text" data-slide-to="2"></li>
-        </ol>
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-              <div class="item active">
-                <h2>Expertise in Skincare</h2>
-                <p>
-                  Our hand-selected team of Facial Experts deliver our next-generation skincare treatments based on the exclusive combination of Dr Hamzayeva’s iconic Gazelli White Oil™ formulations with the best in state-of-the-art technology. 
-                </p>
-              </div>
-              <div class="item">
-                <h2>Discover & Inspire</h2>
-                <p>
-                  In the heart of the House you will find a warm and welcoming space in which to connect with others and discover our innovative calendar of events and workshops. This room will bring people together, and encourage us to stretch our intellect and imagination.
-                </p>
-              </div>
-              <div class="item">
-                <h2>Awaken the Senses</h2>
-                <p>
-                  An intimate space flooded with natural light. Here you can enjoy one-to-one consultations with resident and visiting lifestyle experts, while reawakening all the channels of the senses in a spirit of healing and mindfulness.
-                </p>
-              </div>
-            </div>
+          <div>
+          <h2>Gazelli House</h2>
+          <p>
+          The Gazelli world has been built upon a foundation of more than 40 years’ scientific research and unparalleled expertise in results driven skincare.  Now in the Gazelli House London, you can be fully immersed in founder Dr Hamzayeva’s unique vision for the union of the fields of science, skincare and wellbeing.
+          </p>
+          <p>
+          Divided into three floors, the House offers a range of targeted skincare treatments, workshops, events and visiting experts that provide guests with the tools to enrich every aspect of their wellbeing.
+          </p>
+          <p>
+          Immersed in art and culture, you will be enthralled by the originality of the House, the dedication of our staff, and the passion behind the innovative programme of events.
+          </p>
+          <p>
+          With its intimate, homely and inviting interiors, the Gazelli House is the perfect space in which to learn, be inspired, and be empowered in a unique atmosphere that encourages healing through all of the senses.
+          </p>
           </div>
           <hr/>
           <div>

@@ -1,6 +1,25 @@
 <?php
+require 'lib/config.php';
 require 'lib/Mobile_Detect.php';
 $detect = new Mobile_Detect;
+
+$carousel_images = array();
+
+if ($handle = opendir($img_dir)) {
+  /* This is the correct way to loop over the directory. */
+  while (false !== $entry = readdir($handle)) {
+    if($entry !== "." && $entry !== "..") {
+      $img_obj = new stdClass();
+      $img_obj->image = $entry;
+      $img_obj->contrast = strpos($entry, '-dark') ? 'dark' : 'light';
+      $carousel_images[] = $img_obj;
+    }
+  }
+  shuffle($carousel_images);
+  while(count($carousel_images) > 3) {
+    array_shift($carousel_images);
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +36,7 @@ $detect = new Mobile_Detect;
 
 <!-- Bootstrap core CSS -->
 <link href="stylesheets/style.css" rel="stylesheet">
-
+<link href="stylesheets/jquery.fancybox.css" rel="stylesheet">
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -52,16 +71,36 @@ $detect = new Mobile_Detect;
         <ul class="nav navbar-nav navbar-right">
         </ul>
       </nav>
-      <div id="carousel-example-generic" class="carousel slide carousel-fade">
+      <div id="carousel-example-generic" class="carousel carousel-fade slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators" data-animation="animated slideDown">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-            <img src="/images/headers/live-beautifully.jpg" alt="Live Beautifully">
-            <div class="carousel-caption narrow">
-              Live<br/>Beautifully
+          <img src="images/headers/carousel/foundations-dark.jpg" alt="Foundations" data-animation="animated">
+            <div class="carousel-caption dark">
+              Foundations
+            </div>
+          </div>
+          <div class="item">
+            <img src="images/headers/carousel/living-room.jpg" alt="Living Room" data-animation="animated">
+            <div class="carousel-caption light">
+              Living Room
+            </div>
+          </div>
+          <div class="item">
+            <img src="images/headers/carousel/sky-parlour.jpg" alt="Sky Parlour" data-animation="animated">
+            <div class="carousel-caption light">
+             Sky Parlour
             </div>
           </div>
         </div>
+
       </div>
     </header>
     <div class="container">
@@ -69,17 +108,34 @@ $detect = new Mobile_Detect;
       <div>
         <!-- Page content of course! -->
         <main class="text-center" id="content" role="main">
-          <div>
-          <h2>Gazelli House</h2>
-            <p>
-            The Gazelli world has been built upon a foundation of expertise in results driven skincare. Now, in the Gazelli House London, you can be fully immersed in the brand’s creativity and commitment to enhancing lives. 
-            </p>
-            <p>
-            Divided into three unique floors, the House offers a range of services, workshops and lifestyle events that provide guests with the tools to enrich every aspect of their wellbeing. 
-            </p>
-            <p>
-            With its intimate, homely and inviting interiors, the Gazelli House is the perfect space in which to learn and be inspired, a unique atmosphere that encourages healing through all of the senses.
-            </p>
+          <div id="carousel-text" class="carousel carousel-fade slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators" data-animation="animated slideDown">
+          <li data-target="#carousel-text" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-text" data-slide-to="1"></li>
+          <li data-target="#carousel-text" data-slide-to="2"></li>
+        </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <h2>Expertise in Skincare</h2>
+                <p>
+                  Our select team of Facial Experts delivers our next-generation skincare treatments based on Dr Hamzayeva’s potent formulations, targeted hands-on techniques, and seamlessly integrated state-of-the-art technology.
+                </p>
+              </div>
+              <div class="item">
+                <h2>Discover & Inspire</h2>
+                <p>
+                  In the heart of the House is a warm and welcoming space in which to connect with others and discover our innovative calendar of events. This room will bring people together and encourage us to learn, discover and stretch our imagination.
+                </p>
+              </div>
+              <div class="item">
+                <h2>Awaken the Senses</h2>
+                <p>
+                  An intimate space flooded with natural light. Here you can enjoy one-to-one consultations with our range of insightful, intuitive and highly skilled specialist practitioners and coaches.
+                </p>
+              </div>
+            </div>
           </div>
           <hr/>
           <div>

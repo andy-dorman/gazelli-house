@@ -1,5 +1,5 @@
 <?php
-ini_set('display_errors',1); 
+ini_set('display_errors',1);
 error_reporting(E_ALL);
 require '../lib/config.php';
 require '../lib/Mobile_Detect.php';
@@ -40,7 +40,7 @@ $fh = fopen($fullPath, 'w');
     <div class="container">
 <?php
 
-    $query = "SELECT * FROM enquiries";// LIMIT ".((isset($_GET["page"]) ? $_GET["page"] : 0) * 20).",20;"; 
+    $query = "SELECT * FROM enquiries";// LIMIT ".((isset($_GET["page"]) ? $_GET["page"] : 0) * 20).",20;";
 
     if($result = mysql_query($query, $mysqli)) {
       $data = "";
@@ -135,6 +135,9 @@ $fh = fopen($fullPath, 'w');
     if($row['yoga']) {
       array_push($genres, 'yoga');
     }
+    if($row['events']) {
+      array_push($genres, 'events');
+    }
     ?>
       <!--<tr>
         <td><?php echo $row['full_name'];?></td>
@@ -150,7 +153,7 @@ $fh = fopen($fullPath, 'w');
         <td><?php echo $row['suggestion'];?></td>
         <td><?php echo implode($genres, ", ");?></td>
       </tr>-->
-<?php  
+<?php
     $data .= $row['full_name']."\t".$row['dob']."\t".$row['address1']."\t".$row['address2']."\t".$row['city']."\t".$row['postcode']."\t".$row['country']."\t".$row['tel']."\t".$row['email']."\t".stripslashes($row['interests'])."\t".stripslashes($row['suggestions'])."\t".implode($genres, ", ")."\t".$row['created_at']."\n";
       }
       fwrite($fh, $data);
