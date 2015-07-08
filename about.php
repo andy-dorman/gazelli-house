@@ -83,7 +83,7 @@ if ($handle = opendir($img_dir)) {
         <div class="carousel-inner" role="listbox">
           <div class="item active">
           <img src="images/headers/carousel/foundations-dark.jpg" alt="Foundations" data-animation="animated">
-            <div class="carousel-caption dark">
+            <div class="carousel-caption light">
               Foundations
             </div>
           </div>
