@@ -47,7 +47,7 @@ $detect = new Mobile_Detect;
         <ul class="nav navbar-nav">
           <li><a href="/">Home</a></li>
           <li><a href="/about.php">About Gazelli House</a></li>
-          <li><a href="/membership.php">Membership Registration</a></li>
+          <li><a href="/membership.php">Guest Registration</a></li>
           <li><a href="http://gazellihouselondon.tumblr.com" target="_blank">Live Beautifully Campaign</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -59,9 +59,9 @@ $detect = new Mobile_Detect;
       <div>
         <!-- Page content of course! -->
         <main class="text-center" id="content" role="main">
-          <h2>Membership</h2>
+          <h2>Guest Registration</h2>
           <p>
-            Gazelli House Membership is completely free of charge. All we ask is that you fill out this quick form to ensure your place within the House, and so that the service we provide you with is as tailored to you as possible. We look forward to welcoming you to the Gazelli world.
+            Registering as a Gazelli House Guest will ensure your place within the House and enable us to tailor our service to you as much as possible. Please complete the form below and we will be in touch shortly with you complimentary Membership Card.
           </p>
           <form <?php if(!$detect->isMobile()) { ?> class="form-horizontal" <?php } ?>role="form" id="membership-registration" action="entry.php" method="post">
             <fieldset>
@@ -257,9 +257,6 @@ $detect = new Mobile_Detect;
           </form>
           <hr/>
           <div>
-            <p>
-              Sign up to register your interest and recieve your complimentary membership
-            </p>
             <a href="/membership.php" id="sign-up">Click here to sign up</a>
         </main>
       </div>

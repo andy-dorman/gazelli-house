@@ -46,7 +46,7 @@ $detect = new Mobile_Detect;
         <ul class="nav navbar-nav">
           <li><a href="/">Home</a></li>
           <li><a href="/about.php">About Gazelli House</a></li>
-          <li><a href="/membership.php">Membership Registration</a></li>
+          <li><a href="/membership.php">Guest Registration</a></li>
           <li><a href="http://gazellihouselondon.tumblr.com" target="_blank">Live Beautifully Campaign</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -72,23 +72,17 @@ $detect = new Mobile_Detect;
           <div>
           <h2>Gazelli House</h2>
           <p>
-          The Gazelli world has been built upon a foundation of more than 40 years’ scientific research and unparalleled expertise in results driven skincare.  Now in the Gazelli House London, you can be fully immersed in founder Dr Hamzayeva’s unique vision for the union of the fields of science, skincare and wellbeing.
+            With its intimate, homely and inviting interiors, the Gazelli House is the perfect space in which to learn, feel inspired, and be empowered in a unique atmosphere that encourages healing through all of the senses.
           </p>
           <p>
-          Divided into three floors, the House offers a range of targeted skincare treatments, workshops, events and visiting experts that provide guests with the tools to enrich every aspect of their wellbeing.
+            Divided into three floors, experience our performance-led treatments and switch off as the therapist’s hands work their magic, hear inspiring guest speakers at evening events, swing by for informal supper clubs, book swaps and poetry readings, and discover new practices and therapies.
           </p>
           <p>
-          Immersed in art and culture, you will be enthralled by the originality of the House, the dedication of our staff, and the passion behind the innovative programme of events.
-          </p>
-          <p>
-          With its intimate, homely and inviting interiors, the Gazelli House is the perfect space in which to learn, be inspired, and be empowered in a unique atmosphere that encourages healing through all of the senses.
+            You’ll find us on Walton Street, in the heart of Belgravia, a light-filled destination where you will fully immerse yourself, discover our story, and write your own.
           </p>
           </div>
           <hr/>
           <div>
-            <p>
-              Sign up to register your interest and recieve your complimentary membership
-            </p>
             <a href="/membership.php" id="sign-up">Click here to sign up</a>
           </div>
         </main>

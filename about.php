@@ -65,7 +65,7 @@ if ($handle = opendir($img_dir)) {
         <ul class="nav navbar-nav">
           <li><a href="/">Home</a></li>
           <li><a href="/about.php">About Gazelli House</a></li>
-          <li><a href="/membership.php">Membership Registration</a></li>
+          <li><a href="/membership.php">Guest Registration</a></li>
           <li><a href="http://gazellihouselondon.tumblr.com" target="_blank">Live Beautifully Campaign</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -82,15 +82,15 @@ if ($handle = opendir($img_dir)) {
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-          <img src="images/headers/carousel/foundations-dark.jpg" alt="Foundations" data-animation="animated">
-            <div class="carousel-caption light">
-              Foundations
-            </div>
-          </div>
-          <div class="item">
             <img src="images/headers/carousel/living-room.jpg" alt="Living Room" data-animation="animated">
             <div class="carousel-caption light">
               Living Room
+            </div>
+          </div>
+          <div class="item">
+          <img src="images/headers/carousel/foundations-dark.jpg" alt="Foundations" data-animation="animated">
+            <div class="carousel-caption light">
+              Foundations
             </div>
           </div>
           <div class="item">
@@ -100,7 +100,6 @@ if ($handle = opendir($img_dir)) {
             </div>
           </div>
         </div>
-
       </div>
     </header>
     <div class="container">
@@ -118,15 +117,15 @@ if ($handle = opendir($img_dir)) {
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
               <div class="item active">
-                <h2>Expertise in Skincare</h2>
-                <p>
-                  Our select team of Facial Experts delivers our next-generation skincare treatments based on Dr Hamzayeva’s potent formulations, targeted hands-on techniques, and seamlessly integrated state-of-the-art technology.
-                </p>
-              </div>
-              <div class="item">
                 <h2>Discover & Inspire</h2>
                 <p>
                   In the heart of the House is a warm and welcoming space in which to connect with others and discover our innovative calendar of events. This room will bring people together and encourage us to learn, discover and stretch our imagination.
+                </p>
+              </div>
+              <div class="item">
+                <h2>Expertise in Skincare</h2>
+                <p>
+                  Our select team of Facial Experts delivers our next-generation skincare treatments based on Dr Hamzayeva’s potent formulations, targeted hands-on techniques, and seamlessly integrated state-of-the-art technology.
                 </p>
               </div>
               <div class="item">
@@ -139,9 +138,6 @@ if ($handle = opendir($img_dir)) {
           </div>
           <hr/>
           <div>
-            <p>
-              Sign up to register your interest and recieve your complimentary membership
-            </p>
             <a href="/membership.php" id="sign-up">Click here to sign up</a>
           </div>
         </main>
