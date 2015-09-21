@@ -55,11 +55,9 @@ if(!$_SERVER['REQUEST_METHOD'] == "POST") {
   }
   if($_POST['interests']) {
     $interests = mysql_real_escape_string($_POST['interests']);
-		$interests = str_replace(array("\n", "\t"), '', $interests);
   }
   if(isset($_POST['suggestions'])) {
     $suggestions = mysql_real_escape_string($_POST['suggestions']);
-		$suggestions = str_replace(array("\n", "\t"), '', $suggestions);
   }
 
 	$literature = isset($_POST['literature']) ? 1 : 0;

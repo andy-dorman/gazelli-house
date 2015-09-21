@@ -154,7 +154,7 @@ $fh = fopen($fullPath, 'w');
         <td><?php echo implode($genres, ", ");?></td>
       </tr>-->
 <?php
-    $data .= $row['full_name']."\t".$row['dob']."\t".$row['address1']."\t".$row['address2']."\t".$row['city']."\t".$row['postcode']."\t".$row['country']."\t".$row['tel']."\t".$row['email']."\t".stripslashes($row['interests'])."\t".stripslashes($row['suggestions'])."\t".implode($genres, ", ")."\t".$row['created_at']."\n";
+    $data .= $row['full_name']."\t".$row['dob']."\t".$row['address1']."\t".$row['address2']."\t".$row['city']."\t".$row['postcode']."\t".$row['country']."\t".$row['tel']."\t".$row['email']."\t".preg_replace("/[\n\r]/", "", stripslashes($row['interests']))."\t".preg_replace("/[\n\r]/", "", stripslashes($row['suggestions']))."\t".implode($genres, ", ")."\t".$row['created_at']."\n";
       }
       fwrite($fh, $data);
     fclose($fh);
