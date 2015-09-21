@@ -59,8 +59,9 @@
                 content += "<h4>" + key.replace(/_/g, ' ') + "</h4>\n";
                 content += "<p>" + response[key] + "</p>\n";
               }
-              content = '<div id="form-errors"><h3>Registration errors</h3>' + content + '<button class="btn btn-primary">OK</button></div>';
             });
+
+						content = '<div id="form-errors"><h3>Registration errors</h3>' + content + '<button class="btn btn-primary">OK</button></div>';
           }
           $.fancybox({
             fixed: true,
