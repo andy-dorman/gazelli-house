@@ -28,22 +28,7 @@
       // pre-submit callback
       success: function (response) {
         if(response["duplicate_email"]) {
-          var errors = $('<div/>').attr({
-            "id": "errors"
-          }).html('<ul><li>' + response["duplicate_email"] + '</li></ul>');
-
-          //$("#").append(errors);
-
-          var oklink = $('<a/>').attr({
-            "id": "oklink",
-            "href": "#ok"
-          }).text("OK");
-
-          $('#errors').append(oklink);
-          $("#oklink").click(function (e) {
-            e.preventDefault();
-            $("#errors").remove();
-          });
+					content = '<div id="form-errors"><h3>Duplicate email</h3><p>' + response["duplicate_email"] + '</p><button class="btn btn-primary">OK</button></div>';
         } else {
           var content = "";
           if(response["thanks"]) {
