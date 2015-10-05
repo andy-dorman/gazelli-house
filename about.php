@@ -152,9 +152,9 @@ if ($handle = opendir($img_dir)) {
       </div>
       <div class="social-icons">
         <ul class="list-inline text-center">
-            <li class="social-icon bird"><a href="https://www.twitter.com/WaltonSecret" target="_blank"></a></li>
-            <li class="social-icon facebook"><a href="https://www.facebook.com/WaltonSecret" target="_blank"></a></li>
-            <li class="social-icon icon-3"><a href="https://www.instagram.com/walton_secret" target="_blank"></a></li>
+            <li class="social-icon bird"><a href="https://www.twitter.com/gazellihouse" target="_blank"></a></li>
+            <li class="social-icon facebook"><a href="https://www.facebook.com/GazelliHouse" target="_blank"></a></li>
+            <li class="social-icon icon-3"><a href="https://www.instagram.com/gazellihouse" target="_blank"></a></li>
             <li class="social-icon twitter"><a href="http://gazellihouselondon.tumblr.com" target="_blank"></a></li>
           </ul>
       </div>
@@ -191,6 +191,15 @@ $(document).ready(function(){
         js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
         return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
       }(document, "script", "twitter-wjs"));
+    </script>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-48048293-2', 'auto');
+          ga('send', 'pageview');
     </script>
   </body>
 </html>
