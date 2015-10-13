@@ -256,8 +256,6 @@ $detect = new Mobile_Detect;
             </fieldset>
           </form>
           <hr/>
-          <div>
-            <a href="/membership.php" id="sign-up">Click here to sign up</a>
         </main>
       </div>
       <div class="social-icons">
