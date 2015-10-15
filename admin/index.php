@@ -82,8 +82,8 @@ $fh = fopen($fullPath, 'w');
         <td><?php echo implode($genres, ", ");?></td>
       </tr>-->
 <?php
-    $firstname = explode(" ", $row['full_name'])[0];
-    $surname = explode(" ", $row['full_name'])[1];
+    $firstname = explode(" ", $row['full_name'])(0);
+    $surname = explode(" ", $row['full_name'])(1);
     $address = $row['address1']."\n".$row['address2']."\n".$row['city']."\n".$row['postcode']."\n".$row['country'];
     $data .= $firstname."\t".$surname."\t".$address."\t".$row['dob']."\t".$row['tel']."\t".$row['email']."\t".preg_replace("/[\n\r]/", "", stripslashes($row['interests']))."\t".preg_replace("/[\n\r]/", "", stripslashes($row['suggestions']))."\t".$row['literature']."\t".$row['art']."\t".$row['languages']."\t".$row['fashion']."\t".$row['cosmetics']."\t".$row['spirituality']."\t".$row['self_development']."\t".$row['body_treatments']."\t".$row['skincare']."\t".$row['life_coaching']."\t".$row['facial_treatments']."\t".$row['alternative_therapies']."\t".$row['travel']."\t".$row['ayurveda']."\t".$row['lifestyle']."\t".$row['nutrition']."\t".$row['fitness']."\t".$row['theatre']."\t".$row['ballet']."\t".$row['socialising']."\t".$row['relaxing']."\t".$row['film_screenings']."\t".$row['yoga']."\t".$row['events']."\t".$row['created_at']."\n";
       }
