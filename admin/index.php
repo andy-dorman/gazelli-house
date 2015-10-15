@@ -44,7 +44,7 @@ $fh = fopen($fullPath, 'w');
 
     if($result = mysql_query($query, $mysqli)) {
       $data = "";
-      $data = "name\tdate of birth\taddress1\taddress2\tcity\tpostcode\tcountry\ttel\temail\tinterests\tsuggestions\tselected areas\tdate\n";
+      $data = "name\tdate of birth\taddress1\taddress2\tcity\tpostcode\tcountry\ttel\temail\tinterests\tsuggestions\tliterature\tart\tlanguages\tfashion\tcosmetics\tspirituality\tself development\tbody treatments\tskincare\tlife coaching\tfacial treatments\talternative therapies\ttravel\tlifestyle\tnutrition\tfitness\ttheatre\tballet\tsocialising\trelaxing\tfilm screenings\tyoga\tevents\tdate\n";
 ?>
 <!--
   <table class="table table-striped">
@@ -63,6 +63,7 @@ $fh = fopen($fullPath, 'w');
       <th>Genres</th>
     </thead>
     <tbody>-->
+
 <?php
       while($row = mysql_fetch_array($result)) {
     $genres = array();
@@ -154,7 +155,7 @@ $fh = fopen($fullPath, 'w');
         <td><?php echo implode($genres, ", ");?></td>
       </tr>-->
 <?php
-    $data .= $row['full_name']."\t".$row['dob']."\t".$row['address1']."\t".$row['address2']."\t".$row['city']."\t".$row['postcode']."\t".$row['country']."\t".$row['tel']."\t".$row['email']."\t".preg_replace("/[\n\r]/", "", stripslashes($row['interests']))."\t".preg_replace("/[\n\r]/", "", stripslashes($row['suggestions']))."\t".implode($genres, ", ")."\t".$row['created_at']."\n";
+    $data .= $row['full_name']."\t".$row['dob']."\t".$row['address1']."\t".$row['address2']."\t".$row['city']."\t".$row['postcode']."\t".$row['country']."\t".$row['tel']."\t".$row['email']."\t".preg_replace("/[\n\r]/", "", stripslashes($row['interests']))."\t".preg_replace("/[\n\r]/", "", stripslashes($row['suggestions']))."\t".$row['literature']$row['art']."\t".$row['languages']."\t".$row['fashion']."\t".$row['cosmetics']."\t".$row['spirituality']."\t".$row['self_development']."\t".$row['body_treatments']."\t".$row['skincare']."\t".$row['life_coaching']."\t".$row['facial_treatments']."\t".$row['alternative_therapies']."\t".$row['travel']."\t".$row['ayurveda']."\t".$row['lifestyle']."\t".$row['nutrition']."\t".$row['fitness']."\t".$row['theatre']."\t".$row['ballet']."\t".$row['socialising']."\t".$row['relaxing']."\t".$row['film_screenings']."\t".$row['yoga']."\t".$row['events']."\t".$row['created_at']."\n";
       }
       fwrite($fh, $data);
     fclose($fh);
