@@ -44,7 +44,7 @@ $fh = fopen($fullPath, 'w');
 
     if($result = mysql_query($query, $mysqli)) {
       $data = "";
-      $data = "name\tdate of birth\taddress1\taddress2\tcity\tpostcode\tcountry\ttel\temail\tinterests\tsuggestions\tliterature\tart\tlanguages\tfashion\tcosmetics\tspirituality\tself development\tbody treatments\tskincare\tlife coaching\tfacial treatments\talternative therapies\ttravel\tlifestyle\tnutrition\tfitness\ttheatre\tballet\tsocialising\trelaxing\tfilm screenings\tyoga\tevents\tdate\n";
+      $data = "first name\tsurname\tdate of birth\taddress\ttel\temail\tinterests\tsuggestions\tliterature\tart\tlanguages\tfashion\tcosmetics\tspirituality\tself development\tbody treatments\tskincare\tlife coaching\tfacial treatments\talternative therapies\ttravel\ayurveda\tlifestyle\tnutrition\tfitness\ttheatre\tballet\tsocialising\trelaxing\tfilm screenings\tyoga\tevents\tdate\n";
 ?>
 <!--
   <table class="table table-striped">
@@ -66,79 +66,6 @@ $fh = fopen($fullPath, 'w');
 
 <?php
       while($row = mysql_fetch_array($result)) {
-    $genres = array();
-    if($row['literature']) {
-      array_push($genres, 'literature');
-    }
-    if($row['art']) {
-      array_push($genres, 'art');
-    }
-    if($row['languages']) {
-      array_push($genres, 'languages');
-    }
-    if($row['fashion']) {
-      array_push($genres, 'fashion');
-    }
-    if($row['cosmetics']) {
-      array_push($genres, 'cosmetics');
-    }
-    if($row['spirituality']) {
-      array_push($genres, 'spirituality');
-    }
-    if($row['self_development']) {
-      array_push($genres, 'self development');
-    }
-    if($row['body_treatments']) {
-      array_push($genres, 'body treatments');
-    }
-    if($row['skincare']) {
-      array_push($genres, 'skincare');
-    }
-    if($row['life_coaching']) {
-      array_push($genres, 'life coaching');
-    }
-    if($row['facial_treatments']) {
-      array_push($genres, 'facial treatments');
-    }
-    if($row['alternative_therapies']) {
-      array_push($genres, 'alternative therapies');
-    }
-    if($row['travel']) {
-      array_push($genres, 'travel');
-    }
-    if($row['ayurveda']) {
-      array_push($genres, 'ayurveda');
-    }
-    if($row['lifestyle']) {
-      array_push($genres, 'lifestyle');
-    }
-    if($row['nutrition']) {
-      array_push($genres, 'nutrition');
-    }
-    if($row['fitness']) {
-      array_push($genres, 'fitness');
-    }
-    if($row['theatre']) {
-      array_push($genres, 'theatre');
-    }
-    if($row['ballet']) {
-      array_push($genres, 'ballet');
-    }
-    if($row['socialising']) {
-      array_push($genres, 'socialising');
-    }
-    if($row['relaxing']) {
-      array_push($genres, 'relaxing');
-    }
-    if($row['film_screenings']) {
-      array_push($genres, 'film screenings');
-    }
-    if($row['yoga']) {
-      array_push($genres, 'yoga');
-    }
-    if($row['events']) {
-      array_push($genres, 'events');
-    }
     ?>
       <!--<tr>
         <td><?php echo $row['full_name'];?></td>
@@ -155,7 +82,10 @@ $fh = fopen($fullPath, 'w');
         <td><?php echo implode($genres, ", ");?></td>
       </tr>-->
 <?php
-    $data .= $row['full_name']."\t".$row['dob']."\t".$row['address1']."\t".$row['address2']."\t".$row['city']."\t".$row['postcode']."\t".$row['country']."\t".$row['tel']."\t".$row['email']."\t".preg_replace("/[\n\r]/", "", stripslashes($row['interests']))."\t".preg_replace("/[\n\r]/", "", stripslashes($row['suggestions']))."\t".$row['literature']."\t".$row['art']."\t".$row['languages']."\t".$row['fashion']."\t".$row['cosmetics']."\t".$row['spirituality']."\t".$row['self_development']."\t".$row['body_treatments']."\t".$row['skincare']."\t".$row['life_coaching']."\t".$row['facial_treatments']."\t".$row['alternative_therapies']."\t".$row['travel']."\t".$row['ayurveda']."\t".$row['lifestyle']."\t".$row['nutrition']."\t".$row['fitness']."\t".$row['theatre']."\t".$row['ballet']."\t".$row['socialising']."\t".$row['relaxing']."\t".$row['film_screenings']."\t".$row['yoga']."\t".$row['events']."\t".$row['created_at']."\n";
+    $firstname = split($row['full_name'], ' ')[0];
+    $surname = split($row['full_name'], ' ')[1];
+    $address = $row['address1']."\n".$row['address2']."\n".$row['city']."\n".$row['postcode']."\n".$row['country'];
+    $data .= $firstname."\t".$surname."\t".$address."\t".$row['dob']."\t".$row['tel']."\t".$row['email']."\t".preg_replace("/[\n\r]/", "", stripslashes($row['interests']))."\t".preg_replace("/[\n\r]/", "", stripslashes($row['suggestions']))."\t".$row['literature']."\t".$row['art']."\t".$row['languages']."\t".$row['fashion']."\t".$row['cosmetics']."\t".$row['spirituality']."\t".$row['self_development']."\t".$row['body_treatments']."\t".$row['skincare']."\t".$row['life_coaching']."\t".$row['facial_treatments']."\t".$row['alternative_therapies']."\t".$row['travel']."\t".$row['ayurveda']."\t".$row['lifestyle']."\t".$row['nutrition']."\t".$row['fitness']."\t".$row['theatre']."\t".$row['ballet']."\t".$row['socialising']."\t".$row['relaxing']."\t".$row['film_screenings']."\t".$row['yoga']."\t".$row['events']."\t".$row['created_at']."\n";
       }
       fwrite($fh, $data);
     fclose($fh);
