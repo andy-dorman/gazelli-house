@@ -84,29 +84,31 @@ $fh = fopen($fullPath, 'w');
 <?php
     $fullnameArr = explode(" ", $row['full_name']);
     $firstname = "";
-    for ($i = 0; $i < $fullnameArr.length -1; $i++) {
-      $firstname = $firstname + $fullnameArr($i);
+    for ($i = 0; $i < count($fullnameArr) -1; $i++) {
+      $firstname .= $fullnameArr[$i];
     }
 
-    $surname = $fullnameArr[$fullnameArr.length-1];
-    $address = array();
+    $surname = $fullnameArr[count($fullnameArr)-1];
+    $addressArr = array();
     if($row['address1']) {
-      array_push($address, $row['address1']);
+      array_push($addressArr, $row['address1']);
     }
     if($row['address2']) {
-      array_push($address, $row['address2']);
+      array_push($addressArr, $row['address2']);
     }
     if($row['city']) {
-      array_push($address, $row['city']);
+      array_push($addressArr, $row['city']);
     }
     if($row['postcode']) {
-      array_push($address, $row['postcode']);
+      array_push($addressArr, $row['postcode']);
     }
     if($row['country']) {
-      array_push($address, $row['country']);
+      array_push($addressArr, $row['country']);
     }
 
-    $data .= $firstname."\t".$surname."\t".$row['dob']."\t".$address.implode(',')."\t".$row['tel']."\t".$row['email']."\t".preg_replace("/[\n\r]/", "", stripslashes($row['interests']))."\t".preg_replace("/[\n\r]/", "", stripslashes($row['suggestions']))."\t".$row['literature']."\t".$row['art']."\t".$row['languages']."\t".$row['fashion']."\t".$row['cosmetics']."\t".$row['spirituality']."\t".$row['self_development']."\t".$row['body_treatments']."\t".$row['skincare']."\t".$row['life_coaching']."\t".$row['facial_treatments']."\t".$row['alternative_therapies']."\t".$row['travel']."\t".$row['ayurveda']."\t".$row['lifestyle']."\t".$row['nutrition']."\t".$row['fitness']."\t".$row['theatre']."\t".$row['ballet']."\t".$row['socialising']."\t".$row['relaxing']."\t".$row['film_screenings']."\t".$row['yoga']."\t".$row['events']."\t".$row['created_at']."\n";
+    $address = $addressArr.implode(', ');
+
+    $data .= $firstname."\t".$surname."\t".$row['dob']."\t".$address."\t".$row['tel']."\t".$row['email']."\t".preg_replace("/[\n\r]/", "", stripslashes($row['interests']))."\t".preg_replace("/[\n\r]/", "", stripslashes($row['suggestions']))."\t".$row['literature']."\t".$row['art']."\t".$row['languages']."\t".$row['fashion']."\t".$row['cosmetics']."\t".$row['spirituality']."\t".$row['self_development']."\t".$row['body_treatments']."\t".$row['skincare']."\t".$row['life_coaching']."\t".$row['facial_treatments']."\t".$row['alternative_therapies']."\t".$row['travel']."\t".$row['ayurveda']."\t".$row['lifestyle']."\t".$row['nutrition']."\t".$row['fitness']."\t".$row['theatre']."\t".$row['ballet']."\t".$row['socialising']."\t".$row['relaxing']."\t".$row['film_screenings']."\t".$row['yoga']."\t".$row['events']."\t".$row['created_at']."\n";
       }
       fwrite($fh, $data);
     fclose($fh);
