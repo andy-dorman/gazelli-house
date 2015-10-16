@@ -85,7 +85,7 @@ $fh = fopen($fullPath, 'w');
     $fullnameArr = explode(" ", $row['full_name']);
     $firstname = "";
     for ($i = 0; $i < $fullnameArr.length -1; $i++) {
-      $firstname = $firstname + $fullnameArr[$i];
+      $firstname = $firstname + $fullnameArr($i);
     }
 
     $surname = $fullnameArr[$fullnameArr.length-1];
