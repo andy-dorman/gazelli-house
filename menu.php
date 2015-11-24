@@ -206,7 +206,7 @@ $detect = new Mobile_Detect;
             </h3>
           </div>
           <hr/>
-          <div>
+          <div class="text-center">
             <a href="/membership.php" id="sign-up">Click here to sign up</a>
           </div>
         </main>
