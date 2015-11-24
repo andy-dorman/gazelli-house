@@ -60,7 +60,7 @@ $detect = new Mobile_Detect;
         <!-- Page content of course! -->
         <main class="text-center menu-page" id="content" role="main">
           <div>
-            <h2>Treatment Menu</h2>
+            <h2 class="text-center">Treatment Menu</h2>
             <p>
               Our treatment menu is based on the principle of reserving time with our Facial and Body Experts. Your specific treatment plan is devised with your Expert, based on an in-depth Diagnostic consultation.
             </p>
