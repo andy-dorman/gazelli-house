@@ -15,7 +15,7 @@ array_push($activities, array("name" =>  "family-time", "label" => "Spending Tim
 array_push($activities, array("name" =>  "yoga"));
 array_push($activities, array("name" =>  "work"));
 array_push($activities, array("name" =>  "other"));
-$formarray("activities") = $activities;
+$form["activities"] = $activities;
 
 $exercises = array();
 array_push($exercises, array("name" =>  "running"));
@@ -29,7 +29,7 @@ array_push($exercises, array("name" =>  "cycling"));
 array_push($exercises, array("name" =>  "golf"));
 array_push($exercises, array("name" =>  "rugby"));
 array_push($exercises, array("name" =>  "other"));
-$formarray("exercise") = $exercises;
+$form["exercise"] = $exercises;
 
 $time = array();
 array_push($time, array("name" =>  "family"));
@@ -44,7 +44,7 @@ array_push($time, array("name" =>  "relaxing"));
 array_push($time, array("name" =>  "work"));
 array_push($time, array("name" =>  "self-development"));
 array_push($time, array("name" =>  "other"));
-$formarray("time") = $time;
+$form["time"] = $time;
 
 $surround = array();
 array_push($surround, array("name" =>  "computer"));
@@ -60,7 +60,7 @@ array_push($surround, array("name" =>  "books"));
 array_push($surround, array("name" =>  "family-photos", "label" => "Family Photos"));
 array_push($surround, array("name" =>  "exercise-equipment", "label" => "Exercise Equipment"));
 array_push($surround, array("name" =>  "other"));
-$formarray("surround") = $surround;
+$form["surround"] = $surround;
 
 $describe = array();
 array_push($describe, array("name" =>  "driven"));
@@ -75,7 +75,7 @@ array_push($describe, array("name" =>  "diplomatic"));
 array_push($describe, array("name" =>  "warm"));
 array_push($describe, array("name" =>  "patient"));
 array_push($describe, array("name" =>  "tactful"));
-$formarray("describe") = $describe;
+$form["describe"] = $describe;
 
 $relax = array();
 array_push($relax, array("name" =>  "reading"));
@@ -90,7 +90,7 @@ array_push($relax, array("name" =>  "nature-walks", "label" => "Nature Walks"));
 array_push($relax, array("name" =>  "facial-body-treatments", "label" => "Facial & Body Treatments"));
 array_push($relax, array("name" =>  "exercise"));
 array_push($relax, array("name" =>  "other"));
-$formarray("relax") = $relax;
+$form["relax"] = $relax;
 
 $community = array();
 array_push($community, array("name" =>  "meeting-like-minded-people", "label" => "Meeting Like-Minded People"));
@@ -105,7 +105,7 @@ array_push($community, array("name" =>  "feel-beautiful", "label" => "Feel Beaut
 array_push($community, array("name" =>  "time-for-myself", "label" => "Time For Myself"));
 array_push($community, array("name" =>  "time-to-think-or-stop-thinking", "label" => "Time To Think Or Stop Thinking"));
 array_push($community, array("name" =>  "other"));
-$formarray("community") = $community;
+$form["community"] = $community;
 
 $share = array();
 array_push($share, array("name" =>  "travel"));
@@ -121,5 +121,5 @@ array_push($share, array("name" =>  "networking"));
 array_push($share, array("name" =>  "self-development"));
 array_push($share, array("name" =>  "networking"));
 array_push($share, array("name" =>  "other"));
-$formarray("share") = $share;
+$form["share"] = $share;
 ?>
