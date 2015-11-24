@@ -24,6 +24,7 @@ module.exports = function(grunt) {
             all: {
                 files: {
                     'javascripts/gazelli-house.min.js': [
+												'bower_components/lodash/lodash.js',
                         'bower_components/jquery/dist/jquery.min.js',
                         'bower_components/bootstrap/dist/js/bootstrap.min.js',
                         'bower_components/bootstrap-select/dist/js/bootstrap-select.js',

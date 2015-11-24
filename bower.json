@@ -10,6 +10,7 @@
     "jquery-ui": null,
     "jquery.fancybox": null,
     "bootstrap-select": "~1.7.1",
+    "lodash": "~3.10.1"
   },
   "resolutions": {
     "jquery": "2.1.4"
