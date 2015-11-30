@@ -116,8 +116,9 @@ $detect = new Mobile_Detect;
                   <label class="control-label<?php if(!$detect->isMobile()) { ?> col-xs-3<?php } ?>">Country</label>
                   <div<?php if(!$detect->isMobile()) { ?> class="col-xs-8"<?php } ?>>
                     <select class="selectpicker col-xs-12">
-                      <option>United Kingdom</option>
-                      <option>United States</option>
+                      <option value="" class="text-center">Select one</option>
+                      <option value="uk" class="text-center">United Kingdom</option>
+                      <option value="us" class="text-center">United States</option>
                     </select>
                   </div>
                 </div>

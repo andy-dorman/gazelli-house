@@ -593,6 +593,9 @@ form {
 				outline: 0 !important;
 				background: $brand-primary;
 				color: $site-bg;
+				.filter-option {
+					text-align: center;
+				}
 			}
       .dropdown-menu {
 				padding: 0;
