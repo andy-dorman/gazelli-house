@@ -18,8 +18,8 @@ $letter-spacing:            0;
 
 body {
 	letter-spacing:				$letter-spacing;
-	background: 				#EAE5E3;
-	background-color: 			$site-bg;
+	background: 					#EAE5E3;
+	background-color: 		$site-bg;
 }
 
 div.fancybox-skin {
@@ -36,6 +36,7 @@ div.fancybox-skin {
 
 p {
 	margin-bottom:				14px;
+	line-height: 20px;
 }
 
 .container {
@@ -47,13 +48,25 @@ p {
 	margin-bottom: 				0;
 }
 
+h2,
+h3,
+h4 {
+	color: #444444;
+	font-size: 20px;
+	letter-spacing: 6px;
+}
+h4 {
+	font-size: 16px;
+	margin-bottom: 16px;
+}
+
 h2 {
   font-size: 26px;
-  color: #444444;
   text-transform: uppercase;
-  letter-spacing: 6px;
   text-transform:       uppercase;
 }
+
+
 
 .navbar-header {
   position:         relative;
@@ -209,7 +222,7 @@ hr {
 		text-align: center;
 		border-top: 1px solid $brand-primary;
 		border-bottom: 1px solid $brand-primary;
-		padding: 20px 0;
+		padding: 16px 0;
 		margin-bottom: 20px;
 
 		.col-sm-6 & {
@@ -220,9 +233,25 @@ hr {
 	.book {
 		background: white;
 		font-size: 16px;
-		padding: 20px;
+		padding: 20px 10px;
 		border: none;
+		margin-bottom: 50px;
+		letter-spacing: 1px;
 	}
+
+	.price-list {
+		font-size: 12px;
+		letter-spacing: 4px;
+
+		&,
+		p {
+			font-family: $font-family-sans-serif-med;
+		}
+		hr {
+			margin: 0 0 10px;
+		}
+	}
+
 	 .table {
 		 border-color: $brand-primary;
 		 tr {
@@ -232,10 +261,14 @@ hr {
 				 border-right: 1px solid $brand-primary;
 				 border-bottom-width: 1px;
 				 padding: 10px, 16px;
+				 font-size: 12px;
+ 				letter-spacing: 2px;
+				font-family: $font-family-sans-serif-med;
 			 }
 
 			 th {
 			 	text-transform: uppercase;
+
 			 }
 
 			 td:last-of-type,
@@ -420,8 +453,19 @@ form {
       }
     }
   }
+
   .form-group {
     padding: 0 20px;
+
+		&.terms {
+			margin: 0;
+			margin-bottom: 20px;
+
+			&:after {
+				background: none;
+			}
+		}
+
     &.required {
       .control-label:after {
         color: #CB837B;
@@ -518,6 +562,15 @@ form {
     .form-control {
       border: none;
       border-radius: 0;
+			&.other {
+				position: relative;
+				left: -20px;
+				top: 4px;
+				outline: none;
+				width: 200px;
+				height: 26px;
+				padding: 2px 4px;
+			}
     }
 
     .bs-select-hidden {
@@ -525,7 +578,30 @@ form {
     }
 
     .bootstrap-select {
+			padding: 0;
+			outline: none;
+
+			.btn {
+				border-radius: 0px;
+			}
+
+			&.btn-group[class*="col-"] .dropdown-toggle,
+			.dropdown-toggle,
+			a,
+			button,
+			.btn-default {
+				outline: 0 !important;
+				background: $brand-primary;
+				color: $site-bg;
+			}
       .dropdown-menu {
+				padding: 0;
+				margin: 0;
+				& .open>.btn-default.dropdown-toggle {
+					background: $brand-primary;
+					color: $site-bg;
+				}
+
         li {
           &:hover,
           &.selected {

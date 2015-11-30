@@ -50,7 +50,7 @@ $detect = new Mobile_Detect;
           <li><a href="/menu.php">Treatment Menu</a></li>
           <li><a href="/about.php">About</a></li>
           <li><a href="/membership.php">Guest Registration</a></li>
-          <li><a href="http://gazellihouselondon.tumblr.com" target="_blank">Live Beautifully Campaign</a></li>
+          <li><a href="http://gazellihouselondon.tumblr.com" target="_blank">Live Beautifully</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
         </ul>
@@ -115,7 +115,10 @@ $detect = new Mobile_Detect;
                 <div class="form-group">
                   <label class="control-label<?php if(!$detect->isMobile()) { ?> col-xs-3<?php } ?>">Country</label>
                   <div<?php if(!$detect->isMobile()) { ?> class="col-xs-8"<?php } ?>>
-                    <input type="text" name="country" class="form-control"/>
+                    <select class="selectpicker col-xs-12">
+                      <option>United Kingdom</option>
+                      <option>United States</option>
+                    </select>
                   </div>
                 </div>
                 <div class="form-group">
@@ -137,21 +140,18 @@ $detect = new Mobile_Detect;
                   </div>
                 </div>
               <legend>Your interests</legend>
-                <div class="form-group">
-                  <label class="block-caps control-label<?php if(!$detect->isMobile()) { ?> col-xs-3<?php } ?>">WHICH PART OF THE DAY DO YOU LIKE THE MOST? WHAT DO YOU LIKE TO DO THEN?</label>
-                  <div<?php if(!$detect->isMobile()) { ?> class="col-xs-8"<?php } ?>>
-                    <textarea name="interests" class="form-control" placeholder="Between 50 - 100 words"></textarea>
-                  </div>
-                </div>
                 <div class="form-group checkboxes">
-                  <label class="block-caps control-label<?php if(!$detect->isMobile()) { ?> col-xs-3<?php } ?>">WHICH ACTIVITIES GIVE YOU MOST PLEASURE (CHOOSE UP TO 3)?</label>
+                  <label class="block-caps control-label<?php if(!$detect->isMobile()) { ?> col-xs-3<?php } ?>">What do you think you will enjoy the most about your Gazelli House membership?</label>
                   <div<?php if(!$detect->isMobile()) { ?> class="col-xs-8"<?php } ?>>
                     <?php
                     $index = 1;
-                    foreach ($form["activities"] as $value) { ?>
-                    <div class="col-xs-<?php if(!$detect->isMobile()) { ?>4<?php } else {?>6<?php } ?> checkbox checkbox-primary">
-                      <input type="checkbox" name="activities[]" value="<?php echo "activities-".$value["name"]; ?>" class="checkbox pull-left" id="<?php echo "activities-".$value["name"]; ?>"/>
-                      <label class="pull-left" for="<?php echo "activities-".$value["name"]; ?>"><?php echo isset($value["label"]) ? $value["label"] : $value["name"]; ?></label>
+                    foreach ($form["enjoy"] as $value) { ?>
+                    <div class="col-xs-<?php if($value["name"] === "other") { ?>6<?php } else if(!$detect->isMobile()) { ?>4<?php } else {?>6<?php } ?> checkbox checkbox-primary<?php if($value["name"] === "other") { ?> other<?php }?>">
+                      <input type="checkbox" name="enjoy[]" value="<?php echo "enjoy-".$value["name"]; ?>" class="checkbox pull-left" id="<?php echo "enjoy-".$value["name"]; ?>"/>
+                      <label class="pull-left" for="<?php echo "enjoy-".$value["name"]; ?>"><?php echo isset($value["label"]) ? $value["label"] : $value["name"]; ?></label>
+                      <?php if($value["name"] === "other") { ?>
+                        <input class="form-control other" type="text" />
+                      <?php } ?>
                     </div>
                     <?php if(($detect->isMobile() && $index%2 === 0) || (!$detect->isMobile() && $index%3 === 0) ) { ?>
                       <div class="clearfix visible-lg-block"></div>
@@ -161,122 +161,32 @@ $detect = new Mobile_Detect;
                   </div>
                 </div>
                 <div class="form-group checkboxes">
-                  <label class="block-caps control-label<?php if(!$detect->isMobile()) { ?> col-xs-3<?php } ?>">WHAT EXERCISE DO YOU DO? WHICH SPORTS DO YOU PLAY?</label>
-                  <div<?php if(!$detect->isMobile()) { ?> class="col-xs-8"<?php } ?>>
-                    <?php
-                    $index = 1;
-                    foreach ($form["exercise"] as $value) { ?>
-                    <div class="col-xs-<?php if(!$detect->isMobile()) { ?>4<?php } else {?>6<?php } ?> checkbox checkbox-primary">
-                      <input type="checkbox" name="exercise[]" value="<?php echo "exercise-".$value["name"]; ?>" class="checkbox pull-left" id="<?php echo "exercise-".$value["name"]; ?>"/>
-                      <label class="pull-left" for="<?php echo "exercise-".$value["name"]; ?>"><?php echo isset($value["label"]) ? $value["label"] : $value["name"]; ?></label>
-                    </div>
-                    <?php if(($detect->isMobile() && $index%2 === 0) || (!$detect->isMobile() && $index%3 === 0) ) { ?>
-                      <div class="clearfix visible-lg-block"></div>
-                    <?php }
-                    $index++;
-                    } ?>
-                  </div>
-                </div>
-                <div class="form-group checkboxes">
-                  <label class="block-caps control-label<?php if(!$detect->isMobile()) { ?> col-xs-3<?php } ?>">WHAT/WHO DO YOU TEND TO SPEND THE MOST TIME ON/WITH EVERY DAY (CHOOSE UP TO THREE)?</label>
-                  <div<?php if(!$detect->isMobile()) { ?> class="col-xs-8"<?php } ?>>
-                    <?php
-                    $index = 1;
-                    foreach ($form["time"] as $value) { ?>
-                    <div class="col-xs-<?php if(!$detect->isMobile()) { ?>4<?php } else {?>6<?php } ?> checkbox checkbox-primary">
-                      <input type="checkbox" name="time[]" value="<?php echo "time-".$value["name"]; ?>" class="checkbox pull-left" id="<?php echo "time-".$value["name"]; ?>"/>
-                      <label class="pull-left" for="<?php echo "time-".$$value["name"]; ?>"><?php echo isset($value["label"]) ? $value["label"] : $value["name"]; ?></label>
-                    </div>
-                    <?php if(($detect->isMobile() && $index%2 === 0) || (!$detect->isMobile() && $index%3 === 0) ) { ?>
-                      <div class="clearfix visible-lg-block"></div>
-                    <?php }
-                    $index++;
-                    } ?>
-                  </div>
-                </div>
-                <div class="form-group checkboxes">
-                  <label class="block-caps control-label<?php if(!$detect->isMobile()) { ?> col-xs-3<?php } ?>">WHAT DO YOU TEND TO SURROUND YOURSELF WITH (CHOOSE UP TO THREE)?</label>
-                  <div<?php if(!$detect->isMobile()) { ?> class="col-xs-8"<?php } ?>>
-                    <?php
-                    $index = 1;
-                    foreach ($form["surround"] as $value) { ?>
-                    <div class="col-xs-<?php if(!$detect->isMobile()) { ?>4<?php } else {?>6<?php } ?> checkbox checkbox-primary">
-                      <input type="checkbox" name="surround[]" value="<?php echo "surround-".$value["name"]; ?>" class="checkbox pull-left" id="<?php echo "surround-".$value["name"]; ?>"/>
-                      <label class="pull-left" for="<?php echo "surround-".$value["name"]; ?>"><?php echo isset($value["label"]) ? $value["label"] : $value["name"]; ?></label>
-                    </div>
-                    <?php if(($detect->isMobile() && $index%2 === 0) || (!$detect->isMobile() && $index%3 === 0) ) { ?>
-                      <div class="clearfix visible-lg-block"></div>
-                    <?php }
-                    $index++;
-                    } ?>
-                  </div>
-                </div>
-                <div class="form-group checkboxes">
-                  <label class="block-caps control-label<?php if(!$detect->isMobile()) { ?> col-xs-3<?php } ?>">WHICH ADJECTIVES BEST DESCRIBE YOU?</label>
-                  <div<?php if(!$detect->isMobile()) { ?> class="col-xs-8"<?php } ?>>
-                    <?php
-                    $index = 1;
-                    foreach ($form["describe"] as $value) { ?>
-                    <div class="col-xs-<?php if(!$detect->isMobile()) { ?>4<?php } else {?>6<?php } ?> checkbox checkbox-primary">
-                      <input type="checkbox" name="describe[]" value="<?php echo "describe-".$value["name"]; ?>" class="checkbox pull-left" id="<?php echo "describe-".$value["name"]; ?>"/>
-                      <label class="pull-left" for="<?php echo "describe-".$value["name"]; ?>"><?php echo isset($value["label"]) ? $value["label"] : $value["name"]; ?></label>
-                    </div>
-                    <?php if(($detect->isMobile() && $index%2 === 0) || (!$detect->isMobile() && $index%3 === 0) ) { ?>
-                      <div class="clearfix visible-lg-block"></div>
-                    <?php }
-                    $index++;
-                    } ?>
-                  </div>
-                </div>
-                <div class="form-group checkboxes">
-                  <label class="block-caps control-label<?php if(!$detect->isMobile()) { ?> col-xs-3<?php } ?>">WHAT DO YOU NORMALLY DO TO RELAX?</label>
-                  <div<?php if(!$detect->isMobile()) { ?> class="col-xs-8"<?php } ?>>
-                    <?php
-                    $index = 1;
-                    foreach ($form["relax"] as $value) { ?>
-                    <div class="col-xs-<?php if(!$detect->isMobile()) { ?>4<?php } else {?>6<?php } ?> checkbox checkbox-primary">
-                      <input type="checkbox" name="relax[]" value="<?php echo "relax-".$value["name"]; ?>" class="checkbox pull-left" id="<?php echo "relax-".$value["name"]; ?>"/>
-                      <label class="pull-left" for="<?php echo "relax-".$value["name"]; ?>"><?php echo isset($value["label"]) ? $value["label"] : $value["name"]; ?></label>
-                    </div>
-                    <?php if(($detect->isMobile() && $index%2 === 0) || (!$detect->isMobile() && $index%3 === 0) ) { ?>
-                      <div class="clearfix visible-lg-block"></div>
-                    <?php }
-                    $index++;
-                    } ?>
-                  </div>
-                </div>
-                <div class="form-group checkboxes">
-                  <label class="block-caps control-label<?php if(!$detect->isMobile()) { ?> col-xs-3<?php } ?>">WHAT INTERESTS YOU MOST ABOUT JOINING THE GAZELLI HOUSE COMMUNITY?</label>
-                  <div<?php if(!$detect->isMobile()) { ?> class="col-xs-8"<?php } ?>>
-                    <?php
-                    $index = 1;
-                    foreach ($form["community"] as $value) { ?>
-                    <div class="col-xs-<?php if(!$detect->isMobile()) { ?>4<?php } else {?>6<?php } ?> checkbox checkbox-primary">
-                      <input type="checkbox" name="community[]" value="<?php echo "community-".$value["name"]; ?>" class="checkbox pull-left" id="<?php echo "community-".$value["name"]; ?>"/>
-                      <label class="pull-left" for="<?php echo "community-".$value["name"]; ?>"><?php echo isset($value["label"]) ? $value["label"] : $value["name"]; ?></label>
-                    </div>
-                    <?php if(($detect->isMobile() && $index%2 === 0) || (!$detect->isMobile() && $index%3 === 0) ) { ?>
-                      <div class="clearfix visible-lg-block"></div>
-                    <?php }
-                    $index++;
-                    } ?>
-                  </div>
-                </div>
-                <div class="form-group checkboxes">
-                  <label class="block-caps control-label<?php if(!$detect->isMobile()) { ?> col-xs-3<?php } ?>">WE WANT TO MAKE SURE THERE IS SOMETHING FOR EVERYONE IN THE GAZELLI HOUSE TO ENJOY. SO PLEASE SHARE WITH US YOUR INTERESTS. (CHOOSE UP TO 3)</label>
+                  <label class="block-caps control-label<?php if(!$detect->isMobile()) { ?> col-xs-3<?php } ?>">Please share with us your interests so we can make sure there is something for every Gazelli House member to enjoy</label>
                   <div<?php if(!$detect->isMobile()) { ?> class="col-xs-8"<?php } ?>>
                     <?php
                     $index = 1;
                     foreach ($form["share"] as $value) { ?>
-                    <div class="col-xs-<?php if(!$detect->isMobile()) { ?>4<?php } else {?>6<?php } ?> checkbox checkbox-primary">
+                    <div class="col-xs-<?php if($value["name"] === "other") { ?>6<?php } else if(!$detect->isMobile()) { ?>4<?php } else {?>6<?php } ?> checkbox checkbox-primary<?php if($value["name"] === "other") { ?> other<?php }?>">
                       <input type="checkbox" name="share[]" value="<?php echo "share-".$value["name"]; ?>" class="checkbox pull-left" id="<?php echo "share-".$value["name"]; ?>"/>
                       <label class="pull-left" for="<?php echo "share-".$value["name"]; ?>"><?php echo isset($value["label"]) ? $value["label"] : $value["name"]; ?></label>
+                      <?php if($value["name"] === "other") { ?>
+                        <input class="form-control other" type="text" />
+                      <?php } ?>
                     </div>
                     <?php if(($detect->isMobile() && $index%2 === 0) || (!$detect->isMobile() && $index%3 === 0) ) { ?>
                       <div class="clearfix visible-lg-block"></div>
                     <?php }
                     $index++;
                     } ?>
+                  </div>
+                </div>
+                <div class="form-group checkboxes terms">
+                  <div class="col-xs-10 checkbox checkbox-primary">
+                    <input type="checkbox" name="terms" value="1" class="checkbox pull-left" id="terms"/>
+                    <label class="pull-left" for="terms">I promise to treat the Gazelli House and the objects within it with the same respect I would treat my own home. I look forward to meeting and getting to
+                   know other House Members and I will always behave with compassion towards them. I understand that the House allows children at selected times only due to
+                   workshops and seminars that might be taking place. I agree to comply with the 24 hour cancellation policy that the House operates across all services. Most of all,
+                   I vow to enjoy my Membership to the fullest, and remember each day the Gazelli philosophy to Live Beautifully.</label>
                   </div>
                 </div>
                 <div class="form-group">

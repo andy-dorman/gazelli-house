@@ -131,6 +131,7 @@
 
 		if(!interests || (interests.split(' ').length < 40 || interests.split(' ').length > 110)) {
 			errors["Interests 1"] = "Your answer for Interests 1 must be between 50-100 words";
+			console.log(interests);
 			out = false;
 		}
 		if(activities.length > 3) {

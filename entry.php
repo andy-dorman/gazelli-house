@@ -5,7 +5,8 @@
 //header('Cache-Control: no-cache, must-revalidate');
 //header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
 //header('Content-type: application/json');
-require "lib/db.php";
+//require "lib/db.php";
+require "lib/config.php";
 $out = array();
 if(!$_SERVER['REQUEST_METHOD'] == "POST") {
 	$out["invalid"] = "You can't access this page directly!!";
@@ -85,6 +86,17 @@ if(!$_SERVER['REQUEST_METHOD'] == "POST") {
 	$yoga = isset($_POST['yoga']) ? 1 : 0;
 	$events = isset($_POST['events']) ? 1 : 0;
 
+	$checkboxes = array();
+	foreach($form as $key => $value) {
+		$values = isset($_POST[$key]) ? $_POST[$key] : array();
+		//print_r($values);
+		foreach($value as $element) {
+			//echo $element['name']."\n";
+			array_push($checkboxes, array($key.'-'.$element['name'] => (in_array($key.'-'.$element['name'], $values) ? 1 : 0)));
+		}
+	}
+	//print_r($checkboxes);
+
 	if($email !== $confirm_email) {
     $out['emails_do_not_match'] = "Your email addresses do not match can.";
   } else {
@@ -101,8 +113,20 @@ if(!$_SERVER['REQUEST_METHOD'] == "POST") {
   if(count($out)) {
     die(json_encode($out));
   } else {
-    $query = "INSERT INTO enquiries (full_name, dob, address1, address2, city, postcode, country, tel, email, interests, suggestions, literature, art, languages, fashion, cosmetics, spirituality, self_development, body_treatments, skincare, life_coaching, facial_treatments, alternative_therapies, travel, ayurveda, lifestyle, nutrition, fitness, theatre, ballet, socialising, relaxing, film_screenings, yoga, events) VALUES ('".$full_name."', '".$dob."', '".$address1."', '".$address2."', '".$city."', '".$postcode."', '".$country."', '".$tel."', '".$email."', '".$interests."', '".$suggestions."', '".$literature."', '".$art."', '".$languages."', '".$fashion."', '".$cosmetics."', '".$spirituality."', '".$self_development."', '".$body_treatments."', '".$skincare."', '".$life_coaching."', '".$facial_treatments."', '".$alternative_therapies."', '".$travel."', '".$ayurveda."', '".$lifestyle."', '".$nutrition."', '".$fitness."', '".$theatre."', '".$ballet."', '".$socialising."', '".$relaxing."', '".$film_screenings."', '".$yoga."', '".$events."')";
+		$insert = "full_name, dob, address1, address2, city, postcode, country, tel, email, interests";
+		$values = "'".$full_name."', '".$dob."', '".$address1."', '".$address2."', '".$city."', '".$postcode."', '".$country."', '".$tel."', '".$email."', '".$interests."'";
 
+		foreach($checkboxes as $checkbox) {
+			foreach($checkbox as $key => $value) {
+				if($value === 1) {
+					$insert .= ", ".$key;
+					$values .= ", '".$value."'";
+				}
+			}
+		}
+
+    $query = "INSERT INTO enquiries (".$insert.") VALUES (".$values.")";
+		//echo $query;
     if($result = mysql_query($query)) {
       $out["result"] = "success";
       $thanks = "";

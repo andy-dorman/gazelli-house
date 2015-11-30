@@ -44,7 +44,13 @@ $fh = fopen($fullPath, 'w');
 
     if($result = mysql_query($query, $mysqli)) {
       $data = "";
-      $data = "first name\tsurname\tdate of birth\taddress\ttel\temail\tinterests\tsuggestions\tliterature\tart\tlanguages\tfashion\tcosmetics\tspirituality\tself development\tbody treatments\tskincare\tlife coaching\tfacial treatments\talternative therapies\ttravel\tayurveda\tlifestyle\tnutrition\tfitness\ttheatre\tballet\tsocialising\trelaxing\tfilm screenings\tyoga\tevents\tdate\n";
+      $data = "first name\tsurname\tdate of birth\taddress\ttel\temail\tinterests\tsuggestions\tliterature\tart\tlanguages\tfashion\tcosmetics\tspirituality\tself development\tbody treatments\tskincare\tlife coaching\tfacial treatments\talternative therapies\ttravel\tayurveda\tlifestyle\tnutrition\tfitness\ttheatre\tballet\tsocialising\trelaxing\tfilm screenings\tyoga\tevents\t";
+      foreach($form as $key => $value) {
+        foreach($value as $element) {
+          $data .= ($element['label'] || $element['name'])." - ".$key."\t";
+        }
+      }
+      $data .= "date\n";
 ?>
 <!--
   <table class="table table-striped">
@@ -108,7 +114,13 @@ $fh = fopen($fullPath, 'w');
 
     $address = implode(', ', $addressArr);
 
-    $data .= $firstname."\t".$surname."\t".$row['dob']."\t".$address."\t".$row['tel']."\t".$row['email']."\t".preg_replace("/[\n\r]/", "", stripslashes($row['interests']))."\t".preg_replace("/[\n\r]/", "", stripslashes($row['suggestions']))."\t".$row['literature']."\t".$row['art']."\t".$row['languages']."\t".$row['fashion']."\t".$row['cosmetics']."\t".$row['spirituality']."\t".$row['self_development']."\t".$row['body_treatments']."\t".$row['skincare']."\t".$row['life_coaching']."\t".$row['facial_treatments']."\t".$row['alternative_therapies']."\t".$row['travel']."\t".$row['ayurveda']."\t".$row['lifestyle']."\t".$row['nutrition']."\t".$row['fitness']."\t".$row['theatre']."\t".$row['ballet']."\t".$row['socialising']."\t".$row['relaxing']."\t".$row['film_screenings']."\t".$row['yoga']."\t".$row['events']."\t".$row['created_at']."\n";
+    $data .= $firstname."\t".$surname."\t".$row['dob']."\t".$address."\t".$row['tel']."\t".$row['email']."\t".preg_replace("/[\n\r]/", "", stripslashes($row['interests']))."\t".preg_replace("/[\n\r]/", "", stripslashes($row['suggestions']))."\t".$row['literature']."\t".$row['art']."\t".$row['languages']."\t".$row['fashion']."\t".$row['cosmetics']."\t".$row['spirituality']."\t".$row['self_development']."\t".$row['body_treatments']."\t".$row['skincare']."\t".$row['life_coaching']."\t".$row['facial_treatments']."\t".$row['alternative_therapies']."\t".$row['travel']."\t".$row['ayurveda']."\t".$row['lifestyle']."\t".$row['nutrition']."\t".$row['fitness']."\t".$row['theatre']."\t".$row['ballet']."\t".$row['socialising']."\t".$row['relaxing']."\t".$row['film_screenings']."\t".$row['yoga']."\t".$row['events']."\t";
+    foreach($form as $key => $value) {
+  		foreach($value as $element) {
+        $data .= $row[$key.'-'.$element['name']]."\t";
+  		}
+  	}
+    $data .= $row['created_at']."\n";
       }
       fwrite($fh, $data);
     fclose($fh);

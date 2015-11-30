@@ -48,7 +48,7 @@ $detect = new Mobile_Detect;
           <li><a href="/menu.php">Treatment Menu</a></li>
           <li><a href="/about.php">About</a></li>
           <li><a href="/membership.php">Guest Registration</a></li>
-          <li><a href="http://gazellihouselondon.tumblr.com" target="_blank">Live Beautifully Campaign</a></li>
+          <li><a href="http://gazellihouselondon.tumblr.com" target="_blank">Live Beautifully</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
         </ul>
@@ -61,6 +61,7 @@ $detect = new Mobile_Detect;
         <main class="text-center menu-page" id="content" role="main">
           <div>
             <h2 class="text-center">Treatment Menu</h2>
+            <h4 class="text-center">ADVANCED COLLECTION SKINCARE</h4>
             <p>
               Our treatment menu is based on the principle of reserving time with our Facial and Body Experts. Your specific treatment plan is devised with your Expert, based on an in-depth Diagnostic consultation.
             </p>
@@ -91,17 +92,21 @@ $detect = new Mobile_Detect;
               Treatment costs are based on the amount of time reserved with your Expert, and the technologies selected.
             </p>
             <div class="row">
-              <div class="col-sm-6 text-left">
-                FACIAL TECHNOLOGIES
+              <div class="col-sm-6 text-left price-list">
+                <p>
+                  FACIAL TECHNOLOGIES
+                </p>
                 <hr/>
               </div>
-              <div class="col-sm-6 text-left">
-                TIME | PRICE
+              <div class="col-sm-6 text-left price-list">
+                <p>
+                  TIME | PRICE
+                </p>
                 <hr/>
               </div>
             </div>
             <div class="row">
-              <div class="col-sm-6 text-left">
+              <div class="col-sm-6 text-left price-list">
                 <p>
                   OXYGEN THERAPY
                 </p>
@@ -112,7 +117,7 @@ $detect = new Mobile_Detect;
                   HIGH FREQUENCY
                 </p>
               </div>
-              <div class="col-sm-6 text-left">
+              <div class="col-sm-6 text-left price-list">
                 <p>
                   30 MINS | £80
                 </p>
@@ -127,16 +132,31 @@ $detect = new Mobile_Detect;
                 </p>
               </div>
               <div class="clearfix"></div>
-              <div class="col-sm-6 text-left">
+              <div class="col-sm-6 text-left price-list">
                 <hr/>
-                <p>
-                  RADIO FREQUENCY
-                </p>
                 <p>
                   MICRO-NEEDLING
                 </p>
               </div>
-              <div class="col-sm-6 text-left">
+              <div class="col-sm-6 text-left price-list">
+                <hr/>
+                <p>
+                  30 MINS | £130
+                </p>
+                <p>
+                  60 MINS | £250
+                </p>
+
+              </div>
+              <div class="clearfix"></div>
+              <div class="col-sm-6 text-left price-list">
+                <hr/>
+                <p>
+                  RADIO FREQUENCY
+                </p>
+
+              </div>
+              <div class="col-sm-6 text-left price-list">
                 <hr/>
                 <p>
                   30 MINS | £130
