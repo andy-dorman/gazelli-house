@@ -510,7 +510,6 @@ form {
   }
 
   fieldset {
-		counter-reset: label;
     padding-bottom: 20px;
     background: #F5F2F1;
 
@@ -538,11 +537,6 @@ form {
 
 		.block-caps {
 			text-align: left !important;
-			&:before {
-				counter-increment: label;
-				content: counter(label) ".";
-				margin-right: 4px;
-			}
 		}
 
     textarea.form-control {
