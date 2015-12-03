@@ -84,7 +84,7 @@ if ($handle = opendir($img_dir)) {
         <div class="carousel-inner" role="listbox">
           <div class="item active">
             <img src="images/headers/carousel/living-room.jpg" alt="Living Room" data-animation="animated">
-            <div class="carousel-caption light">
+            <div class="carousel-caption dark">
               Living Room
             </div>
           </div>
@@ -96,7 +96,7 @@ if ($handle = opendir($img_dir)) {
           </div>
           <div class="item">
             <img src="images/headers/carousel/sky-parlour.jpg" alt="Sky Parlour" data-animation="animated">
-            <div class="carousel-caption light">
+            <div class="carousel-caption dark">
              Sky Parlour
             </div>
           </div>
@@ -138,8 +138,10 @@ if ($handle = opendir($img_dir)) {
             </div>
           </div>
           <hr/>
-          <div>
-            <a href="/membership.php" id="sign-up">Click here to sign up</a>
+          <div class="text-center footer">
+            <p>Gazelli House | 202 Walton Street | London | SW3 2JL<br/>
+              to book please contact <a href="mailto:info@gazelli.co.uk">info@gazelli.co.uk</a>
+            </p>
           </div>
         </main>
 

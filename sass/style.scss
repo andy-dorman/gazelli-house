@@ -20,6 +20,15 @@ body {
 	letter-spacing:				$letter-spacing;
 	background: 					#EAE5E3;
 	background-color: 		$site-bg;
+	a {
+		color: #444444;
+	}
+}
+
+.footer {
+	text-transform: uppercase;
+	font-size: 12px;
+	letter-spacing: 2px;
 }
 
 div.fancybox-skin {
@@ -62,8 +71,8 @@ h4 {
 
 h2 {
   font-size: 26px;
+	margin-top: 30px;
   text-transform: uppercase;
-  text-transform:       uppercase;
 }
 
 
@@ -246,6 +255,7 @@ hr {
 		&,
 		p {
 			font-family: $font-family-sans-serif-med;
+			margin-bottom: 4px;
 		}
 		hr {
 			margin: 0 0 10px;
@@ -260,15 +270,28 @@ hr {
 				 border-color: $brand-primary;
 				 border-right: 1px solid $brand-primary;
 				 border-bottom-width: 1px;
-				 padding: 10px, 16px;
+				 padding: 10px 12px;
 				 font-size: 12px;
- 				letter-spacing: 2px;
-				font-family: $font-family-sans-serif-med;
+ 				 letter-spacing: 2px;
+				 font-family: $font-family-sans-serif-med;
+			 }
+
+			 td:first-child,
+			 th:first-child {
+				 padding-left: 0;
 			 }
 
 			 th {
+				 padding-top: 2px;
 			 	text-transform: uppercase;
+				font-weight: 400;
+				&.time {
+					width: 14%
+				}
 
+				&.treatment {
+					width: 29%
+				}
 			 }
 
 			 td:last-of-type,
@@ -355,6 +378,7 @@ hr {
     margin-top: 28px;
     width: 100%;
     color: $brand-primary;
+		color: #333;
     font-size: 20px;
     text-transform: uppercase;
     letter-spacing: 20px;
@@ -602,14 +626,20 @@ form {
 
         li {
           &:hover,
-          &.selected {
+					&:focus
+          {
             background: $site-bg;
              a {
               color: $brand-primary;
              }
           }
+					&.selected {
+						a {
+						 color: $site-bg;
+						}
+					}
 
-          >a {
+          > a {
             color: $site-bg;
             &:hover {
               color: $brand-primary;
@@ -637,8 +667,16 @@ form {
       font-size:      12px;
       width:          120%;
       max-width:      120%;
+
     }
   }
+
+	.terms {
+		label {
+			text-transform: none;
+		}
+	}
+
 
   .checkbox-primary input[type="checkbox"]:checked+label::before,
   .checkbox label::before,

@@ -83,8 +83,10 @@ $detect = new Mobile_Detect;
           </p>
           </div>
           <hr/>
-          <div>
-            <a href="/membership.php" id="sign-up">Click here to sign up</a>
+          <div class="text-center footer">
+            <p>Gazelli House | 202 Walton Street | London | SW3 2JL<br/>
+              to book please contact <a href="mailto:info@gazelli.co.uk">info@gazelli.co.uk</a>
+            </p>
           </div>
         </main>
 

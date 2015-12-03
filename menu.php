@@ -188,17 +188,17 @@ $detect = new Mobile_Detect;
             <table class="table">
               <thead>
                 <tr>
-                  <th>TIME</th>
-                  <th>PRESCRIPTIVE TREATMENT</th>
-                  <th>Add<br/>Scrubs & Wraps</th>
-                  <th>Include<br/>Radio Frequency</th>
+                  <th class="time">TIME</th>
+                  <th class="treatment">PRESCRIPTIVE<br/>TREATMENT</th>
+                  <th class="treatment">Add<br/>Scrubs & Wraps</th>
+                  <th class="treatment">Include<br/>Radio Frequency</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>30 MINS</td>
-                  <td>£80</td>
-                  <td>£110</td>
+                  <td>£65</td>
+                  <td>--</td>
                   <td>£130</td>
                 </tr>
                 <tr>
@@ -210,7 +210,7 @@ $detect = new Mobile_Detect;
                 <tr>
                   <td>90 MINS</td>
                   <td>£185</td>
-                  <td>£115</td>
+                  <td>£215</td>
                   <td>£355</td>
                 </tr>
                 <tr>
@@ -226,8 +226,10 @@ $detect = new Mobile_Detect;
             </h3>
           </div>
           <hr/>
-          <div class="text-center">
-            <a href="/membership.php" id="sign-up">Click here to sign up</a>
+          <div class="text-center footer">
+            <p>Gazelli House | 202 Walton Street | London | SW3 2JL<br/>
+              to book please contact <a href="mailto:info@gazelli.co.uk">info@gazelli.co.uk</a>
+            </p>
           </div>
         </main>
 
