@@ -50,7 +50,7 @@ $detect = new Mobile_Detect;
           <li><a href="/menu.php">Treatment Menu</a></li>
           <li><a href="/about.php">About</a></li>
           <li><a href="/membership.php">Guest Registration</a></li>
-          <li><a href="http://gazellihouselondon.tumblr.com" target="_blank">Live Beautifully</a></li>
+          <!--<li><a href="http://gazellihouselondon.tumblr.com" target="_blank">Live Beautifully</a></li>-->
         </ul>
         <ul class="nav navbar-nav navbar-right">
         </ul>
@@ -115,6 +115,8 @@ $detect = new Mobile_Detect;
                 <div class="form-group">
                   <label class="control-label<?php if(!$detect->isMobile()) { ?> col-xs-3<?php } ?>">Country</label>
                   <div<?php if(!$detect->isMobile()) { ?> class="col-xs-8"<?php } ?>>
+                    <input type="text" name="country" class="form-control">
+                    <!--
                     <select class="selectpicker col-xs-12">
                       <option class="text-center" value="" class="text-center">Select one</option>
                       <option class="text-center" value="Afghanistan">Afghanistan</option>
@@ -361,7 +363,7 @@ $detect = new Mobile_Detect;
                       <option class="text-center" value="Yemen">Yemen</option>
                       <option class="text-center" value="Zambia">Zambia</option>
                       <option class="text-center" value="Zimbabwe">Zimbabwe</option>
-                    </select>
+                    </select>-->
                   </div>
                 </div>
                 <div class="form-group">
@@ -393,7 +395,7 @@ $detect = new Mobile_Detect;
                       <input type="checkbox" name="enjoy[]" value="<?php echo "enjoy-".$value["name"]; ?>" class="checkbox pull-left" id="<?php echo "enjoy-".$value["name"]; ?>"/>
                       <label class="pull-left" for="<?php echo "enjoy-".$value["name"]; ?>"><?php echo isset($value["label"]) ? $value["label"] : $value["name"]; ?></label>
                       <?php if($value["name"] === "other") { ?>
-                        <input class="form-control other" type="text" />
+                        <input class="form-control other" name="enjoy-other" type="text" value=""/>
                       <?php } ?>
                     </div>
                     <?php if(($detect->isMobile() && $index%2 === 0) || (!$detect->isMobile() && $index%3 === 0) ) { ?>
@@ -413,7 +415,7 @@ $detect = new Mobile_Detect;
                       <input type="checkbox" name="share[]" value="<?php echo "share-".$value["name"]; ?>" class="checkbox pull-left" id="<?php echo "share-".$value["name"]; ?>"/>
                       <label class="pull-left" for="<?php echo "share-".$value["name"]; ?>"><?php echo isset($value["label"]) ? $value["label"] : $value["name"]; ?></label>
                       <?php if($value["name"] === "other") { ?>
-                        <input class="form-control other" type="text" />
+                        <input class="form-control other" name="share-other" type="text" value=""/>
                       <?php } ?>
                     </div>
                     <?php if(($detect->isMobile() && $index%2 === 0) || (!$detect->isMobile() && $index%3 === 0) ) { ?>

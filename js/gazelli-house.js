@@ -84,6 +84,21 @@
 	  /*$("label").each(function () {
 	      $(this).css("display", "none");
 	  });*/
+		$('#membership-registration').find('input[value$="-other"][type=checkbox]').change(function(){
+			var text = $(this).siblings('input').first();
+			if(!$(this).is(':checked')) {
+				text.val('');
+			}
+		});
+
+		$('#membership-registration').find('input[name$="-other"][type=text]').keyup(function() {
+			var checkbox = $(this).siblings('input').first();
+			if($(this).val()) {
+				checkbox.prop('checked', true);
+      } else {
+				checkbox.prop('checked', false);
+			}
+		});
   }
 
   if($('#membership-registration').size()) {
@@ -107,92 +122,93 @@
 
 	function validateForm(formData, jqForm, options) {
     var out = true;
-		var errors = [];
-
-		var interests = _.chain(formData).filter(function(data) {
-			return data.name === "interests";
-		}).first().get('value').value();
-
-		var share = _.filter(formData, function(data) {
-			return data.name === "share[]";
-		});
-
-		var surround = _.filter(formData, function(data) {
-			return data.name === "surround[]";
-		});
-
-		var time = _.filter(formData, function(data) {
-			return data.name === "time[]";
-		});
-
-		var activities = _.filter(formData, function(data) {
-			return data.name === "activities[]";
-		});
-
-		if(!interests || (interests.split(' ').length < 40 || interests.split(' ').length > 110)) {
-			errors["Interests 1"] = "Your answer for Interests 1 must be between 50-100 words";
-			console.log(interests);
-			out = false;
-		}
-		if(activities.length > 3) {
-			errors["Interests 2"] = "You cannot select more than 3 options from Interests question 2";
-			out = false;
-		}
-
-		if(time.length > 3) {
-			errors["Interests 3"] = "You cannot select more than 3 options from Interests question 4";
-			out = false;
-		}
-
-		if(surround.length > 3) {
-			errors["Interests 5"] = "You cannot select more than 3 options from Interests question 5";
-			out = false;
-		}
-
-		if(share.length > 3) {
-			errors["Interests 9"] = "You cannot select more than 3 options from Interests question 9";
-			out = false;
-		}
-
-		if(_.keys(errors).length > 0) {
-			var error = '';
-			Object.keys(errors).forEach(function(key, idx) {
-				if(errors[key]) {
-					error += "<h4>" + key.replace(/_/g, ' ') + "</h4>\n";
-					error += "<p>" + errors[key] + "</p>\n";
-				}
-			})
-
-			content = '<div id="form-errors"><h3>There\'s a problem</h3>' + error + '<button class="btn btn-primary">OK</button></div>';
-		}
-
-		$.fancybox({
-			fixed: true,
-			enableEscapeButton : true,
-			overlayShow : true,
-			content: content,
-			fitToView: true,
-			autoSize: true,
-			closeClick: true,
-			closeBtn: false,
-			openEffect: 'none',
-			closeEffect: 'none',
-			scrolling: 'yes',
-			padding: 0,
-			afterClose: function(){
-				$(window).trigger('fancyboxClosed');
-			},
-			helpers   : {
-				overlay: {
-					css: {'background': 'rgba(0,0,0,0.8)'} // or your preferred hex color value
-				} // overlay
-			} // helpers
-		});
-
-		$('#success-message button, #form-errors button').click(function(e){
-			e.preventDefault();
-			$.fancybox.close();
-		});
+		// var errors = [];
+		//
+		// var interests = _.chain(formData).filter(function(data) {
+		// 	return data.name === "interests";
+		// }).first().get('value').value();
+		//
+		// var share = _.filter(formData, function(data) {
+		// 	return data.name === "share[]";
+		// });
+		//
+		// var surround = _.filter(formData, function(data) {
+		// 	return data.name === "surround[]";
+		// });
+		//
+		// var time = _.filter(formData, function(data) {
+		// 	return data.name === "time[]";
+		// });
+		//
+		// var activities = _.filter(formData, function(data) {
+		// 	return data.name === "activities[]";
+		// });
+		//
+		// if(!interests || (interests.split(' ').length < 40 || interests.split(' ').length > 110)) {
+		// 	errors["Interests 1"] = "Your answer for Interests 1 must be between 50-100 words";
+		// 	console.log(interests);
+		// 	out = false;
+		// }
+		//
+		// if(activities.length > 3) {
+		// 	errors["Interests 2"] = "You cannot select more than 3 options from Interests question 2";
+		// 	out = false;
+		// }
+		//
+		// if(time.length > 3) {
+		// 	errors["Interests 3"] = "You cannot select more than 3 options from Interests question 4";
+		// 	out = false;
+		// }
+		//
+		// if(surround.length > 3) {
+		// 	errors["Interests 5"] = "You cannot select more than 3 options from Interests question 5";
+		// 	out = false;
+		// }
+		//
+		// if(share.length > 3) {
+		// 	errors["Interests 9"] = "You cannot select more than 3 options from Interests question 9";
+		// 	out = false;
+		// }
+		//
+		// if(_.keys(errors).length > 0) {
+		// 	var error = '';
+		// 	Object.keys(errors).forEach(function(key, idx) {
+		// 		if(errors[key]) {
+		// 			error += "<h4>" + key.replace(/_/g, ' ') + "</h4>\n";
+		// 			error += "<p>" + errors[key] + "</p>\n";
+		// 		}
+		// 	})
+		//
+		// 	content = '<div id="form-errors"><h3>There\'s a problem</h3>' + error + '<button class="btn btn-primary">OK</button></div>';
+		// }
+		//
+		// $.fancybox({
+		// 	fixed: true,
+		// 	enableEscapeButton : true,
+		// 	overlayShow : true,
+		// 	content: content,
+		// 	fitToView: true,
+		// 	autoSize: true,
+		// 	closeClick: true,
+		// 	closeBtn: false,
+		// 	openEffect: 'none',
+		// 	closeEffect: 'none',
+		// 	scrolling: 'yes',
+		// 	padding: 0,
+		// 	afterClose: function(){
+		// 		$(window).trigger('fancyboxClosed');
+		// 	},
+		// 	helpers   : {
+		// 		overlay: {
+		// 			css: {'background': 'rgba(0,0,0,0.8)'} // or your preferred hex color value
+		// 		} // overlay
+		// 	} // helpers
+		// });
+		//
+		// $('#success-message button, #form-errors button').click(function(e){
+		// 	e.preventDefault();
+		// 	$.fancybox.close();
+		// });
 
     return out;
 	}

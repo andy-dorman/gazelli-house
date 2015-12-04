@@ -67,6 +67,7 @@ h4 {
 h4 {
 	font-size: 16px;
 	margin-bottom: 16px;
+	font-weight: 800;
 }
 
 h2 {
@@ -75,7 +76,11 @@ h2 {
   text-transform: uppercase;
 }
 
-
+.item {
+	h2 {
+		margin-top: 20px;
+	}
+}
 
 .navbar-header {
   position:         relative;
@@ -693,6 +698,9 @@ form {
   padding: 1px 10px 10px 10px;
   h3,
   h4 {
+		letter-spacing: 2px;
+		margin: 10px 0;
+		font-weight: 800;
     text-transform: capitalize;
   }
   h4 {

@@ -67,7 +67,7 @@ if ($handle = opendir($img_dir)) {
           <li><a href="/menu.php">Treatment Menu</a></li>
           <li><a href="/about.php">About</a></li>
           <li><a href="/membership.php">Guest Registration</a></li>
-          <li><a href="http://gazellihouselondon.tumblr.com" target="_blank">Live Beautifully</a></li>
+          <!--<li><a href="http://gazellihouselondon.tumblr.com" target="_blank">Live Beautifully</a></li>-->
         </ul>
         <ul class="nav navbar-nav navbar-right">
         </ul>
@@ -84,7 +84,7 @@ if ($handle = opendir($img_dir)) {
         <div class="carousel-inner" role="listbox">
           <div class="item active">
             <img src="images/headers/carousel/living-room.jpg" alt="Living Room" data-animation="animated">
-            <div class="carousel-caption dark">
+            <div class="carousel-caption light">
               Living Room
             </div>
           </div>
@@ -96,7 +96,7 @@ if ($handle = opendir($img_dir)) {
           </div>
           <div class="item">
             <img src="images/headers/carousel/sky-parlour.jpg" alt="Sky Parlour" data-animation="animated">
-            <div class="carousel-caption dark">
+            <div class="carousel-caption light">
              Sky Parlour
             </div>
           </div>

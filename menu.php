@@ -48,7 +48,7 @@ $detect = new Mobile_Detect;
           <li><a href="/menu.php">Treatment Menu</a></li>
           <li><a href="/about.php">About</a></li>
           <li><a href="/membership.php">Guest Registration</a></li>
-          <li><a href="http://gazellihouselondon.tumblr.com" target="_blank">Live Beautifully</a></li>
+          <!--<li><a href="http://gazellihouselondon.tumblr.com" target="_blank">Live Beautifully</a></li>-->
         </ul>
         <ul class="nav navbar-nav navbar-right">
         </ul>
@@ -75,8 +75,8 @@ $detect = new Mobile_Detect;
             <p>
               Following the Diagnostics each guest is contacted by a Gazelli House representative with their individual treatment plan, an ongoing program devised to help them achieve an authentic and long-lasting sense of balance across their skin, body and mind.
             </p>
-            <p>
-              <strong>45 MINS | £50</strong>
+            <p class="price-list">
+              45 MINS | £50
             </p>
             <h3 class="book">
               <strong>TO BOOK:</strong> Please call <strong>0207 581 4355</strong> or email <a href="mailto:bookings@gazelli.co.uk">bookings@gazelli.co.uk</a>
