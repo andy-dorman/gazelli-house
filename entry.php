@@ -124,14 +124,14 @@ if(!$_SERVER['REQUEST_METHOD'] == "POST") {
 		foreach($checkboxes as $checkbox) {
 			foreach($checkbox as $key => $value) {
 				if($value === 1) {
-					$insert .= ", ".$key;
+					$insert .= ", `".$key."`";
 					$values .= ", '".$value."'";
 				}
 			}
 		}
 
     $query = "INSERT INTO enquiries (".$insert.") VALUES (".$values.")";
-		echo $query;
+
     if($result = mysql_query($query)) {
       $out["result"] = "success";
       $thanks = "";
