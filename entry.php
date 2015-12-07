@@ -100,7 +100,7 @@ if(!$_SERVER['REQUEST_METHOD'] == "POST") {
 			}
 		}
 	}
-	print_r($checkboxes);
+	//print_r($checkboxes);
 
 	if($email !== $confirm_email) {
     $out['emails_do_not_match'] = "Your email addresses do not match can.";
