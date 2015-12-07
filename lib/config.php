@@ -29,7 +29,6 @@ array_push($share, array("name" =>  "spirituality"));
 array_push($share, array("name" =>  "music"));
 array_push($share, array("name" =>  "networking"));
 array_push($share, array("name" =>  "self-development"));
-array_push($share, array("name" =>  "networking"));
 array_push($share, array("name" =>  "diy", "label" => "DIY Activities"));
 array_push($share, array("name" =>  "other", "label" => "Other (Please Specify)"));
 $form["share"] = $share;
