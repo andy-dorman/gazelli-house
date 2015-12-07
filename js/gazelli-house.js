@@ -194,7 +194,7 @@
 			out = false;
 		}
 
-		if(terms.length === 0) {
+		if(terms.length !== 1) {
 			errors["Terms"] = "You must agree to the terms and conditions";
 			out = false;
 		}
