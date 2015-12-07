@@ -48,6 +48,9 @@ $fh = fopen($fullPath, 'w');
       foreach($form as $key => $value) {
         foreach($value as $element) {
           $data .= ($element['label'] || $element['name'])." - ".$key."\t";
+          if($element['name'] === 'other') {
+            $data .= "Other value - ".$key."\t";
+          }
         }
       }
       $data .= "date\n";
@@ -118,6 +121,9 @@ $fh = fopen($fullPath, 'w');
     foreach($form as $key => $value) {
   		foreach($value as $element) {
         $data .= $row[$key.'-'.$element['name']]."\t";
+        if($element['name'] === 'other') {
+          $data .= ($row[$key.'-'.$element['name'].'-value'] || "")."\t";
+        }
   		}
   	}
     $data .= $row['created_at']."\n";

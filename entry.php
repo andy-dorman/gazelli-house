@@ -92,10 +92,15 @@ if(!$_SERVER['REQUEST_METHOD'] == "POST") {
 		//print_r($values);
 		foreach($value as $element) {
 			//echo $element['name']."\n";
+
 			array_push($checkboxes, array($key.'-'.$element['name'] => (in_array($key.'-'.$element['name'], $values) ? 1 : 0)));
+			if($element['name'] === 'other' && in_array($key.'-'.$element['name'], $values)) {
+				$formKey = $key.'-'.$element['name'];
+				array_push($checkboxes, array($key.'-'.$element['name'].'-value' => $_POST[$formKey]));
+			}
 		}
 	}
-	//print_r($checkboxes);
+	print_r($checkboxes);
 
 	if($email !== $confirm_email) {
     $out['emails_do_not_match'] = "Your email addresses do not match can.";

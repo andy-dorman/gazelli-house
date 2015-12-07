@@ -88,6 +88,8 @@
 			var text = $(this).siblings('input').first();
 			if(!$(this).is(':checked')) {
 				text.val('');
+			} else {
+				text.focus();
 			}
 		});
 
@@ -122,8 +124,8 @@
 
 	function validateForm(formData, jqForm, options) {
     var out = true;
-		// var errors = [];
-		//
+		var errors = [];
+
 		// var interests = _.chain(formData).filter(function(data) {
 		// 	return data.name === "interests";
 		// }).first().get('value').value();
@@ -170,45 +172,72 @@
 		// 	out = false;
 		// }
 		//
-		// if(_.keys(errors).length > 0) {
-		// 	var error = '';
-		// 	Object.keys(errors).forEach(function(key, idx) {
-		// 		if(errors[key]) {
-		// 			error += "<h4>" + key.replace(/_/g, ' ') + "</h4>\n";
-		// 			error += "<p>" + errors[key] + "</p>\n";
-		// 		}
-		// 	})
-		//
-		// 	content = '<div id="form-errors"><h3>There\'s a problem</h3>' + error + '<button class="btn btn-primary">OK</button></div>';
-		// }
-		//
-		// $.fancybox({
-		// 	fixed: true,
-		// 	enableEscapeButton : true,
-		// 	overlayShow : true,
-		// 	content: content,
-		// 	fitToView: true,
-		// 	autoSize: true,
-		// 	closeClick: true,
-		// 	closeBtn: false,
-		// 	openEffect: 'none',
-		// 	closeEffect: 'none',
-		// 	scrolling: 'yes',
-		// 	padding: 0,
-		// 	afterClose: function(){
-		// 		$(window).trigger('fancyboxClosed');
-		// 	},
-		// 	helpers   : {
-		// 		overlay: {
-		// 			css: {'background': 'rgba(0,0,0,0.8)'} // or your preferred hex color value
-		// 		} // overlay
-		// 	} // helpers
-		// });
-		//
-		// $('#success-message button, #form-errors button').click(function(e){
-		// 	e.preventDefault();
-		// 	$.fancybox.close();
-		// });
+		var terms = _.filter(formData, function(data) {
+			return data.name === "terms";
+		})
+
+		var shareOther = _.filter(formData, function(data) {
+			return data.name === "share[]" && data.value === 'share-other';
+		})
+
+		if(shareOther.length > 0 && _.chain(formData).filter(function(data) { return data.name === 'share-other'}).first().get('value').value() === "") {
+			errors["Share - other"] = "You must supply your alternative option";
+			out = false;
+		}
+
+		var enjoyOther = _.filter(formData, function(data) {
+			return data.name === "enjoy[]" && data.value === 'enjoy-other';
+		})
+
+		if(enjoyOther.length > 0 && _.chain(formData).filter(function(data) { return data.name === 'enjoy-other'}).first().get('value').value() === "") {
+			errors["Enjoy - other"] = "You must supply your alternative option";
+			out = false;
+		}
+
+		if(terms.length === 0) {
+			errors["Terms"] = "You must agree to the terms and conditions";
+			out = false;
+		}
+
+		if(_.keys(errors).length > 0) {
+			var error = '';
+			Object.keys(errors).forEach(function(key, idx) {
+				if(errors[key]) {
+					error += "<h4>" + key.replace(/_/g, ' ') + "</h4>\n";
+					error += "<p>" + errors[key] + "</p>\n";
+				}
+			})
+
+			content = '<div id="form-errors"><h3>There\'s a problem</h3>' + error + '<button class="btn btn-primary">OK</button></div>';
+		}
+
+		$.fancybox({
+			fixed: true,
+			enableEscapeButton : true,
+			overlayShow : true,
+			content: content,
+			fitToView: true,
+			autoSize: true,
+			closeClick: true,
+			closeBtn: false,
+			openEffect: 'none',
+			closeEffect: 'none',
+			scrolling: 'yes',
+			padding: 0,
+			afterClose: function(){
+				$(window).trigger('fancyboxClosed');
+			},
+			helpers   : {
+				overlay: {
+					css: {'background': 'rgba(0,0,0,0.8)'} // or your preferred hex color value
+				} // overlay
+			} // helpers
+		});
+
+		$('#success-message button, #form-errors button').click(function(e){
+			e.preventDefault();
+			$.fancybox.close();
+		});
 
     return out;
 	}

@@ -10,7 +10,7 @@ array_push($enjoy, array("name" =>  "knowledge"));
 array_push($enjoy, array("name" =>  "improve-confidence", "label" => "Improve Confidence"));
 array_push($enjoy, array("name" =>  "socialising"));
 array_push($enjoy, array("name" =>  "relaxation"));
-array_push($enjoy, array("name" =>  "improve-self-love", "label" => "Imrove Self-love"));
+array_push($enjoy, array("name" =>  "improve-self-love", "label" => "Improve Self-love"));
 array_push($enjoy, array("name" =>  "feel-beautiful", "label" => "Feel Beautiful"));
 array_push($enjoy, array("name" =>  "time-for-myself", "label" => "Time For Myself"));
 array_push($enjoy, array("name" =>  "time-to-think-or-stop-thinking", "label" => "Time To Think Or Stop Thinking"));

@@ -67,10 +67,10 @@ $detect = new Mobile_Detect;
             </p>
             <h3>DIAGNOSTICS</h3>
             <p>
-              Gazelli’s skincare experts have worked alongside leading psychologists and lifestyle specialists to develop our unique 3-stage Diagnostics Programme. An essential and integral part of the Gazelli journey, the Diagnostics are designed to ensure that each guest feels comfortable and encouraged to engage with the House on every level.
+              Gazelli’s Skincare Experts have worked alongside leading psychologists and lifestyle specialists to develop our unique 3-stage Diagnostics Programme. An essential and integral part of the Gazelli journey, the Diagnostics are designed to ensure that each guest feels comfortable and encouraged to engage with the House on every level.
             </p>
             <p>
-              A series of targeted questions and sensory experiences help to establish each individualÕs core values, character traits and overall health and well-being. This is followed by a 7-phase facial or body analysis that closely examines the fundamental characteristics of the skin, and is used to inform the Prescriptive Treatment plan.
+              A series of targeted questions and sensory experiences help to establish each individuals core values, character traits and overall health and well-being. This is followed by a 7-phase facial or body analysis that closely examines the fundamental characteristics of the skin, and is used to inform the Prescriptive Treatment plan.
             </p>
             <p>
               Following the Diagnostics each guest is contacted by a Gazelli House representative with their individual treatment plan, an ongoing program devised to help them achieve an authentic and long-lasting sense of balance across their skin, body and mind.
