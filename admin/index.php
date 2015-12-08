@@ -48,9 +48,6 @@ $fh = fopen($fullPath, 'w');
       foreach($form as $key => $value) {
         foreach($value as $element) {
           $data .= $element['label'] ? $element['label']." - ".$key."\t" : $element['name']." - ".$key."\t";
-          if($element['name'] === 'other') {
-            $data .= "Other value - ".$key."\t";
-          }
         }
       }
       $data .= "date\n";
@@ -120,9 +117,11 @@ $fh = fopen($fullPath, 'w');
     $data .= $firstname."\t".$surname."\t".$row['dob']."\t".$address."\t".$row['tel']."\t".$row['email']."\t".preg_replace("/[\n\r]/", "", stripslashes($row['interests']))."\t".preg_replace("/[\n\r]/", "", stripslashes($row['suggestions']))."\t".$row['literature']."\t".$row['art']."\t".$row['languages']."\t".$row['fashion']."\t".$row['cosmetics']."\t".$row['spirituality']."\t".$row['self_development']."\t".$row['body_treatments']."\t".$row['skincare']."\t".$row['life_coaching']."\t".$row['facial_treatments']."\t".$row['alternative_therapies']."\t".$row['travel']."\t".$row['ayurveda']."\t".$row['lifestyle']."\t".$row['nutrition']."\t".$row['fitness']."\t".$row['theatre']."\t".$row['ballet']."\t".$row['socialising']."\t".$row['relaxing']."\t".$row['film_screenings']."\t".$row['yoga']."\t".$row['events']."\t";
     foreach($form as $key => $value) {
   		foreach($value as $element) {
-        $data .= $row[$key.'-'.$element['name']]."\t";
+
         if($element['name'] === 'other') {
-          $data .= $row[$key.'-'.$element['name'].'-value']."\t";
+          $data .= $row[$key.'-'.$element['name'].'-value'] ? $row[$key.'-'.$element['name'].'-value']."\t" : "0"."\t";
+        } else {
+          $data .= $row[$key.'-'.$element['name']]."\t";
         }
   		}
   	}
