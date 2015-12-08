@@ -123,10 +123,8 @@ if(!$_SERVER['REQUEST_METHOD'] == "POST") {
 
 		foreach($checkboxes as $checkbox) {
 			foreach($checkbox as $key => $value) {
-				if($value === 1) {
-					$insert .= ", `".$key."`";
-					$values .= ", '".$value."'";
-				}
+				$insert .= ", `".$key."`";
+				$values .= ", '".$value."'";
 			}
 		}
 

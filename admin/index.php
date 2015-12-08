@@ -47,7 +47,7 @@ $fh = fopen($fullPath, 'w');
       $data = "first name\tsurname\tdate of birth\taddress\ttel\temail\tinterests\tsuggestions\tliterature\tart\tlanguages\tfashion\tcosmetics\tspirituality\tself development\tbody treatments\tskincare\tlife coaching\tfacial treatments\talternative therapies\ttravel\tayurveda\tlifestyle\tnutrition\tfitness\ttheatre\tballet\tsocialising\trelaxing\tfilm screenings\tyoga\tevents\t";
       foreach($form as $key => $value) {
         foreach($value as $element) {
-          $data .= ($element['label'] || $element['name'])." - ".$key."\t";
+          $data .= $element['label'] ? $element['label']." - ".$key."\t" : $element['name']." - ".$key."\t";
           if($element['name'] === 'other') {
             $data .= "Other value - ".$key."\t";
           }
