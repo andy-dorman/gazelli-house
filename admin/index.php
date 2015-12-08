@@ -122,7 +122,7 @@ $fh = fopen($fullPath, 'w');
   		foreach($value as $element) {
         $data .= $row[$key.'-'.$element['name']]."\t";
         if($element['name'] === 'other') {
-          $data .= ($row[$key.'-'.$element['name'].'-value'] || "")."\t";
+          $data .= $row[$key.'-'.$element['name'].'-value']."\t";
         }
   		}
   	}

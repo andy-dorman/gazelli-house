@@ -129,7 +129,7 @@ if(!$_SERVER['REQUEST_METHOD'] == "POST") {
 		}
 
     $query = "INSERT INTO enquiries (".$insert.") VALUES (".$values.")";
-		echo $query;
+
     if($result = mysql_query($query)) {
       $out["result"] = "success";
       $thanks = "";
