@@ -813,3 +813,195 @@ form {
     }
   }
 }
+
+#calendar-container {
+	width: 310px;
+}
+.calendar-nav {
+	height: 25px;
+	position: relative;
+	button {
+		background: none;
+		border: none;
+		padding: 0;
+		height: 25px;
+		width: 25px;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		& ~ button {
+			left: auto;
+			right: 0px;
+		}
+	}
+}
+
+.cal-day-today {
+	background-color: transparent;
+}
+
+.cal-row-fluid{
+	.cal-cell,
+	.cal-day-weekend span[data-cal-date],
+	.cal-day-holiday span[data-cal-date],
+	&:hover {
+		color: #444444;
+		background-color: $brand-secondary;
+	}
+	.cal-cell:hover,
+	.cal-day-weekend span[data-cal-date]:hover,
+	.cal-day-holiday span[data-cal-date]:hover, {
+		background-color: $brand-primary;
+		color: #fff;
+	}
+
+	.cal-day-outmonth {
+		&:hover {
+			background: transparent;
+		}
+		span[data-cal-date] {
+			opacity: 0.3;
+		}
+	}
+	.cal-day-today {
+		color: #fff;
+		span[data-cal-date] {
+			background-color: #946D46;
+			color: #fff;
+			opacity: 1;
+		}
+	}
+}
+
+.cal-month-box .cal-day-today span[data-cal-date] {
+	font-size: 1.2em;
+}
+
+.cal-year-box [class*="span"],
+.cal-month-box [class*="cal-cell"] {
+	height: 25px;
+	min-height: 25px;
+	.cal-month-day {
+		height: 25px;
+	}
+}
+
+span[data-cal-date] {
+	margin: auto;
+	text-align: center;
+	display: block;
+	width: 100%;
+	line-height: 25px;
+	&.event-day {
+		background-color: #C09E78 !important;
+	}
+	&.active {
+		background-color: #946D46 !important;
+	}
+}
+
+
+.month-title {
+	text-transform: uppercase;
+	line-height: 25px;
+	font-size: 14px;
+	display: inline-block;
+	color: white;
+	font-weight: 800;
+	width: 100%;
+	margin: auto;
+	text-align: center;
+}
+.cal-row-head {
+	display: none;
+}
+
+.calendar-nav {
+	width:	100%;
+	background: $brand-primary;
+}
+
+form {
+	label {
+		min-width: 250px;
+	}
+
+	input[type=file] {
+		display: inline-block;
+	}
+}
+
+#events {
+	h3 {
+		background: #999999;
+		text-align: center;
+		text-transform: uppercase;
+		color: white;
+		padding: 5px;
+	}
+	.panel-default {
+		&.panel {
+			position: relative;
+			border: none;
+			margin-bottom: 5px;
+			font-size: 12px;
+		}
+		> .panel-heading {
+			padding: 0;
+			background: #C09E78;
+			.panel-title {
+				a {
+					width: 100%;
+					display: block;
+					padding: 10px 15px;
+					text-decoration: none;
+					&:hover,
+					&:active,
+					&:link,
+					&:visited {
+						text-decoration: none;
+					}
+					span {
+						color: white;
+						padding-right: 20px;
+						border-right: 1px solid white;
+						& ~ span {
+							border: none;
+							padding: 0;
+							padding-left: 20px;
+						}
+					}
+				}
+			}
+		}
+		.event-image {
+			width: 150px;
+			float: right;
+		}
+		.event-footer {
+			position: absolute;
+			bottom: 10px;
+			text-transform: uppercase;
+			strong {
+				& ~ strong {
+					padding-left: 10px;
+					border-left: 1px solid #333;
+				}
+			}
+			span {
+
+				padding: 0 10px;
+				& ~ span {
+					border: none;
+				}
+			}
+		}
+	}
+}
+.tab {
+	display: none;
+	padding-top: 20px;
+}
+.nav-tabs {
+	margin-top: 20px;
+}
