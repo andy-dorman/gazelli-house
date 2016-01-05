@@ -115,9 +115,9 @@ if($id) {
 mysql_close($mysqli);
 //if($uploadOk === 1) {
   $redirect = "http://".$_SERVER['HTTP_HOST']."/admin";
-  echo "<script language='javascript'>\n";
-  echo "window.location.href='".$redirect."';";
-  echo "</script>\n";
+  // echo "<script language='javascript'>\n";
+  // echo "window.location.href='".$redirect."';";
+  // echo "</script>\n";
 //}
 
 ?>
