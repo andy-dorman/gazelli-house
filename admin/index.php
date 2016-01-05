@@ -350,7 +350,7 @@ $fh = fopen($fullPath, 'w');
 
 
         var eventFooterEl = $('<div/>', {
-          class: 'event-footer col-xs-9',
+          class: 'event-footer col-xs-12',
           html:  footerHtml
         }).appendTo(eventBodyEl);
 
