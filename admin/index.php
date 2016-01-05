@@ -336,6 +336,7 @@ $fh = fopen($fullPath, 'w');
     }
   });
 
+
   $('.calendar-nav button[data-calendar-nav]').each(function() {
 		var $this = $(this);
 		$this.click(function() {

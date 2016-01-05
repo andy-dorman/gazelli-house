@@ -1,8 +1,8 @@
 <?php
 require "../lib/db.php";
-
 $date = mysql_real_escape_string($_POST['date']);
-$month = date_parse($date)["month"];
+$parsedDate = date_parse($date);
+$month = $parsedDate["month"];
 $query = "SELECT * from events WHERE month(date) = '".$month."'";
 $out = array();
 if($result = mysql_query($query)) {
