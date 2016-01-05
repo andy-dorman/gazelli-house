@@ -90,20 +90,22 @@ if ($uploadOk == 0) {
 }
 
 if($id) {
-  $query = "UPDATE events SET title='".$title."', date='".$date."',host='".$host."',description='".$description."',price='".$price."',time='".$time."',duration='".$duration."',location='".$location."',eventbrite_code='".$eventbrite_code."',image='".$image."',active=".$active." WHERE id=".$id;
-
+  $query = "UPDATE events SET title='".$title."', date='".$date."',host='".$host."',description='".$description."',price='".$price."',time='".$time."',duration='".$duration."',location='".$location."',eventbrite_code='".$eventbrite_code."',active=".$active.",eventbrite_code='".$eventbrite_code."'";
+  if($image) {
+    $query .= ",image='".$image."'";
+  }
+  $query .= " WHERE id=".$id;
   if($result = mysql_query($query)) {
 
   } else {
     //echo mysql_error();
   }
 } else {
-  $insert = "title,date,host,description,price,time,duration,location,active";
+  $insert = "title,date,host,description,price,time,duration,location,eventbrite_code,active";
   if($image) {
     $insert .= ",image";
   }
-  //$values = "'".$title."', '".$date."', '".$host."', '".$description."', '".$price."', '".$time."', '".$duration."', '".$location."', '".$eventbrite_code."', '".$image."', ".$active;
-  $values = "'".$title."', '".$date."', '".$host."', '".$description."', '".$price."', '".$time."', '".$duration."', '".$location."', ".$active;
+  $values = "'".$title."', '".$date."', '".$host."', '".$description."', '".$price."', '".$time."', '".$duration."', '".$location."', '".$eventbrite_code."', ".$active;
   if($image) {
     $insert .= ",image";
     $values .= ", '".$image."'";
