@@ -79,13 +79,6 @@ if ($uploadOk == 0) {
   if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
     //echo "The file ". basename( $_FILES["image"]["name"]). " has been uploaded.";
     $image = $_FILES["image"]["name"];
-    if($result = mysql_query($query)) {
-
-    } else {
-      //echo mysql_error();
-    }
-  } else {
-      //echo "Sorry, there was an error uploading your file.";
   }
 }
 
@@ -95,6 +88,7 @@ if($id) {
     $query .= ",image='".$image."'";
   }
   $query .= " WHERE id=".$id;
+  echo $query;
   if($result = mysql_query($query)) {
 
   } else {
