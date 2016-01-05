@@ -78,17 +78,16 @@ if ($uploadOk == 0) {
 } else {
   if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
     //echo "The file ". basename( $_FILES["image"]["name"]). " has been uploaded.";
-    $image = $_FILES["image"]["name"];
   }
+  $image = $_FILES["image"]["name"];
 }
 
 if($id) {
-  $query = "UPDATE events SET title='".$title."', date='".$date."',host='".$host."',description='".$description."',price='".$price."',time='".$time."',duration='".$duration."',location='".$location."',eventbrite_code='".$eventbrite_code."',active=".$active.",eventbrite_code='".$eventbrite_code."'";
+  $query = "UPDATE events SET title='".$title."', date='".$date."',host='".$host."',description='".$description."',price='".$price."',time='".$time."',duration='".$duration."',location='".$location."',eventbrite_code='".$eventbrite_code."',active=".$active;
   if($image) {
     $query .= ",image='".$image."'";
   }
   $query .= " WHERE id=".$id;
-  echo $query;
   if($result = mysql_query($query)) {
 
   } else {
@@ -115,9 +114,9 @@ if($id) {
 mysql_close($mysqli);
 //if($uploadOk === 1) {
   $redirect = "http://".$_SERVER['HTTP_HOST']."/admin";
-  // echo "<script language='javascript'>\n";
-  // echo "window.location.href='".$redirect."';";
-  // echo "</script>\n";
+  echo "<script language='javascript'>\n";
+  echo "window.location.href='".$redirect."';";
+  echo "</script>\n";
 //}
 
 ?>
