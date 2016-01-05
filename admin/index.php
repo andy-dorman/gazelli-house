@@ -324,7 +324,7 @@ $fh = fopen($fullPath, 'w');
 
         var eventBodyEl = $('<div/>', {
           class: 'event-description panel-body row',
-          html: '<p class="col-xs-9">' + event['description'] + '</p>'
+          html: '<p class="col-xs-9" style="padding-bottom: 10px;">' + event['description'] + '</p>'
         }).appendTo(eventPanelEl);
 
         if(event['image']) {
