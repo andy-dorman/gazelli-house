@@ -327,7 +327,7 @@ $fh = fopen($fullPath, 'w');
           html: '<p class="col-xs-9">' + event['description'] + '</p>'
         }).appendTo(eventPanelEl);
 
-        if(event['image'] !== '') {
+        if(event['image']) {
           var eventImageEl = $('<img/>', {
             class: 'event-image col-xs-3',
             src: '/images/events/' + event['image']
