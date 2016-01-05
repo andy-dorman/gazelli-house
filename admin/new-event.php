@@ -1,6 +1,9 @@
 <?php
 require "../lib/db.php";
 
+if($_POST['id']) {
+  $id = mysql_real_escape_string($_POST['id']);
+}
 if($_POST['title']) {
   $title = mysql_real_escape_string($_POST['title']);
 }
@@ -76,9 +79,6 @@ if ($uploadOk == 0) {
   if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
     //echo "The file ". basename( $_FILES["image"]["name"]). " has been uploaded.";
     $image = $_FILES["image"]["name"];
-    $insert = "title,date,host,description,price,time,duration,location,eventbrite_code,image,active";
-    $values = "'".$title."', '".$date."', '".$host."', '".$description."', '".$price."', '".$time."', '".$duration."', '".$location."', '".$eventbrite_code."', '".$image."', ".$active;
-    $query = "INSERT INTO events (".$insert.") VALUES (".$values.")";
     if($result = mysql_query($query)) {
 
     } else {
@@ -89,12 +89,39 @@ if ($uploadOk == 0) {
   }
 }
 
+if($id) {
+  $query = "UPDATE events SET title='".$title."', date='".$date."',host='".$host."',description='".$description."',price='".$price."',time='".$time."',duration='".$duration."',location='".$location."',eventbrite_code='".$eventbrite_code."',image='".$image."',active=".$active." WHERE id=".$id;
+
+  if($result = mysql_query($query)) {
+
+  } else {
+    //echo mysql_error();
+  }
+} else {
+  $insert = "title,date,host,description,price,time,duration,location,active";
+  if($image) {
+    $insert .= ",image";
+  }
+  //$values = "'".$title."', '".$date."', '".$host."', '".$description."', '".$price."', '".$time."', '".$duration."', '".$location."', '".$eventbrite_code."', '".$image."', ".$active;
+  $values = "'".$title."', '".$date."', '".$host."', '".$description."', '".$price."', '".$time."', '".$duration."', '".$location."', ".$active;
+  if($image) {
+    $insert .= ",image";
+    $values .= ", '".$image."'";
+  }
+  $query = "INSERT INTO events (".$insert.") VALUES (".$values.")";
+  if($result = mysql_query($query)) {
+
+  } else {
+    //echo mysql_error();
+  }
+}
+
 mysql_close($mysqli);
-if($uploadOk === 1) {
+//if($uploadOk === 1) {
   $redirect = "http://".$_SERVER['HTTP_HOST']."/admin";
   echo "<script language='javascript'>\n";
-  echo "alert('Upload successful!'); window.location.href='".$redirect."';";
+  echo "window.location.href='".$redirect."';";
   echo "</script>\n";
-}
+//}
 
 ?>

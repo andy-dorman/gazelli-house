@@ -55,7 +55,7 @@ $fh = fopen($fullPath, 'w');
             <div id="calendar"></div>
           </div>
           <div class="col-xs-2">
-            <button id="add-event">Add event</button>
+            <button id="new-event">New event</button>
           </div>
         </div>
         <form class="form" id="new-event" enctype="multipart/form-data" method="post" action="new-event.php">
@@ -104,6 +104,7 @@ $fh = fopen($fullPath, 'w');
               <label for="active">Active</label>
               <input id="active" class="checkbox" name="active" type="checkbox" value="1"/>
             </div>
+            <input id="id" name="id" class="form-control" type="hidden"/>
 
           </div>
           <input id="submit" type="submit" name="submit" value="GO!">
@@ -216,6 +217,10 @@ $fh = fopen($fullPath, 'w');
     date = date.data('cal-date');
   }
   var events;
+  $('#new-event').click(function() {
+    editEvent(false);
+  });
+
   function getEvents() {
     $.ajax({
       url: "get-events.php",
@@ -236,17 +241,32 @@ $fh = fopen($fullPath, 'w');
   getEvents();
 
   function editEvent(idx) {
-    var event = events[idx];
-    $('#title').val(event['title']);
-    $('#date').val(event['date']);
-    $('#host').val(event['host']);
-    $('#description').val(event['description']);
-    $('#price').val(event['price']);
-    $('#time').val(event['time']);
-    $('#duration').val(event['duration']);
-    $('#location').val(event['location']);
-    $('#eventbrite_code').val(event['eventbrite_code']);
-    $('#active').prop('checked', event['active'] == 1);
+    if(idx !== false) {
+      var event = events[idx];
+      $('#id').val(event['id']);
+      $('#title').val(event['title']);
+      $('#date').val(event['date']);
+      $('#host').val(event['host']);
+      $('#description').val(event['description']);
+      $('#price').val(event['price']);
+      $('#time').val(event['time']);
+      $('#duration').val(event['duration']);
+      $('#location').val(event['location']);
+      $('#eventbrite_code').val(event['eventbrite_code']);
+      $('#active').prop('checked', event['active'] == 1);
+    } else {
+      $('#id').val('');
+      $('#title').val('');
+      $('#date').val('');
+      $('#host').val('');
+      $('#description').val('');
+      $('#price').val('');
+      $('#time').val('');
+      $('#duration').val('');
+      $('#location').val('');
+      $('#eventbrite_code').val('');
+      $('#active').prop('checked', false);
+    }
   }
 
   function buildEvents() {

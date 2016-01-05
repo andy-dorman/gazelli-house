@@ -8,6 +8,7 @@ $out = array();
 if($result = mysql_query($query)) {
   while ($row = mysql_fetch_assoc($result)) {
     $event = array();
+    $event["id"] = $row['id'];
     $event["title"] = $row['title'];
     $event["date"] = $row['date'];
     $event["description"] = $row['description'];
