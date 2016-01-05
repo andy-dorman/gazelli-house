@@ -327,14 +327,31 @@ $fh = fopen($fullPath, 'w');
           html: '<p class="col-xs-9">' + event['description'] + '</p>'
         }).appendTo(eventPanelEl);
 
-        var eventImageEl = $('<img/>', {
-          class: 'event-image col-xs-3',
-          src: '/images/events/' + event['image']
-        }).appendTo(eventBodyEl);
+        if(event['image'] !== '') {
+          var eventImageEl = $('<img/>', {
+            class: 'event-image col-xs-3',
+            src: '/images/events/' + event['image']
+          }).appendTo(eventBodyEl);
+        }
+
+        var footerHtml = "";
+        if(event['price'] !== '') {
+          footerHtml += '<strong>price:</strong><span>' + event['price'] + '</span>';
+        }
+        if(event['time'] !== '') {
+          footerHtml += '<strong>time:</strong><span>' + event['time'] + '</span>';
+        }
+        if(event['duration'] !== '') {
+          footerHtml += '<strong>duration:</strong><span>' + event['duration'] + '</span>';
+        }
+        if(event['location'] !== '') {
+          footerHtml += '<span>' + event['location'] + '</span>';
+        }
+
 
         var eventFooterEl = $('<div/>', {
           class: 'event-footer col-xs-9',
-          html: '<strong>price:</strong><span>' + event['price'] + '</span>' + '<strong>time:</strong><span>' + event['time'] + '</span>' + '<strong>duration:</strong><span>' + event['duration'] + '</span>' + '<span>' + event['location'] + '</span>'
+          html:  footerHtml
         }).appendTo(eventBodyEl);
 
         $(eventHeaderEl).appendTo(eventEl);
