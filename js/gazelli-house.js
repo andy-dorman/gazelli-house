@@ -114,9 +114,7 @@
 			context: document.body,
 			method: "POST",
 			dataType: 'json',
-			data: {
-				date: date
-			}
+			data: data
 		}).done(function(result) {
 			events = result;
 			buildEvents();
