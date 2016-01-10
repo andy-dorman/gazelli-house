@@ -5,7 +5,7 @@ $parsedDate = date_parse($date);
 $month = $parsedDate["month"];
 $query = "SELECT * from events WHERE month(date) = '".$month."'";
 if($_POST['active']) {
-  $query .= " AND active='".$POST['active']."'";
+    $query .= " AND active=".mysql_real_escape_string($_POST['active']);
 }
 $out = array();
 if($result = mysql_query($query)) {
