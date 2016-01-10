@@ -106,7 +106,7 @@
 		data.date = date;
 
 		if($('.admin').size() === 0) {
-			data.active = 1;
+			data.active = '1';
 		}
 
 		$.ajax({
