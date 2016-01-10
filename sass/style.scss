@@ -814,7 +814,7 @@ form {
   }
 }
 
-#calendar-container {
+.admin #calendar-container {
 	width: 310px;
 }
 .calendar-nav {
@@ -940,15 +940,52 @@ form {
 		padding: 5px;
 	}
 	.panel-default {
+		position: relative;
+
 		&.panel {
 			position: relative;
 			border: none;
 			margin-bottom: 5px;
 			font-size: 12px;
+
+			.panel-body {
+				margin-left: -5px;
+				margin-right: -5px;
+				padding-bottom: 10px;
+				> p {
+					margin-left: -15px;
+				}
+			}
 		}
+
+
 		> .panel-heading {
 			padding: 0;
+
 			background: #C09E78;
+
+			.event-title {
+				text-transform: uppercase;
+				> span {
+					text-transform: none;
+				}
+			}
+
+			&:after {
+				content: '\f0dd';
+				font-family: 'FontAwesome';
+				position: absolute;
+				right: 10px;
+				top: 3px;
+				font-size: 20px;
+				color: white;
+			}
+
+			&.open:after {
+				content: '\f0de';
+				top: 10px;
+			}
+
 			.panel-title {
 				a {
 					width: 100%;
@@ -961,7 +998,14 @@ form {
 					&:visited {
 						text-decoration: none;
 					}
-					span {
+
+					.event-date {
+						font-family: $font-family-serif;
+						font-weight: 100;
+						font-size: 20px;
+					}
+
+					> span {
 						color: white;
 						padding-right: 20px;
 						border-right: 1px solid white;
@@ -973,7 +1017,12 @@ form {
 					}
 				}
 			}
+
+			.active {
+				background: #946D46;
+			}
 		}
+
 		.event-image {
 			width: 150px;
 			float: right;
@@ -996,6 +1045,36 @@ form {
 				}
 			}
 		}
+
+		.event-brite {
+			background: #999;
+			padding: 5px 10px;
+			button {
+
+			}
+
+			div.btn {
+				float: left;
+				background: url('/images/eventbrite_button.png') top left;
+				background-size: 100% 100%;
+				border: none;
+				width: 79px;
+				height: 30px;
+			}
+
+			a.btn {
+				float: right;
+				border: 1px solid white;
+				border-radius: 0;
+				padding: 3px 8px;
+				font-size: 11px;
+				color: white;
+				background: transparent;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				margin-top: 3px;
+			}
+		}
 	}
 }
 .tab {
@@ -1004,4 +1083,13 @@ form {
 }
 .nav-tabs {
 	margin-top: 20px;
+}
+
+
+.cal-row-fluid .cal-day-today span[data-cal-date]:hover {
+	background: #946D46;
+}
+
+span[data-cal-date] {
+	opacity: 1;
 }

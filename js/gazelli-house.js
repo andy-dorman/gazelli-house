@@ -19,7 +19,271 @@
 				css: {'background': 'rgba(0,0,0,0.8)'} // or your preferred hex color value
 			} // overlay
 		} // helpers
-    });
+  });
+
+	$('.admin.nav-tabs a').click(function() {
+		$('.nav-tabs li').removeClass('active');
+		$(this).parent('li').addClass('active');
+		var activeTab = $(this).text().toLowerCase();
+		$('.tab').hide();
+		$('.tab.' + activeTab).show();
+	});
+
+	if($('.admin.nav-tabs li.active a').size() > 0) {
+		$('.tab.' + $('.admin.nav-tabs li.active a').text().toLowerCase()).show();
+	}
+
+
+	//initDate();
+	//initEvents();
+	var calendar = initCalendar();
+	var date = initDate();
+	var events;
+
+	$('#new-event').click(function() {
+		editEvent(false);
+	});
+
+	getEvents();
+
+	$('#add-event').click(function() {
+		var date = $('*[data-cal-date].active');
+		if(date.size() === 1) {
+			date = date.data('cal-date');
+		} else {
+			date = $('div.cal-day-today').find('*[data-cal-date]');
+			date = date.data('cal-date');
+		}
+	});
+
+	setClick();
+	var date;
+
+	function initCalendar() {
+		var calendar = $("#calendar").calendar(
+	  {
+	    tmpl_path: "/tmpls/",
+	    tmpl_cache: false,
+	    weekbox: false,
+	    events_source: function () { return []; },
+	    onAfterViewLoad: function(view) {
+				//$('.month-title').text(this.getTitle().split(' ')[0]);
+	      $('.month-title').text(this.getTitle());
+	      $('.cal-month-day > span').each(function(){
+	        if($(this).text().length < 2) {
+	          $(this).text('0' + $(this).text());
+	        }
+	      });
+			}
+	  });
+
+		$('.calendar-nav button[data-calendar-nav]').each(function() {
+			var $this = $(this);
+			$this.click(function() {
+				calendar.navigate($this.data('calendar-nav'));
+				date = calendar.options.day;
+				getEvents();
+				setClick();
+			});
+		});
+
+		return calendar;
+	};
+
+	function initDate() {
+		date = $('*[data-cal-date].active');
+	  if(date.size() === 1) {
+	    date = date.data('cal-date');
+	  } else {
+	    date = $('div.cal-day-today').find('*[data-cal-date]');
+	    date = date.data('cal-date');
+	  }
+		return date;
+	};
+
+	function getEvents() {
+		$.ajax({
+			url: "/lib/get-events.php",
+			context: document.body,
+			method: "POST",
+			dataType: 'json',
+			data: {
+				date: date
+			}
+		}).done(function(result) {
+			events = result;
+			buildEvents();
+		});
+	};
+
+	function buildEvents() {
+		$('#events').empty();
+		if(events.length > 0) {
+			var momentDate = moment(events[0]['date']);
+			var eventsHeaderEl = $('<h3/>', {
+				class: 'event-heading',
+				text: momentDate.format('MMMM') + ' ' + momentDate.format('YYYY')
+			}).appendTo($('#events'));
+
+			var accordion = $('<div/>', {
+				id: 'events',
+				class: 'panel-group'
+			});
+			events.forEach(function(event, idx){
+				$('*[data-cal-date="' + event['date'] + '"]').addClass('event-day');
+				var eventEl = $('<div/>', {
+					class: 'panel panel-default'
+				});
+				var eventHeaderEl = $('<div/>', {
+					class: 'panel-heading'
+				});
+				var eventTitleEl = $('<h4/>', {
+					class: 'panel-title'
+				});
+
+				var eventHeaderLinkEl = $('<a/>', {
+					'data-toggle': 'collapse',
+					'data-parent': '#events',
+					'href': '#collapse' + idx
+				});
+
+				eventHeaderLinkEl.click(function() {
+					$('.panel-title > a').removeClass('active');
+					$(this).addClass('active');
+					editEvent(idx);
+				});
+
+				var momentDate = moment(event['date']);
+				var eventDateEl = $('<span/>', {
+					class: 'event-date',
+					text: momentDate.format('ddd') + ' ' + momentDate.format('Do')
+				}).appendTo(eventHeaderLinkEl);
+				var titleOpts = {};
+				titleOpts.class = 'event-title';
+
+				if(event['host']) {
+					titleOpts.html  = event['title'] + ' <span>with ' + event['host'] + '</span>';
+				} else {
+					titleOpts.text = event['title'];
+				}
+
+				var eventTitle = $('<span/>', titleOpts).appendTo(eventHeaderLinkEl);
+
+				if(date === event['date']) {
+					eventHeaderLinkEl.addClass('active');
+				}
+
+				$(eventHeaderLinkEl).appendTo(eventTitleEl);
+				$(eventTitleEl).appendTo(eventHeaderEl);
+
+				var eventPanelEl = $('<div/>', {
+					id: 'collapse' + idx,
+					class: 'panel-collapse collapse'
+				});
+
+				var eventBodyEl = $('<div/>', {
+					class: 'event-description panel-body row',
+					html: '<p class="col-xs-9" style="padding-bottom: 10px;">' + event['description'] + '</p>'
+				}).appendTo(eventPanelEl);
+
+				if(event['image']) {
+					var eventImageEl = $('<img/>', {
+						class: 'event-image col-xs-3',
+						src: '/images/events/' + event['image']
+					}).appendTo(eventBodyEl);
+				}
+
+				var footerHtml = "";
+				if(event['price'] !== '') {
+					footerHtml += '<strong>price:</strong><span>' + event['price'] + '</span>';
+				}
+				if(event['time'] !== '') {
+					footerHtml += '<strong>time:</strong><span>' + event['time'] + '</span>';
+				}
+				if(event['duration'] !== '') {
+					footerHtml += '<strong>duration:</strong><span>' + event['duration'] + '</span>';
+				}
+				if(event['location'] !== '') {
+					footerHtml += '<span>' + event['location'] + '</span>';
+				}
+
+
+				var eventFooterEl = $('<div/>', {
+					class: 'event-footer col-xs-12',
+					html:  footerHtml
+				}).appendTo(eventBodyEl);
+
+				if(event['eventbrite_code']) {
+					var eventBriteCodeEl = $('<div/>', {
+						style: 'width: 100%; text-align: left;',
+						class: 'event-brite col-xs-12',
+						html: '<div></div><a class="btn btn-default" href="http://www.eventbrite.co.uk/e/' + event['eventbrite_code'] + '" ref="ebtn">Book now</a>'
+					}).appendTo(eventBodyEl);
+				}
+
+				$(eventHeaderEl).appendTo(eventEl);
+				$(eventPanelEl).appendTo(eventEl);
+
+				$(eventEl).appendTo($('#events'));
+			});
+			//$(".collapse").collapse();
+			$(".collapse").on("hide.bs.collapse", function(){
+		    $(this).prev('.panel-heading').first().removeClass('open');
+		  });
+		  $(".collapse").on("show.bs.collapse", function(){
+		    $(this).prev('.panel-heading').first().addClass('open');
+		  });
+		}
+	};
+
+	function editEvent(idx) {
+		if(idx !== false) {
+			var event = events[idx];
+			$('#id').val(event['id']);
+			$('#title').val(event['title']);
+			$('#date').val(event['date']);
+			$('#host').val(event['host']);
+			$('#description').val(event['description']);
+			$('#price').val(event['price']);
+			$('#time').val(event['time']);
+			$('#duration').val(event['duration']);
+			$('#location').val(event['location']);
+			$('#eventbrite_code').val(event['eventbrite_code']);
+			$('#active').prop('checked', event['active'] == 1);
+		} else {
+			$('#id').val('');
+			$('#title').val('');
+			$('#date').val('');
+			$('#host').val('');
+			$('#description').val('');
+			$('#price').val('');
+			$('#time').val('');
+			$('#duration').val('');
+			$('#location').val('');
+			$('#eventbrite_code').val('');
+			$('#active').prop('checked', false);
+		}
+	};
+
+	function setClick() {
+		$('*[data-cal-date]').off();
+		$('*[data-cal-date]').unbind();
+		$('*[data-cal-date]').dblclick(function(event) {
+			event.preventDefault();
+			event.stopPropagation();
+		});
+		$('*[data-cal-date]').click(function(event) {
+			event.preventDefault();
+			event.stopPropagation();
+			$('*[data-cal-date]').removeClass('active');
+			$(this).addClass('active');
+			//console.log($(this).data('cal-date'));
+			$('#new-event #date').val($(this).data('cal-date'));
+		});
+	};
+
+
+
 
 	function getForm() {
     var options = {

@@ -1,6 +1,8 @@
 <?php
+require 'lib/config.php';
 require 'lib/Mobile_Detect.php';
 $detect = new Mobile_Detect;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,11 +15,12 @@ $detect = new Mobile_Detect;
 <meta name="keywords" content="skincare, targeted, treatments, lifting, sculpting, formulations, acne, skin, ageing, anti-ageing, youth, wrinkles, fine lines, lymphatic, Gazelli, Dr Hamzayeva, experts, specialist, Askarova, Azerbaijan, Baku, Oxyjet, Radiofrequency, Microneedling, MesoVytal, Microdermabrasion, High frequency, LED, light therapy, health, body, mind, soul, mindfulness, nutrition, lifestyle, programme, discover, learn, create, hypnotherapy, life coach, counselling, nlp, cbt, sound therapy, art therapy, ayuverda, wellbeing, wellness, emotional intelligence, advice, mentor, journey, spirit, spiritual, yoga">
 <meta name="author" content="">
 
-<title>Gazelli House</title>
+<title>Gazelli House - Events</title>
 
 <!-- Bootstrap core CSS -->
+<link href="/bower_components/bootstrap-calendar/css/calendar.css" rel="stylesheet">
 <link href="stylesheets/style.css" rel="stylesheet">
-
+<link href="stylesheets/jquery.fancybox.css" rel="stylesheet">
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -54,35 +57,34 @@ $detect = new Mobile_Detect;
         <ul class="nav navbar-nav navbar-right">
         </ul>
       </nav>
-      <div id="carousel-example-generic" class="carousel slide carousel-fade">
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-          <div class="item active">
-            <img src="/images/headers/live-beautifully.jpg" alt="Live Beautifully">
-            <div class="carousel-caption narrow">
-              Live<br/>Beautifully
-            </div>
-          </div>
-        </div>
-      </div>
     </header>
     <div class="container">
       <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
       <div>
         <!-- Page content of course! -->
-        <main class="text-center" id="content" role="main">
-          <div>
-          <h2>Gazelli House</h2>
-          <p>
-            With its intimate, homely and inviting interiors, the Gazelli House is the perfect space in which to learn, feel inspired, and be empowered in a unique atmosphere that encourages healing through all of the senses.
-          </p>
-          <p>
-            Divided into three floors, experience our performance-led treatments and switch off as the therapist’s hands work their magic, hear inspiring guest speakers at evening events, swing by for informal supper clubs, book swaps and poetry readings, and discover new practices and therapies.
-          </p>
-          <p>
-            You’ll find us on Walton Street, in the heart of Belgravia, a light-filled destination where you will fully immerse yourself, discover our story, and write your own.
-          </p>
+        <main id="content" role="main">
+          <h2 class="text-center">Calendar of Events</h2>
+          <div class="row">
+            <div id="calendar-container" class="col-xs-5">
+              <div class="calendar-nav">
+                <button class="btn btn-primary" data-calendar-nav="prev"><i class="fa fa-caret-left"></i></button>
+                <h4 class="month-title"></h4>
+                <button class="btn btn-primary" data-calendar-nav="next"><i class="fa fa-caret-right"></i></button>
+              </div>
+              <div id="calendar"></div>
+            </div>
+            <div class="col-xs-7">
+              <p>
+                We believe in approaching the subject of beauty holistically from skin, through to lifestyle, to mindset. Our aim is to create a community of Gazeli House Members who are as excited as we are to engage with this idea. For that reason we invite you to become a Member of the House and share with us a few of your.
+              </p>
+            </div>
           </div>
+          <div class="row">
+            <div id="events" class="col-xs-12">
+            </div>
+          </div>
+
+
           <hr/>
           <div class="text-center footer">
             <p>Gazelli House | 174 Walton Street | London | SW3 2JL<br/>
