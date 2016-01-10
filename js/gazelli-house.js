@@ -209,7 +209,7 @@
 
 
 				var eventFooterEl = $('<div/>', {
-					class: 'event-footer col-xs-12',
+					class: 'event-footer col-xs-9',
 					html:  footerHtml
 				}).appendTo(eventBodyEl);
 
@@ -217,7 +217,7 @@
 					var eventBriteCodeEl = $('<div/>', {
 						style: 'width: 100%; text-align: left;',
 						class: 'event-brite col-xs-12',
-						html: '<div></div><a class="btn btn-default" href="http://www.eventbrite.co.uk/e/' + event['eventbrite_code'] + '" ref="ebtn">Book now</a>'
+						html: '<div class="btn"></div><a class="btn btn-default" href="http://www.eventbrite.co.uk/e/' + event['eventbrite_code'] + '" ref="ebtn">Book now</a>'
 					}).appendTo(eventBodyEl);
 				}
 
