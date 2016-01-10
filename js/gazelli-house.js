@@ -102,6 +102,13 @@
 	};
 
 	function getEvents() {
+		var data = {};
+		data.date = date;
+
+		if($('.admin').size() === 0) {
+			data.active = 1;
+		}
+
 		$.ajax({
 			url: "/lib/get-events.php",
 			context: document.body,
