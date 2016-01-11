@@ -149,7 +149,8 @@
 				var eventHeaderLinkEl = $('<a/>', {
 					'data-toggle': 'collapse',
 					'data-parent': '#events',
-					'href': '#collapse' + idx
+					'href': '#collapse' + idx,
+					'id': event['date']
 				});
 
 				eventHeaderLinkEl.click(function() {
@@ -209,7 +210,7 @@
 					footerHtml += '<strong>duration:</strong><span>' + event['duration'] + '</span>';
 				}
 				if(event['location'] !== '') {
-					footerHtml += '<span>' + event['location'] + '</span>';
+					footerHtml += '<strong>location:</strong><span>' + event['location'] + '</span>';
 				}
 
 
@@ -231,18 +232,25 @@
 
 				$(eventEl).appendTo($('#events'));
 			});
-			//$(".collapse").collapse();
+
+			$("*[data-toggle='collapse']").click(function() {
+				$('*[data-cal-date="' + $(this).attr('id') + '"]').addClass('active');
+			});
+
 			$(".collapse").on("hide.bs.collapse", function(){
 		    $(this).prev('.panel-heading').first().removeClass('open');
+				$('*[data-cal-date="' + $(this).attr('id') + '"]').addClass('active');
 		  });
 		  $(".collapse").on("show.bs.collapse", function(){
 		    $(this).prev('.panel-heading').first().addClass('open');
+
 		  });
 		}
 	};
 
 	function editEvent(idx) {
 		if(idx !== false) {
+			$('#delete').show();
 			var event = events[idx];
 			$('#id').val(event['id']);
 			$('#title').val(event['title']);
@@ -256,6 +264,7 @@
 			$('#eventbrite_code').val(event['eventbrite_code']);
 			$('#active').prop('checked', event['active'] == 1);
 		} else {
+			$('#delete').hide();
 			$('#id').val('');
 			$('#title').val('');
 			$('#date').val('');
@@ -283,7 +292,9 @@
 			$('*[data-cal-date]').removeClass('active');
 			$(this).addClass('active');
 			//console.log($(this).data('cal-date'));
-			$('#new-event #date').val($(this).data('cal-date'));
+			var calDate = $(this).data('cal-date');
+			$('#new-event #date').val(calDate);
+			$($('a#' + calDate).attr('href')).collapse('show');
 		});
 	};
 

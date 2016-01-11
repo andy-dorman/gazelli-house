@@ -55,6 +55,9 @@ p {
 	background-color: 			$site-bg;
 	padding-bottom: 			20px;
 	margin-bottom: 				0;
+	padding-top: 111px;
+  margin-top: -110px;
+  height: 100%;
 }
 
 h2,
@@ -853,6 +856,9 @@ form {
 	.cal-day-holiday span[data-cal-date]:hover, {
 		background-color: $brand-primary;
 		color: #fff;
+		.event-day {
+			background: #946D46;
+		}
 	}
 
 	.cal-day-outmonth {
@@ -864,9 +870,9 @@ form {
 		}
 	}
 	.cal-day-today {
-		color: #fff;
 		span[data-cal-date] {
 			background-color: #946D46;
+			background-color: #c4c4c4;
 			color: #fff;
 			opacity: 1;
 		}
@@ -874,7 +880,7 @@ form {
 }
 
 .cal-month-box .cal-day-today span[data-cal-date] {
-	font-size: 1.2em;
+	font-size: 1em;
 }
 
 .cal-year-box [class*="span"],
@@ -893,9 +899,11 @@ span[data-cal-date] {
 	width: 100%;
 	line-height: 25px;
 	&.event-day {
-		background-color: #C09E78 !important;
+		color: #fff;
+		background-color: #C09E78;
 	}
 	&.active {
+		color: #fff;
 		background-color: #946D46 !important;
 	}
 }
@@ -921,13 +929,15 @@ span[data-cal-date] {
 	background: $brand-primary;
 }
 
-form {
-	label {
-		min-width: 250px;
-	}
+.admin {
+	form {
+		label {
+			min-width: 250px;
+		}
 
-	input[type=file] {
-		display: inline-block;
+		input[type=file] {
+			display: inline-block;
+		}
 	}
 }
 
@@ -1003,12 +1013,14 @@ form {
 						font-family: $font-family-serif;
 						font-weight: 100;
 						font-size: 16px;
+						width: 90px;
+						display: inline-block;
 					}
 
 					> span {
 						color: white;
 						font-size: 14px;
-						letter-spacing: 2px;
+						letter-spacing: 1px;
 						padding-right: 15px;
 						border-right: 1px solid white;
 						& ~ span {
@@ -1028,6 +1040,7 @@ form {
 		.event-image {
 			width: 150px;
 			float: right;
+			padding-right: 0px;
 		}
 		.event-footer {
 			margin-left: -15px;
@@ -1089,9 +1102,20 @@ form {
 
 
 .cal-row-fluid .cal-day-today span[data-cal-date]:hover {
-	background: #946D46;
+
+	//background: #946D46;
+	background: #82807F;
 }
 
 span[data-cal-date] {
 	opacity: 1;
+}
+
+#delete {
+	display: none;
+}
+
+.events-page {
+	background: url('/images/headers/carousel/sky-parlour.jpg') top left;
+	background-size: auto 100%;
 }

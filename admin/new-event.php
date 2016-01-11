@@ -41,6 +41,7 @@ if($_POST['active']) {
 }
 
 $target_dir = "../images/events/";
+$uploading_image = $_FILES["image"]["name"];
 $target_file = $target_dir . basename($_FILES["image"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo(parse_url($target_file, PHP_URL_PATH),PATHINFO_EXTENSION));
@@ -48,62 +49,69 @@ $imageFileType = strtolower(pathinfo(parse_url($target_file, PHP_URL_PATH),PATHI
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["image"]["tmp_name"]);
     if($check !== false) {
-        //echo "File is an image - " . $check["mime"] . ".";
+        echo "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
     } else {
-        //echo "File is not an image.<br/>";
+        echo "File is not an image.<br/>";
         $uploadOk = 0;
     }
 }
 // Check if file already exists
-if (file_exists($target_file)) {
-    //echo "Sorry, file already exists.<br/>";
-    $uploadOk = 0;
-}
-// Check file size
-if ($_FILES["image"]["size"] > 2000000) {
-    //echo "Sorry, your file is too large.";
-    $uploadOk = 0;
-}
-// Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" ) {
-    //echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-    $uploadOk = 0;
-}
-// Check if $uploadOk is set to 0 by an error
-if ($uploadOk == 0) {
-    //echo "Sorry, your file was not uploaded.";
-// if everything is ok, try to upload file
-} else {
-  if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-    //echo "The file ". basename( $_FILES["image"]["name"]). " has been uploaded.";
+if($uploading_image) {
+  if (file_exists($target_file)) {
+      //echo "Sorry, file already exists.<br/>";
+      //$uploadOk = 0;
   }
-  $image = $_FILES["image"]["name"];
-}
-
-if($id) {
-  $query = "UPDATE events SET title='".$title."', date='".$date."',host='".$host."',description='".$description."',price='".$price."',time='".$time."',duration='".$duration."',location='".$location."',eventbrite_code='".$eventbrite_code."',active=".$active;
-  if($image) {
-    $query .= ",image='".$image."'";
+  // Check file size
+  if ($_FILES["image"]["size"] > 2000000) {
+      echo "Sorry, your file is too large.";
+      $uploadOk = 0;
   }
-  $query .= " WHERE id=".$id;
-  if($result = mysql_query($query)) {
-
+  // Allow certain file formats
+  if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+  && $imageFileType != "gif" ) {
+      echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+      $uploadOk = 0;
+  }
+  // Check if $uploadOk is set to 0 by an error
+  if ($uploadOk == 0) {
+      echo "Sorry, your file was not uploaded.";
+  // if everything is ok, try to upload file
   } else {
-    //echo mysql_error();
+    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+      //echo "The file ". basename( $_FILES["image"]["name"]). " has been uploaded.";
+    }
+    $image = $_FILES["image"]["name"];
+  }
+}
+if($id) {
+
+  if(isset($_POST["delete"])) {
+    $query = "DELETE FROM events WHERE id=".$id.";";
+    if($result = mysql_query($query)) {
+
+    }
+  } else {
+    $query = "UPDATE events SET title='".$title."', date='".$date."',host='".$host."',description='".$description."',price='".$price."',time='".$time."',duration='".$duration."',location='".$location."',eventbrite_code='".$eventbrite_code."',active=".$active;
+    if($image) {
+      $query .= ",image='".$image."'";
+    }
+    $query .= " WHERE id=".$id;
+    if($result = mysql_query($query)) {
+
+    } else {
+      //echo mysql_error();
+    }
   }
 } else {
   $insert = "title,date,host,description,price,time,duration,location,eventbrite_code,active";
-  if($image) {
-    $insert .= ",image";
-  }
   $values = "'".$title."', '".$date."', '".$host."', '".$description."', '".$price."', '".$time."', '".$duration."', '".$location."', '".$eventbrite_code."', ".$active;
   if($image) {
     $insert .= ",image";
     $values .= ", '".$image."'";
   }
   $query = "INSERT INTO events (".$insert.") VALUES (".$values.")";
+
   if($result = mysql_query($query)) {
 
   } else {
@@ -112,11 +120,13 @@ if($id) {
 }
 
 mysql_close($mysqli);
-//if($uploadOk === 1) {
+if($uploadOk === 1) {
   $redirect = "http://".$_SERVER['HTTP_HOST']."/admin";
   echo "<script language='javascript'>\n";
   echo "window.location.href='".$redirect."';";
   echo "</script>\n";
-//}
+} else {
+  echo "You're event may have been added but there was an issue with your file upload. Use the back button in your browser to check if the event has been added and try attaching the image again.";
+}
 
 ?>

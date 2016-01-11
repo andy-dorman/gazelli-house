@@ -108,6 +108,7 @@ $fh = fopen($fullPath, 'w');
 
           </div>
           <input id="submit" type="submit" name="submit" value="GO!">
+          <input id="delete" type="submit" name="delete" value="DELETE EVENT">
         </form>
         <div id="events">
         </div>
