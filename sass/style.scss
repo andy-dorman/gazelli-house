@@ -1119,3 +1119,17 @@ span[data-cal-date] {
 	background: url('/images/headers/carousel/sky-parlour.jpg') top left;
 	background-size: auto 100%;
 }
+
+.about-page {
+	.container {
+		padding-top: 642px;
+	  margin-top: -641px;
+	}
+}
+
+.home-page {
+	.container {
+		padding-top: 554px;
+	  margin-top: -553px;
+	}
+}

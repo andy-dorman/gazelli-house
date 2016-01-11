@@ -48,7 +48,7 @@ if ($handle = opendir($img_dir)) {
 <link rel="icon" href="/favicon.ico">
 
   </head>
-  <body>
+  <body class="about-page">
   <a href="#" name="top" id="top"></a>
     <!-- Docs master nav -->
     <header class="navbar navbar-static-top text-center" id="top" role="banner">
