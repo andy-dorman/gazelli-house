@@ -234,6 +234,7 @@
 			});
 
 			$("*[data-toggle='collapse']").click(function() {
+				$('*[data-cal-date]').removeClass('active');
 				$('*[data-cal-date="' + $(this).attr('id') + '"]').addClass('active');
 			});
 

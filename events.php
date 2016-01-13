@@ -75,7 +75,11 @@ $detect = new Mobile_Detect;
             </div>
             <div class="col-xs-7">
               <p>
-                We believe in approaching the subject of beauty holistically from skin, through to lifestyle, to mindset. Our aim is to create a community of Gazeli House Members who are as excited as we are to engage with this idea. For that reason we invite you to become a Member of the House and share with us a few of your.
+                Here at the Gazelli House, we want to help you make positive, long-term changes in a way that fit into your life: tiny
+                tweaks to your emotional and physical wellbeing that feel at once natural and powerful. That’s why we’ve devised an exciting calendar of events. Discover new, alternative therapies, take part in group activities, broaden your interests, and above all, have some fun. 
+              </p>
+              <p>
+                We look forward to seeing you there. 
               </p>
             </div>
           </div>
