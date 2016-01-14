@@ -223,7 +223,7 @@
 					var eventBriteCodeEl = $('<div/>', {
 						style: 'width: 100%; text-align: left;',
 						class: 'event-brite col-xs-12',
-						html: '<div class="btn"></div><a target="_blank" class="btn btn-default" href="http://www.eventbrite.co.uk/e/' + event['eventbrite_code'] + '" ref="ebtn">Book now</a>'
+						html: '<div class="btn"></div><a target="_blank" class="btn btn-default" href="' + event['eventbrite_code'] + '" ref="ebtn">Book now</a>'
 					}).appendTo(eventBodyEl);
 				}
 
