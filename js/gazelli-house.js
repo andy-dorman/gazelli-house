@@ -75,6 +75,7 @@
 	        }
 	      });
         var today = $('.cal-day-today').find('span').data('cal-date');
+        console.log(today);
         if($('.panel-title').find('#' + today).size() > 0) {
           $($('a#' + today).attr('href')).collapse('show');
         }
