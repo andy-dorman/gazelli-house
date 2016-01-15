@@ -1055,7 +1055,14 @@ span[data-cal-date] {
 					padding-left: 10px;
 					border-left: 1px solid #333;
 				}
+
+        &.location {
+          padding-left: 0;
+          border-left: 0;
+        }
 			}
+
+
 			span {
 
 				padding: 0 10px;

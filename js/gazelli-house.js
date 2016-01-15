@@ -214,7 +214,7 @@
 					footerHtml += '<strong>duration:</strong><span>' + event['duration'] + '</span>';
 				}
 				if(event['location'] !== '') {
-					footerHtml += '<strong>location:</strong><span>' + event['location'] + '</span>';
+					footerHtml += '<strong class="location">location:</strong><span>' + event['location'] + '</span>';
 				}
 
 
