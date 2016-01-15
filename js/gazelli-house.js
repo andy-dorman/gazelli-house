@@ -210,7 +210,7 @@
 					footerHtml += '<strong>duration:</strong><span>' + event['duration'] + '</span>';
 				}
 				if(event['location'] !== '') {
-					footerHtml += '<div><strong class="location">location:</strong><span>' + event['location'] + '</span></div>';
+					footerHtml += '<div style="margin-top: 2px;""><strong class="location">location:</strong><span>' + event['location'] + '</span></div>';
 				}
 
 
