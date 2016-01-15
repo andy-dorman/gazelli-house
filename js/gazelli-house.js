@@ -74,11 +74,6 @@
 	          $(this).text('0' + $(this).text());
 	        }
 	      });
-        var today = $('.cal-day-today').find('span').data('cal-date');
-        console.log(today);
-        if($('.panel-title').find('#' + today).size() > 0) {
-          $($('a#' + today).attr('href')).collapse('show');
-        }
 			}
 	  });
 
@@ -252,6 +247,11 @@
 		    $(this).prev('.panel-heading').first().addClass('open');
 
 		  });
+
+      var today = $('.cal-day-today').find('span').data('cal-date');
+      if($('.panel-title').find('#' + today).size() > 0) {
+        $($('a#' + today).attr('href')).collapse('show');
+      }
 		} else {
       $('#events').html("<h3>We're sorry, there are no events at this time.</h3>");
     }
