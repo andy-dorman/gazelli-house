@@ -857,7 +857,7 @@ form {
 		background-color: $brand-primary;
 		color: #fff;
 		.event-day {
-			background: #946D46;
+      background: #372725;
 		}
 	}
 
@@ -901,11 +901,11 @@ span[data-cal-date] {
   font-size: 1em;
 	&.event-day {
 		color: #fff;
-		background-color: #C09E78;
+    background: #9E8F8F;
 	}
 	&.active {
 		color: #fff;
-		background-color: #946D46 !important;
+    background: #372725 !important;
 	}
 }
 
@@ -977,7 +977,7 @@ span[data-cal-date] {
 		> .panel-heading {
 			padding: 0;
 
-			background: #C09E78;
+			background: #9E8F8F;
 
 			.event-title {
 				text-transform: uppercase;
@@ -1038,7 +1038,7 @@ span[data-cal-date] {
 			}
 
 			.active {
-				background: #946D46;
+				background: #372725;
 			}
 		}
 

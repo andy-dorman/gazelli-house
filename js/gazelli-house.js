@@ -74,6 +74,10 @@
 	          $(this).text('0' + $(this).text());
 	        }
 	      });
+        var today = $('.cal-day-today').find('span').data('cal-date');
+        if($('.panel-title').find('#' + today).size() > 0) {
+          $($('a#' + today).attr('href')).collapse('show');
+        }
 			}
 	  });
 
@@ -236,6 +240,7 @@
 			$("*[data-toggle='collapse']").click(function() {
 				$('*[data-cal-date]').removeClass('active');
 				$('*[data-cal-date="' + $(this).attr('id') + '"]').addClass('active');
+        $('.panel-collapse').collapse('hide');
 			});
 
 			$(".collapse").on("hide.bs.collapse", function(){
@@ -246,7 +251,9 @@
 		    $(this).prev('.panel-heading').first().addClass('open');
 
 		  });
-		}
+		} else {
+      $('#events').html("<h3>We're sorry, there are no events at this time.</h3>");
+    }
 	};
 
 	function editEvent(idx) {
@@ -295,6 +302,8 @@
 			//console.log($(this).data('cal-date'));
 			var calDate = $(this).data('cal-date');
 			$('#new-event #date').val(calDate);
+
+      $('.panel-collapse').collapse('hide');
 			$($('a#' + calDate).attr('href')).collapse('show');
 		});
 	};
