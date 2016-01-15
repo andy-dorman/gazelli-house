@@ -50,7 +50,7 @@ $detect = new Mobile_Detect;
           <li><a href="/">Home</a></li>
           <li><a href="/menu">Treatment Menu</a></li>
           <li><a href="/about">About</a></li>
-          <li><a href="/events">Events</a></li>
+          <!-- <li><a href="/events">Events</a></li> -->
           <li><a href="/membership">Guest Registration</a></li>
           <!--<li><a href="http://gazellihouselondon.tumblr.com" target="_blank">Live Beautifully</a></li>-->
         </ul>
@@ -76,10 +76,10 @@ $detect = new Mobile_Detect;
             <div class="col-xs-7">
               <p>
                 Here at the Gazelli House, we want to help you make positive, long-term changes in a way that fit into your life: tiny
-                tweaks to your emotional and physical wellbeing that feel at once natural and powerful. That’s why we’ve devised an exciting calendar of events. Discover new, alternative therapies, take part in group activities, broaden your interests, and above all, have some fun. 
+                tweaks to your emotional and physical wellbeing that feel at once natural and powerful. That’s why we’ve devised an exciting calendar of events. Discover new, alternative therapies, take part in group activities, broaden your interests, and above all, have some fun.
               </p>
               <p>
-                We look forward to seeing you there. 
+                We look forward to seeing you there.
               </p>
             </div>
           </div>

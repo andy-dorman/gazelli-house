@@ -66,7 +66,7 @@ if ($handle = opendir($img_dir)) {
           <li><a href="/">Home</a></li>
           <li><a href="/menu">Treatment Menu</a></li>
           <li><a href="/about">About</a></li>
-          <li><a href="/events">Events</a></li>
+          <!-- <li><a href="/events">Events</a></li> -->
           <li><a href="/membership">Guest Registration</a></li>
           <!--<li><a href="http://gazellihouselondon.tumblr.com" target="_blank">Live Beautifully</a></li>-->
         </ul>
