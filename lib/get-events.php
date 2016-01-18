@@ -3,7 +3,7 @@ require "../lib/db.php";
 $date = mysql_real_escape_string($_POST['date']);
 $parsedDate = date_parse($date);
 $month = $parsedDate["month"];
-$query = "SELECT * from events WHERE month(date) = '".$month."'";
+$query = "SELECT * from events WHERE month(date) = '".$month."' ORDER BY date ASC";
 if($_POST['active']) {
     $query .= " AND active=".mysql_real_escape_string($_POST['active']);
 }

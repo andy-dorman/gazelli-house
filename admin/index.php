@@ -116,7 +116,8 @@ $fh = fopen($fullPath, 'w');
 <?php
     $query = "SELECT * FROM enquiries";
     //if($result = mysql_query($query, $mysqli)) {
-    if($result = mysqli_query($mysqli, $query)) {
+    //if($result = mysqli_query($mysqli, $query)) {
+    if($result = mysql_query($query)) {
       $data = "";
       $data = "first name\tsurname\tdate of birth\taddress\ttel\temail\tinterests\tsuggestions\tliterature\tart\tlanguages\tfashion\tcosmetics\tspirituality\tself development\tbody treatments\tskincare\tlife coaching\tfacial treatments\talternative therapies\ttravel\tayurveda\tlifestyle\tnutrition\tfitness\ttheatre\tballet\tsocialising\trelaxing\tfilm screenings\tyoga\tevents\t";
       foreach($form as $key => $value) {
@@ -126,7 +127,8 @@ $fh = fopen($fullPath, 'w');
       }
       $data .= "date\n";
       //while($row = mysql_fetch_array($result)) {
-      while($row = mysqli_fetch_array($result)) {
+      while ($row = mysql_fetch_assoc($result)) {
+      //while($row = mysqli_fetch_array($result)) {
 
         $fullnameArr = explode(" ", $row['full_name']);
         $firstname = "";
