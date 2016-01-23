@@ -953,7 +953,7 @@ span[data-cal-date] {
     left: 50%;
     top: 50%;
 
-    :after {
+    &:after {
       opacity: 0.4;
       content: '\f021';
       font-size: 64px;
