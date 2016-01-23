@@ -947,6 +947,11 @@ span[data-cal-date] {
 }
 
 #events {
+  &.loading:after {
+    content: 'f021';
+    font-size: 24px;
+  }
+
 	h3 {
 		background: #999999;
 		text-align: center;

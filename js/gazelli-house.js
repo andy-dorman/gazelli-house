@@ -114,8 +114,13 @@
 			context: document.body,
 			method: "POST",
 			dataType: 'json',
-			data: data
-		}).done(function(result) {
+			data: data,
+      beforeSend: function( xhr ) {
+        $('#events').html('');
+        $('#events').addClass('loading');
+        $('#events').addClass('fa-spin');
+      }
+  	}).done(function(result) {
 			events = result;
 			buildEvents();
 		});
@@ -229,7 +234,8 @@
 
 				$(eventHeaderEl).appendTo(eventEl);
 				$(eventPanelEl).appendTo(eventEl);
-
+        $('#events').removeClass('loading');
+        $('#events').removeClass('fa-spin');
 				$(eventEl).appendTo($('#events'));
 			});
 
@@ -245,7 +251,6 @@
 		  });
 		  $(".collapse").on("show.bs.collapse", function(){
 		    $(this).prev('.panel-heading').first().addClass('open');
-
 		  });
 
       var today = $('.cal-day-today').find('span').data('cal-date');
@@ -253,6 +258,8 @@
         $($('a#' + today).attr('href')).collapse('show');
       }
 		} else {
+      $('#events').removeClass('loading');
+      $('#events').removeClass('fa-spin');
       $('#events').html("<h3>We're sorry, there are no events at this time.</h3>");
     }
 	};
