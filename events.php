@@ -65,7 +65,7 @@ $detect = new Mobile_Detect;
         <main id="content" role="main">
           <h2 class="text-center">Calendar of Events</h2>
           <div class="row">
-            <div id="calendar-container" class="col-xs-5">
+            <div id="calendar-container" class="col-xs-12 col-sm-5">
               <div class="calendar-nav">
                 <button class="btn btn-primary" data-calendar-nav="prev"><i class="fa fa-caret-left"></i></button>
                 <h4 class="month-title"></h4>
@@ -73,7 +73,7 @@ $detect = new Mobile_Detect;
               </div>
               <div id="calendar"></div>
             </div>
-            <div class="col-xs-7">
+            <div class="col-xs-12 col-sm-7">
               <p>
                 Here at the Gazelli House, we want to help you make positive, long-term changes in a way that fit into your life: tiny
                 tweaks to your emotional and physical wellbeing that feel at once natural and powerful. That’s why we’ve devised an exciting calendar of events. Discover new, alternative therapies, take part in group activities, broaden your interests, and above all, have some fun.

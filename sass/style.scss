@@ -759,6 +759,16 @@ form {
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-phone) {
+  .event-image {
+    padding-right: 15px;
+    margin-bottom: 10px; 
+  }
+
+  .event-description,
+  .event-footer {
+    margin-left: 0px;
+  }
+
   .navbar-brand {
     background-size: auto;
     margin: auto;
@@ -815,6 +825,10 @@ form {
       letter-spacing: 35px;
     }
   }
+}
+
+#calendar-container {
+  margin-bottom: 20px;
 }
 
 .admin #calendar-container {

@@ -194,12 +194,12 @@
 
 				var eventBodyEl = $('<div/>', {
 					class: 'event-description panel-body row',
-					html: '<p class="col-xs-9" style="padding-bottom: 10px;">' + event['description'] + '</p>'
+					html: '<p class="col-xs-12 col-sm-9" style="padding-bottom: 10px;">' + event['description'] + '</p>'
 				}).appendTo(eventPanelEl);
 
 				if(event['image']) {
 					var eventImageEl = $('<img/>', {
-						class: 'event-image col-xs-3',
+						class: 'event-image col-xs-12 col-sm-3',
 						src: '/images/events/' + event['image']
 					}).appendTo(eventBodyEl);
 				}
@@ -220,7 +220,7 @@
 
 
 				var eventFooterEl = $('<div/>', {
-					class: 'event-footer col-xs-9',
+					class: 'event-footer col-xs-12 col-sm-9',
 					html:  footerHtml
 				}).appendTo(eventBodyEl);
 
