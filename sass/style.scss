@@ -824,8 +824,11 @@ form {
 	height: 25px;
 	position: relative;
 	button {
-    &:focus {
+    &:focus,
+    &:active,
+    &:active:focus {
       outline: 0;
+      outline: none;
     }
 		background: none;
 		border: none;
