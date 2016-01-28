@@ -64,7 +64,7 @@ $detect = new Mobile_Detect;
         <main class="text-center" id="content" role="main">
           <h2>Guest Registration</h2>
           <p>
-            Registering as a Gazelli House Guest will ensure your place within the House and enable us to tailor our service to you as much as possible. Please complete the form below and we will be in touch shortly with you complimentary Membership Card.
+            Gazelli House Membership is complimentary and offered by invitation only. Please register your interest here and we will be in touch soon.
           </p>
           <form <?php if(!$detect->isMobile()) { ?> class="form-horizontal" <?php } ?>role="form" id="membership-registration" action="entry.php" method="post">
             <fieldset>
