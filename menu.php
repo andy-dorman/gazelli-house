@@ -16,7 +16,7 @@ $detect = new Mobile_Detect;
 <title>Gazelli House</title>
 
 <!-- Bootstrap core CSS -->
-<link href="stylesheets/style.css" rel="stylesheet">
+<link href="stylesheets/style.css?v=2.0" rel="stylesheet">
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>

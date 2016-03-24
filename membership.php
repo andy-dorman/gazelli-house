@@ -17,7 +17,7 @@ $detect = new Mobile_Detect;
 <title>Gazelli House - Membership Registration</title>
 
 <!-- Bootstrap core CSS -->
-<link href="stylesheets/style.css" rel="stylesheet">
+<link href="stylesheets/style.css?v=2.0" rel="stylesheet">
 <link href="bower_components/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet">
 <link href="stylesheets/jquery.fancybox.css" rel="stylesheet">
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
