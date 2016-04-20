@@ -1162,6 +1162,141 @@ span[data-cal-date] {
 	}
 }
 
+/* Life page */
+#life {
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 90px;
+
+	.mood-board {
+		position: relative;
+		clear: both;
+		img {
+			position: relative;
+		}
+		.textbox {
+			position: absolute;
+			z-index: 2;
+			background: rgba(255, 255, 255, 0.3);
+			width: 333px;
+			padding: 2px;
+			border: 1px solid white;
+
+			> div {
+				padding: 10px 15px;
+				width: 100%;
+				height: 100%;
+				background: #FAF7F2;
+				border: 2px solid white;
+
+				.toggle {
+					display: block;
+					position: absolute;
+					right: 15px;
+					bottom: 15px;
+					width: 17px;
+					height: 17px;
+					background: $brand-primary url('/images/life/plus.gif') no-repeat center center;
+				}
+
+				&.open {
+					span:after {
+						content: '';
+					}
+					span {
+						display: inline;
+					}
+					.toggle {
+						background-image: url('/images/life/minus.gif');
+					}
+				}
+
+				h4 {
+					margin: 0;
+					letter-spacing: 2px;
+					font-family: $font-family-serif;
+					font-weight: 100;
+					font-size: 1.2em;
+					border-bottom: 1px solid $brand-primary;
+					padding-bottom: 10px;
+					margin-bottom: 10px;
+				}
+				p {
+					padding: 0;
+					margin: 0;
+					font-size: 1.1em;
+					span:after {
+						content: '...';
+					}
+					span ~ span:after {
+						content: '';
+					}
+
+					span ~ span {
+						display: none;
+					}
+				}
+			}
+		}
+
+		&.one {
+			.textbox {
+				top: 430px;
+				right: 100px;
+			}
+		}
+
+		&.two {
+			.textbox {
+				top: 200px;
+				right: 100px;
+			}
+		}
+
+		&.three {
+			.textbox {
+				top: 20px;
+				left: 30px;
+			}
+		}
+
+		&.four {
+			.textbox {
+				top: 100px;
+				right: 50px;
+			}
+		}
+
+		&.five {
+			> .textbox {
+				top: 0px;
+				left: 90px;
+			}
+
+			.textbox ~ .textbox {
+				top: 280px;
+				left: auto;
+				right: 70px;
+			}
+		}
+
+		&.six {
+			.textbox {
+				top: 70px;
+				left: 60px;
+			}
+		}
+
+		&.seven {
+			.textbox {
+				top: 320px;
+				right: 50px;
+			}
+		}
+
+	}
+}
+
 /* Small devices (tablets, 768px and up) */
 @media (max-width: 767px) {
   #events .panel-default .event-image {
