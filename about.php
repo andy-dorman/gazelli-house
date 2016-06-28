@@ -68,6 +68,7 @@ if ($handle = opendir($img_dir)) {
           <li><a href="/about">About</a></li>
           <li><a href="/events">Events</a></li>
           <li><a href="/membership">Guest Registration</a></li>
+          <li><a href="https://gazellihouse.phorest.me/book#/service-category?id=9CBphLQfcl9L8yTTnT5Q9Q" target="_blank">Book now</a></li>
           <!--<li><a href="http://gazellihouselondon.tumblr.com" target="_blank">Live Beautifully</a></li>-->
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -141,7 +142,7 @@ if ($handle = opendir($img_dir)) {
           <hr/>
           <div class="text-center footer">
             <p>Gazelli House | 174 Walton Street | London | SW3 2JL<br/>
-              to book please contact <a href="mailto:info@gazelli.co.uk">info@gazelli.co.uk</a>
+              TO BOOK ONLINE <a href="https://gazellihouse.phorest.me/book#/service-category?id=9CBphLQfcl9L8yTTnT5Q9Q" target="_blank">CLICK HERE</a>
             </p>
           </div>
         </main>
