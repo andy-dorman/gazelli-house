@@ -272,7 +272,7 @@
 			$('#title').val(event['title']);
 			$('#date').val(event['date']);
 			$('#host').val(event['host']);
-			$('#description').val(event['description'].replace(/<br \/>/g, '\n'));
+			$('#description').val(event['description'].replace(/<br \/>/g, "\n"));
 			$('#price').val(event['price']);
 			$('#time').val(event['time']);
 			$('#duration').val(event['duration']);
