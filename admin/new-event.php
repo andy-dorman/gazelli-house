@@ -14,7 +14,7 @@ if($_POST['host']) {
   $host = mysql_real_escape_string($_POST['host']);
 }
 if($_POST['description']) {
-  $description = mysql_real_escape_string(nl2br($_POST['description']));
+  $description = mysql_real_escape_string($_POST['description']);
 }
 if($_POST['price']) {
   $price = mysql_real_escape_string($_POST['price']);
