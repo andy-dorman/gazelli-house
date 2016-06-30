@@ -1242,56 +1242,56 @@ span[data-cal-date] {
 
 		&.one {
 			.textbox {
-				top: 430px;
-				right: 100px;
+				top: 66%;
+				right: 13%;
 			}
 		}
 
 		&.two {
 			.textbox {
-				top: 200px;
-				right: 100px;
+				top: 46%;
+				right: 13%;
 			}
 		}
 
 		&.three {
 			.textbox {
-				top: 20px;
-				left: 30px;
+				top: 5%;
+				left: 6%;
 			}
 		}
 
 		&.four {
 			.textbox {
-				top: 100px;
-				right: 50px;
+				top: 13%;
+				right: 5%;
 			}
 		}
 
 		&.five {
 			> .textbox {
-				top: 0px;
-				left: 90px;
+				top: 0%;
+				left: 13%;
 			}
 
 			.textbox ~ .textbox {
-				top: 280px;
+				top: 80%;
 				left: auto;
-				right: 70px;
+				right: 11%;
 			}
 		}
 
 		&.six {
 			.textbox {
-				top: 70px;
-				left: 60px;
+				top: 15%;
+				left: 10%;
 			}
 		}
 
 		&.seven {
 			.textbox {
-				top: 320px;
-				right: 50px;
+				top: 50%;
+				right: 8%;
 			}
 		}
 
@@ -1310,5 +1310,10 @@ span[data-cal-date] {
     .event-footer {
       margin-left: 0px;
     }
+  }
+
+  #life .mood-board img {
+    width: 100%;
+    height: auto;
   }
 }

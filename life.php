@@ -31,7 +31,7 @@ $detect = new Mobile_Detect;
 <link rel="icon" href="/favicon.ico">
 
   </head>
-  <body class="events-page">
+  <body class="life-page">
   <a href="#" name="top" id="top"></a>
     <!-- Docs master nav -->
     <header class="navbar navbar-static-top text-center" id="top" role="banner">
