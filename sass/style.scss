@@ -1249,14 +1249,14 @@ span[data-cal-date] {
 
 		&.two {
 			.textbox {
-				top: 46%;
+				top: 30%;
 				right: 13%;
 			}
 		}
 
 		&.three {
 			.textbox {
-				top: 5%;
+				top: 26%;
 				left: 6%;
 			}
 		}
@@ -1283,14 +1283,14 @@ span[data-cal-date] {
 
 		&.six {
 			.textbox {
-				top: 15%;
+				top: 62%;
 				left: 10%;
 			}
 		}
 
 		&.seven {
 			.textbox {
-				top: 50%;
+				top: 36%;
 				right: 8%;
 			}
 		}
@@ -1315,5 +1315,10 @@ span[data-cal-date] {
   #life .mood-board img {
     width: 100%;
     height: auto;
+
+    & ~ .textbox {
+      width: 75%;
+      font-size: 0.8em;
+    }
   }
 }
