@@ -68,6 +68,7 @@ if ($handle = opendir($img_dir)) {
           <li><a href="/about">About</a></li>
           <li><a href="/events">Events</a></li>
           <li><a href="/membership">Guest Registration</a></li>
+          <li><a href="/life">Life</a></li>
           <li><a href="https://gazellihouse.phorest.me/book#/service-category?id=9CBphLQfcl9L8yTTnT5Q9Q" target="_blank">Book now</a></li>
           <!--<li><a href="http://gazellihouselondon.tumblr.com" target="_blank">Live Beautifully</a></li>-->
         </ul>
