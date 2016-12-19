@@ -49,7 +49,7 @@ $detect = new Mobile_Detect;
           <li><a href="/treatments">Treatments</a></li>
           <li><a href="/events">Events</a></li>
           <li><a href="/explore">Explore</a></li>
-          <li><a href="/membership">Registration</a></li>
+          <li><a href="/register">Registration</a></li>
           <li class="mobile-book"><a href="tel:+447909092343" target="_blank">Call to Book</a></li>
           <li class="book-now">BOOK NOW - 07909 092 343</li>
         </ul>
