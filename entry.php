@@ -136,10 +136,9 @@ if(!$_SERVER['REQUEST_METHOD'] == "POST") {
       $thanks = "<h2>Thank you</h2><p>Thank you for your application, we will be in touch soon</p>\n";
       $thanks .= "<div class=\"social-icons\">\n";
       $thanks .= "<ul class=\"list-inline text-center\">\n";
-      $thanks .= "<li class=\"social-icon bird\"><a href=\"https://www.twitter.com/WaltonSecret\" target=\"_blank\"></a></li>\n";
-      $thanks .= "<li class=\"social-icon facebook\"><a href=\"https://www.facebook.com/WaltonSecret\" target=\"_blank\"></a></li>\n";
-      $thanks .= "<li class=\"social-icon icon-3\"><a href=\"https://www.instagram.com/walton_secret\" target=\"_blank\"></a></li>\n";
-      $thanks .= "<li class=\"social-icon twitter\"><a href=\"http://gazellihouselondon.tumblr.com\" target=\"_blank\"></a></li>\n";
+      $thanks .= "<li class=\"social-icon bird\"><a href=\"https://www.twitter.com/gazellihouse\" target=\"_blank\"></a></li>\n";
+      $thanks .= "<li class=\"social-icon facebook\"><a href=\"https://www.facebook.com/GazelliHouse\" target=\"_blank\"></a></li>\n";
+      $thanks .= "<li class=\"social-icon icon-3\"><a href=\"https://www.instagram.com/gazellihouse\" target=\"_blank\"></a></li>\n";
       $thanks .= "</ul>\n";
       $thanks .= "<em>Follow us online for updates on Gazelli House</em>\n";
       $thanks .= "</div>\n";
@@ -150,6 +149,14 @@ if(!$_SERVER['REQUEST_METHOD'] == "POST") {
     }
     echo json_encode($out);
     mysql_close($mysqli);
+		// The message
+		$message = "You've received a new registration.\r\n<a\"http://www.gazellihouse.com/download/gazellihouse.xls\">Download current registrations</a>";
+
+		// In case any of our lines are larger than 70 characters, we should use wordwrap()
+		$message = wordwrap($message, 70, "\r\n");
+
+		// Send
+		mail('bookings@gazelli.co.uk', 'New Gazelli House Registration', $message);
   }
 }
 ?>

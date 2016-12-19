@@ -48,13 +48,12 @@ $detect = new Mobile_Detect;
       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
         <ul class="nav navbar-nav">
           <li><a href="/">Home</a></li>
-          <li><a href="/menu">Treatment Menu</a></li>
-          <li><a href="/about">About</a></li>
+          <li><a href="/menu">Treatments</a></li>
           <li><a href="/events">Events</a></li>
-          <li><a href="/membership">Guest Registration</a></li>
-          <li><a href="/life">Life</a></li>
+          <li><a href="/explore">Explore</a></li>
+          <li><a href="/membership">Registration</a></li>
+          <li class="mobile-book"><a href="tel:+447909092343" target="_blank">Call to Book</a></li>
           <li><a href="https://gazellihouse.phorest.me/book#/service-category?id=9CBphLQfcl9L8yTTnT5Q9Q" target="_blank">Book now</a></li>
-          <!--<li><a href="http://gazellihouselondon.tumblr.com" target="_blank">Live Beautifully</a></li>-->
         </ul>
         <ul class="nav navbar-nav navbar-right">
         </ul>
@@ -112,7 +111,6 @@ $detect = new Mobile_Detect;
             <li class="social-icon bird"><a href="https://www.twitter.com/gazellihouse" target="_blank"></a></li>
             <li class="social-icon facebook"><a href="https://www.facebook.com/GazelliHouse" target="_blank"></a></li>
             <li class="social-icon icon-3"><a href="https://www.instagram.com/gazellihouse" target="_blank"></a></li>
-            <li class="social-icon twitter"><a href="http://gazellihouselondon.tumblr.com" target="_blank"></a></li>
           </ul>
       </div>
     </div>

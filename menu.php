@@ -45,13 +45,12 @@ $detect = new Mobile_Detect;
       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
         <ul class="nav navbar-nav">
           <li><a href="/">Home</a></li>
-          <li><a href="/menu">Treatment Menu</a></li>
-          <li><a href="/about">About</a></li>
+          <li><a href="/menu">Treatments</a></li>
           <li><a href="/events">Events</a></li>
-          <li><a href="/membership">Guest Registration</a></li>
-          <li><a href="/life">Life</a></li>
+          <li><a href="/explore">Explore</a></li>
+          <li><a href="/membership">Registration</a></li>
+          <li class="mobile-book"><a href="tel:+447909092343" target="_blank">Call to Book</a></li>
           <li><a href="https://gazellihouse.phorest.me/book#/service-category?id=9CBphLQfcl9L8yTTnT5Q9Q" target="_blank">Book now</a></li>
-          <!--<li><a href="http://gazellihouselondon.tumblr.com" target="_blank">Live Beautifully</a></li>-->
         </ul>
         <ul class="nav navbar-nav navbar-right">
         </ul>
@@ -227,6 +226,19 @@ $detect = new Mobile_Detect;
             <h3 class="book">
               <strong>TO BOOK:</strong> Please call <strong>0207 581 4355</strong> or email <a href="mailto:bookings@gazelli.co.uk">bookings@gazelli.co.uk</a>
             </h3>
+            <h3>VISITING PRACTITIONERS</h3>
+            <p>
+              Our mission is to help you re-engage, not just   with your skin, but with your body, mind and emotions, investing in yourself on every level. In order to achieve lasting emotional and physical wellness, a proper knowledge and understanding of yourself is essential.
+            </p>
+            <p>
+              In the Sky Parlour on our topmost floor is where you will find our practitioners holding private consultations and one-to-one sessions to address various areas of your life.
+            </p>
+            <p>
+              At once insightful, intuitive and highly skilled, our practitioners are friendly, familiar faces who are there to support you. It is up to you which character and approach appeals most to you and what you want to achieve.
+            </p>
+            <p>
+              <strong>TOGETHER WE CAN ADDRESS:</strong> Anxiety, Self-esteem & confidence, Relationships, Body Image, Energy and Sleep.
+            </p>
           </div>
           <hr/>
           <div class="text-center footer">
@@ -249,7 +261,6 @@ $detect = new Mobile_Detect;
             <li class="social-icon bird"><a href="https://www.twitter.com/gazellihouse" target="_blank"></a></li>
             <li class="social-icon facebook"><a href="https://www.facebook.com/GazelliHouse" target="_blank"></a></li>
             <li class="social-icon icon-3"><a href="https://www.instagram.com/gazellihouse" target="_blank"></a></li>
-            <li class="social-icon twitter"><a href="http://gazellihouselondon.tumblr.com" target="_blank"></a></li>
           </ul>
       </div>
     </div>

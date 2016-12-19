@@ -64,47 +64,16 @@ if ($handle = opendir($img_dir)) {
       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
         <ul class="nav navbar-nav">
           <li><a href="/">Home</a></li>
-          <li><a href="/menu">Treatment Menu</a></li>
-          <li><a href="/about">About</a></li>
+          <li><a href="/menu">Treatments</a></li>
           <li><a href="/events">Events</a></li>
-          <li><a href="/membership">Guest Registration</a></li>
-          <li><a href="/life">Life</a></li>
+          <li><a href="/explore">Explore</a></li>
+          <li><a href="/membership">Registration</a></li>
+          <li class="mobile-book"><a href="tel:+447909092343" target="_blank">Call to Book</a></li>
           <li><a href="https://gazellihouse.phorest.me/book#/service-category?id=9CBphLQfcl9L8yTTnT5Q9Q" target="_blank">Book now</a></li>
-          <!--<li><a href="http://gazellihouselondon.tumblr.com" target="_blank">Live Beautifully</a></li>-->
         </ul>
         <ul class="nav navbar-nav navbar-right">
         </ul>
       </nav>
-      <div id="carousel-example-generic" class="carousel carousel-fade slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators" data-animation="animated slideDown">
-          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-          <div class="item active">
-            <img src="images/headers/carousel/living-room.jpg" alt="Living Room" data-animation="animated">
-            <div class="carousel-caption light">
-              Living Room
-            </div>
-          </div>
-          <div class="item">
-          <img src="images/headers/carousel/foundations-dark.jpg" alt="Foundations" data-animation="animated">
-            <div class="carousel-caption light">
-              Foundations
-            </div>
-          </div>
-          <div class="item">
-            <img src="images/headers/carousel/sky-parlour.jpg" alt="Sky Parlour" data-animation="animated">
-            <div class="carousel-caption light">
-             Sky Parlour
-            </div>
-          </div>
-        </div>
-      </div>
     </header>
     <div class="container">
       <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
@@ -161,7 +130,6 @@ if ($handle = opendir($img_dir)) {
             <li class="social-icon bird"><a href="https://www.twitter.com/gazellihouse" target="_blank"></a></li>
             <li class="social-icon facebook"><a href="https://www.facebook.com/GazelliHouse" target="_blank"></a></li>
             <li class="social-icon icon-3"><a href="https://www.instagram.com/gazellihouse" target="_blank"></a></li>
-            <li class="social-icon twitter"><a href="http://gazellihouselondon.tumblr.com" target="_blank"></a></li>
           </ul>
       </div>
     </div>

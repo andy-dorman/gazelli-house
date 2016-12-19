@@ -33,6 +33,7 @@ $detect = new Mobile_Detect;
   <a href="#" name="top" id="top"></a>
     <!-- Docs master nav -->
     <header class="navbar navbar-static-top text-center" id="top" role="banner">
+      <a href="tel:+447909092343" id="phone-link" class="glyphicon glyphicon-earphone"></a>
       <div class="navbar-header">
         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
           <span class="sr-only">Toggle navigation</span>
@@ -45,16 +46,45 @@ $detect = new Mobile_Detect;
       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
         <ul class="nav navbar-nav">
           <li><a href="/">Home</a></li>
-          <li><a href="/menu">Treatment Menu</a></li>
-          <li><a href="/about">About</a></li>
+          <li><a href="/menu">Treatments</a></li>
           <li><a href="/events">Events</a></li>
-          <li><a href="/membership">Guest Registration</a></li>
-          <li><a href="/life">Life</a></li>
+          <li><a href="/explore">Explore</a></li>
+          <li><a href="/membership">Registration</a></li>
+          <li class="mobile-book"><a href="tel:+447909092343" target="_blank">Call to Book</a></li>
           <li><a href="https://gazellihouse.phorest.me/book#/service-category?id=9CBphLQfcl9L8yTTnT5Q9Q" target="_blank">Book now</a></li>
-          <!--<li><a href="http://gazellihouselondon.tumblr.com" target="_blank">Live Beautifully</a></li>-->
         </ul>
         <ul class="nav navbar-nav navbar-right">
         </ul>
+        <div id="carousel-example-generic" class="carousel carousel-fade slide">
+          <!-- Indicators -->
+          <ol class="carousel-indicators" data-animation="animated slideDown">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <img src="images/headers/carousel/living-room.jpg" alt="Living Room" data-animation="animated">
+              <div class="carousel-caption light">
+                Living Room
+              </div>
+            </div>
+            <div class="item">
+            <img src="images/headers/carousel/foundations-dark.jpg" alt="Foundations" data-animation="animated">
+              <div class="carousel-caption light">
+                Foundations
+              </div>
+            </div>
+            <div class="item">
+              <img src="images/headers/carousel/sky-parlour.jpg" alt="Sky Parlour" data-animation="animated">
+              <div class="carousel-caption light">
+               Sky Parlour
+              </div>
+            </div>
+          </div>
+        </div>
       </nav>
       <div id="carousel-example-generic" class="carousel slide carousel-fade">
         <!-- Wrapper for slides -->
@@ -76,10 +106,20 @@ $detect = new Mobile_Detect;
           <div>
           <h2>Gazelli House</h2>
           <p>
-            With its intimate, homely and inviting interiors, the Gazelli House is the perfect space in which to learn, feel inspired, and be empowered in a unique atmosphere that encourages healing through all of the senses.
-          </p>
+          With its intimate, homely and inviting interiors, the Gazelli House is the perfect space in which to learn, feel inspired, and be empowered in a unique atmosphere that encourages healing through all of the senses.
+        </p>
+
+          <h4>THE LIVING ROOM: DISCOVER & INSPIRE</h4>
           <p>
-            Divided into three floors, experience our performance-led treatments and switch off as the therapist’s hands work their magic, hear inspiring guest speakers at evening events, swing by for informal supper clubs, book swaps and poetry readings, and discover new practices and therapies.
+            In the heart of the House is a warm and welcoming space in which to connect with others and discover our innovative calendar of events. This room will bring people together and encourage us to learn, discover and stretch our imagination.
+          </p>
+          <h4>FOUNDATIONS: EXPERTISE IN SKINCARE</h4>
+          <p>
+            Our select team of Facial Experts delivers our next-generation skincare treatments based on Dr Hamzayeva’s potent formulations, targeted hands-on techniques, and seamlessly integrated state-of-the-art technology.
+          </p>
+          <h4>THE SKY PARLOUR: AWAKEN THE SENSES</h4>
+          <p>
+            An intimate space flooded with natural light. Here you can enjoy one-to-one consultations with our range of insightful, intuitive and highly skilled specialist practitioners and coaches.
           </p>
           <p>
             You’ll find us on Walton Street, in the heart of Belgravia, a light-filled destination where you will fully immerse yourself, discover our story, and write your own.
@@ -106,7 +146,7 @@ $detect = new Mobile_Detect;
             <li class="social-icon bird"><a href="https://www.twitter.com/gazellihouse" target="_blank"></a></li>
             <li class="social-icon facebook"><a href="https://www.facebook.com/GazelliHouse" target="_blank"></a></li>
             <li class="social-icon icon-3"><a href="https://www.instagram.com/gazellihouse" target="_blank"></a></li>
-            <li class="social-icon twitter"><a href="http://gazellihouselondon.tumblr.com" target="_blank"></a></li>
+
           </ul>
       </div>
     </div>
