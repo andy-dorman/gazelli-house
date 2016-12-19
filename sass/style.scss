@@ -170,14 +170,30 @@ h2 {
 
 
 
-.navbar-nav>li>a {
-  padding:            4px 8px;
-  color:              #EAE5E3;
-  &:hover,
-  &:focus {
-    background:       #828382;
-    background:       rgba(0, 0, 0, 0.9);
-  }
+.navbar-nav {
+	>li {
+		> a {
+		  padding:            4px 8px;
+		  color:              #EAE5E3;
+		  &:hover,
+		  &:focus {
+		    background:       rgba(0, 0, 0, 0.9);
+		  }
+		}
+		&.active a {
+			background:       #828382;
+			background:       rgba(0, 0, 0, 0.9);
+		}
+	}
+
+	&:hover > li.active {
+		> a {
+			background: transparent;
+		}
+		&:hover a {
+			background:       rgba(0, 0, 0, 0.9);
+		}
+	}
 }
 
 #carousel-text {

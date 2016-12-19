@@ -49,9 +49,9 @@ $detect = new Mobile_Detect;
           <li><a href="/">Home</a></li>
           <li><a href="/menu">Treatments</a></li>
           <li><a href="/events">Events</a></li>
-          <li><a href="/explore">Explore</a></li>
+          <li class="active"><a href="/explore">Explore</a></li>
           <li><a href="/membership">Registration</a></li>
-          <li><a href="https://gazellihouse.phorest.me/book#/service-category?id=9CBphLQfcl9L8yTTnT5Q9Q" target="_blank">Book now</a></li>
+          <li class="book-now">BOOK NOW - 07909 092 343</li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
         </ul>

@@ -45,8 +45,8 @@ $detect = new Mobile_Detect;
       </div>
       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
         <ul class="nav navbar-nav">
-          <li><a href="/">Home</a></li>
-          <li><a href="/menu">Treatments</a></li>
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/treatments">Treatments</a></li>
           <li><a href="/events">Events</a></li>
           <li><a href="/explore">Explore</a></li>
           <li><a href="/membership">Registration</a></li>
