@@ -862,6 +862,9 @@ form {
       padding-top: 28px;
       font-size:  48px;
       letter-spacing: 35px;
+			&.higher {
+				padding-top: 0px;
+			}
     }
   }
 }
@@ -1346,6 +1349,14 @@ span[data-cal-date] {
 
 /* Small devices (tablets, 768px and up) */
 @media (max-width: 767px) {
+	#carousel-example-generic {
+		.carousel-caption {
+			&.higher {
+				padding-top: 0px;
+				margin-top: -20px;
+			}
+		}
+	}
 	header {
 		#phone-link {
 			display: block;
