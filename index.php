@@ -68,7 +68,7 @@ $detect = new Mobile_Detect;
         <div class="carousel-inner" role="listbox">
           <div class="item active">
             <img src="images/headers/carousel/living-room.jpg" alt="Living Room" data-animation="animated">
-            <div class="carousel-caption light">
+            <div class="carousel-caption dark">
               Living Room
             </div>
           </div>
