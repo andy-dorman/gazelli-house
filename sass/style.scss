@@ -1200,7 +1200,7 @@ span[data-cal-date] {
 
 .home-page {
 	.container {
-		padding-top: 1112px;
+		padding-top: 632px;
 	  margin-top: -641px;
 
 		h4 {
@@ -1346,20 +1346,13 @@ span[data-cal-date] {
 
 /* Small devices (tablets, 768px and up) */
 @media (max-width: 767px) {
-	.navbar-brand {
-		background-size:    260px;
-		&:after {
-			top: 52px;
-			font-size: 12px;
-			margin-left: -108px;
-		}
-	}
 	header {
 		#phone-link {
 			display: block;
 			left: 25px;
 			top: 50%;
-			margin-top: -20px;
+			transform: translateY(-50%);
+			text-decoration: none;
 		}
 		.navbar-nav {
 			.mobile-book {
@@ -1403,4 +1396,14 @@ span[data-cal-date] {
       font-size: 0.8em;
     }
   }
+}
+@media (max-width: 480px) {
+	.navbar-brand {
+		background-size:    260px;
+		&:after {
+			top: 52px;
+			font-size: 12px;
+			margin-left: -108px;
+		}
+	}
 }

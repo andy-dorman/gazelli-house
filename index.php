@@ -33,8 +33,8 @@ $detect = new Mobile_Detect;
   <a href="#" name="top" id="top"></a>
     <!-- Docs master nav -->
     <header class="navbar navbar-static-top text-center" id="top" role="banner">
-      <a href="tel:+447909092343" id="phone-link" class="glyphicon glyphicon-earphone"></a>
       <div class="navbar-header">
+        <a href="tel:+447909092343" id="phone-link" class="glyphicon glyphicon-earphone"></a>
         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
@@ -55,44 +55,33 @@ $detect = new Mobile_Detect;
         </ul>
         <ul class="nav navbar-nav navbar-right">
         </ul>
-        <div id="carousel-example-generic" class="carousel carousel-fade slide">
-          <!-- Indicators -->
-          <ol class="carousel-indicators" data-animation="animated slideDown">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-          </ol>
-
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner" role="listbox">
-            <div class="item active">
-              <img src="images/headers/carousel/living-room.jpg" alt="Living Room" data-animation="animated">
-              <div class="carousel-caption light">
-                Living Room
-              </div>
-            </div>
-            <div class="item">
-            <img src="images/headers/carousel/foundations-dark.jpg" alt="Foundations" data-animation="animated">
-              <div class="carousel-caption light">
-                Foundations
-              </div>
-            </div>
-            <div class="item">
-              <img src="images/headers/carousel/sky-parlour.jpg" alt="Sky Parlour" data-animation="animated">
-              <div class="carousel-caption light">
-               Sky Parlour
-              </div>
-            </div>
-          </div>
-        </div>
       </nav>
-      <div id="carousel-example-generic" class="carousel slide carousel-fade">
+      <div id="carousel-example-generic" class="mobile carousel carousel-fade slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators" data-animation="animated slideDown">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-            <img src="/images/headers/live-beautifully.jpg" alt="Live Beautifully">
-            <div class="carousel-caption narrow">
-              Live<br/>Beautifully
+            <img src="images/headers/carousel/living-room.jpg" alt="Living Room" data-animation="animated">
+            <div class="carousel-caption light">
+              Living Room
+            </div>
+          </div>
+          <div class="item">
+          <img src="images/headers/carousel/foundations-dark.jpg" alt="Foundations" data-animation="animated">
+            <div class="carousel-caption light">
+              Foundations
+            </div>
+          </div>
+          <div class="item">
+            <img src="images/headers/carousel/sky-parlour.jpg" alt="Sky Parlour" data-animation="animated">
+            <div class="carousel-caption light">
+             Sky Parlour
             </div>
           </div>
         </div>
@@ -100,6 +89,36 @@ $detect = new Mobile_Detect;
     </header>
     <div class="container">
       <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+      <div id="carousel-example-generic" class="mobile carousel carousel-fade slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators" data-animation="animated slideDown">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <img src="images/headers/carousel/living-room.jpg" alt="Living Room" data-animation="animated">
+            <div class="carousel-caption light">
+              Living Room
+            </div>
+          </div>
+          <div class="item">
+          <img src="images/headers/carousel/foundations-dark.jpg" alt="Foundations" data-animation="animated">
+            <div class="carousel-caption light">
+              Foundations
+            </div>
+          </div>
+          <div class="item">
+            <img src="images/headers/carousel/sky-parlour.jpg" alt="Sky Parlour" data-animation="animated">
+            <div class="carousel-caption light">
+             Sky Parlour
+            </div>
+          </div>
+        </div>
+      </div>
       <div>
         <!-- Page content of course! -->
         <main class="text-center" id="content" role="main">
