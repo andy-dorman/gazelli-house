@@ -143,7 +143,7 @@ if ($handle = opendir($img_dir)) {
           <hr/>
           <div class="text-center footer">
             <p>Gazelli House | 174 Walton Street | London | SW3 2JL<br/>
-              TO BOOK ONLINE <a href="https://gazellihouse.phorest.me/book#/service-category?id=9CBphLQfcl9L8yTTnT5Q9Q" target="_blank">CLICK HERE</a>
+              BOOK NOW - 07909 092 343
             </p>
           </div>
         </main>
