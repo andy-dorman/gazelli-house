@@ -1,1 +1,6 @@
 dev/*
+.ruby-version
+.sass-cache/*
+node_modules/*
+download/*
+sass/sass-css3-mixins
