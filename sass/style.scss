@@ -47,6 +47,24 @@ header {
 	text-transform: uppercase;
 	font-size: 12px;
 	letter-spacing: 2px;
+
+	a,
+	span {
+		font-family: $font-family-sans-serif-reg;
+	}
+
+	a {
+
+		border-bottom-width: 1px;
+		border-bottom-style: solid;
+
+		&:hover,
+		&:active,
+		&:visited,
+		&:link {
+			text-decoration: none;
+		}
+	}
 }
 
 div.fancybox-skin {
@@ -862,10 +880,10 @@ form {
       z-index: 10;
     }
 
-		li.book-now {
-			padding: 4px 8px;
-			color: black;
-		}
+		// li.book-now {
+		// 	padding: 4px 8px;
+		// 	color: black;
+		// }
 
 		& > li:last-child {
 			background: white;
