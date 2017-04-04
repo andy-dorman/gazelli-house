@@ -34,6 +34,7 @@ $detect = new Mobile_Detect;
     <!-- Docs master nav -->
     <header class="navbar navbar-static-top text-center" id="top" role="banner">
       <div class="navbar-header">
+        <a href="tel:+447909092343" id="phone-link" class="glyphicon glyphicon-earphone"></a>
         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
@@ -49,8 +50,7 @@ $detect = new Mobile_Detect;
           <li><a href="/events">Events</a></li>
           <li><a href="/explore">Explore</a></li>
           <li><a href="/register">Registration</a></li>
-          <li class="mobile-book"><a href="tel:+447909092343" target="_blank">Call to Book</a></li>
-          <li><a href="https://gazellihouse.phorest.me/book" target="_blank">Book now</a></li>
+          <li class="book-now">BOOK NOW - 07909 092 343</li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
         </ul>
@@ -243,8 +243,7 @@ $detect = new Mobile_Detect;
           <hr/>
           <div class="text-center footer">
             <p>Gazelli House | 174 Walton Street | London | SW3 2JL<br/>
-              BOOK NOW - <span>07909 092 343</span><br/>
-              OR <a href="https://gazellihouse.phorest.me/book" target="_blank">BOOK ONLINE</a>
+              BOOK NOW - <span>07909 092 343</span>
             </p>
           </div>
         </main>
